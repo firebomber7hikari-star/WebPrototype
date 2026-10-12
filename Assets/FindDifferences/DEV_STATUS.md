@@ -17,7 +17,7 @@
   - **A 通关模式**：每关独立计时（关卡 `timeLimit`，统一 60 s），按顺序打完全部关卡后显示「恭喜，您已通关！」并回到模式选择；超时可重新挑战或返回。
   - **B 生存模式**：总时间 `survivalTime`（180 s），每过一关 +`survivalBonusPerLevel`（10 s），过关后直接进入下一关；关卡用完后从第一关继续（新一轮）。时间用完或点「结束」后显示成绩（通过关数 / 找到不同数 / 坚持秒数），最佳纪录存在 PlayerPrefs（`fd.survival.bestLevels / bestDiffs`）。成绩通过 `FindDifferencesGame.SurvivalEnded` 事件发出，供今后接入排行榜。
   - A/B 各有关卡数组和「随机顺序」开关（`campaignRandomOrder / survivalRandomOrder`）：开启后每轮内每关只出现一次，下一轮重新打乱（新一轮第一关不会与上一轮最后一关相同）。
-- 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **130 关**（Level06～Level135，按场景顺序见第 4 节）；`survivalLevels`（B 模式）当前与 A 相同。
+- 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **140 关**（Level06～Level135 + Level500～509，按场景顺序见第 4 节；500 起为新编号段，资源名不连续不影响游戏内「第 N 关」，它按场景顺序计数）；`survivalLevels`（B 模式）当前与 A 相同。
 - Level01～05（早期扁平经典 / 童话立体风格）仍会生成资源，但**不在场景列表中**。
 - 运行时全部 UI 由代码构建（竖屏 1080×1920 适配）；图片为 900×600 纹理。
 - 调试：`debugMode` 打开时画面显示「跳过本关 ▶」按钮（不加时、不弹结算）；`startLevel` 为 A 模式的起始关序号（随机顺序时无效；当前值由使用者在 Inspector 中设置，生成脚本不会改动）。
@@ -35,7 +35,7 @@
 
 # 3. 当前任务
 
-- 无进行中的任务（最近一次：新增现代生活主题 Level130～135（体育比赛 / 演唱会 / 大型展览 / 加油站 / 商场 / 未来世界），已加入 A、B 两个模式的关卡列表）。
+- 无进行中的任务（最近一次：新增城市日常主题 Level500～509（动物园 / 机场 / 超市 / 学校操场 / 消防站 / 面包店 / 湖畔公园 / 滑雪场 / 海边灯塔 / 图书馆），已加入 A、B 两个模式的关卡列表；`diff_select.py` 的关卡编号识别范围由 1～199 扩大到 1～999）。
 
 ---
 
@@ -177,6 +177,16 @@
 | 128 | Level133 | 加油站 | levels_modern | 路边加油站（罩棚、油泵、价格牌、便利店、风车） | 昼夜 |
 | 129 | Level134 | 商场 | levels_modern | 商场中庭（三层店铺、扶梯、喷泉） | |
 | 130 | Level135 | 未来世界 | levels_modern | 未来城市（穹顶塔楼、磁悬浮、飞行车、机器人） | |
+| 131 | Level500 | 动物园 | levels_daily | 侧视纸艺（长颈鹿、大象池、狮子岩、游客、气球、冰淇淋车） | |
+| 132 | Level501 | 机场 | levels_daily | 航站楼室内 + 玻璃幕墙外停机坪（客机、塔台、航班信息屏） | |
+| 133 | Level502 | 超市 | levels_daily | 室内（货架、水果摊、收银台、购物车） | |
+| 134 | Level503 | 学校操场 | levels_daily | 钟楼校舍、秋千、滑梯、沙坑、篮球架 | |
+| 135 | Level504 | 消防站 | levels_daily | 三车库消防站、消防车、晾水带塔、消防员、斑点狗 | |
+| 136 | Level505 | 面包店 | levels_daily | 室内（面包架、黑板菜单、砖砌烤炉、蛋糕柜） | |
+| 137 | Level506 | 湖畔公园 | levels_daily | 拱桥、凉亭、樱花树、划船、鸭子 | 天气（雨） |
+| 138 | Level507 | 滑雪场 | levels_daily | 缆车、木屋、旗门、雪人、滑雪者 | 天气（雪 / 雾） |
+| 139 | Level508 | 海边灯塔 | levels_daily | 悬崖灯塔、渔村、栈桥、帆船（夜间灯塔光束扫动） | 昼夜 |
+| 140 | Level509 | 图书馆 | levels_daily | 室内（高书架 + 移动梯、拱窗、阅读桌、地球仪、睡猫） | |
 
 「基准关」：用户指定的满幅构图标准为场景序 1–5、9、13、20、22、30。
 
@@ -242,6 +252,7 @@
 - **日本**（levels_heian / heian2 / sengoku / meiji / edo + `jp_kit`）：平安用金色霞带 `kasumi`、桧皮弯曲屋顶 `curved_roof`、竹帘 `hall()`、十二单 `lady_seated`；战国用天守 `castle_keep`、町屋 `machiya`、武士 / 足轻；明治用红砖拱廊 `brick_front`、煤气灯、人力车、机车、汽船；江户带浮世绘配色（普鲁士蓝 `PRUSSIAN`）。
 - **中国**（levels_sanguo / tangsong / xiyou + `cn_kit`）：曲线翘角屋顶 `cn_roof`、斗拱色带、殿堂 `cn_hall`、宝塔、城墙城楼、拱桥、灯笼；人物 `hanfu`（futou / wing / guan / tang_lady / lady / bun / straw）、武将 `warrior`（blade / snake / spear / sword）；西游四人 `wukong / tangseng / bajie / shaseng`。
 - **童话**（levels_andersen）：明亮童话配色，可用尺度对比（拇指姑娘的巨物视角）。
+- **城市日常**（levels_daily，Level500～）：侧视纸艺，明亮日常配色；人物统一用 `modern()`，招牌 / 屏幕文字用 `sign_box()` 随机笔画；不同以「整件换色 / 整件增删」为主（灯具改为整个灯头换色，避免只换小灯芯导致像素不足）。
 - **现代 / 秋叶原**（levels_akiba）：`modern()` 人物、`maid()`、`sign_box()` 竖排招牌（用随机笔画代替文字）、`chibi()` 手办；**不使用真实品牌、商标或现有角色**。
 - **格斗游戏风格**（levels_misc）：原创格斗家（`fighter_gi / fighter_kungfu / wrestler`）+ 顶部血条 / 七段数字倒计时 HUD；**不复刻任何版权角色**。
 - **心理恐怖**（levels_horror）：不血腥，靠「不对劲」营造氛围（空洞的眼、黑影、镜中人），深度雾 + 冷暖对比的光源。
@@ -331,6 +342,7 @@ python diff_select.py verify                  # 检查已生成的 Levels/*.asse
 | `oblique.py` | 45° 伪 3D 俯视 + 光源投影（box / cylinder / ball / cone / tent / figure / 树） |
 | `jp_kit.py` | 日式建筑与人物（天守、町屋、鸟居、和服、武士、足轻、洋装、人力车、机车、汽船） |
 | `levels_modern.py` 内 | `crowd()` 看台观众、`player()` 足球员、`car_side()` 侧视汽车、`pump()` 油泵（可供以后的现代题材复用） |
+| `levels_daily.py` 内 | `giraffe / elephant / lion / dalmatian` 动物、`airliner()` 客机、`shelf_unit()` 超市货架、`bookcase()` 书架、`fire_truck()`、`firefighter()`、`skier()`、`snowman()`、`blossom_tree()`、`loaf()` 面包、`cake()`、`balloon_bunch()` 气球元素 |
 | `cn_kit.py` | 中式建筑与人物（屋顶、殿堂、宝塔、城墙城楼、拱桥、灯笼、汉服、武将、马、骆驼、帆船） |
 
 ---

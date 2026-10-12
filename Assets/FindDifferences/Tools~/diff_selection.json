@@ -2660,6 +2660,332 @@
    "rune5"
   ]
  },
+ "Level500": {
+  "auto": [],
+  "circles": {
+   "bin": [
+    784,
+    544,
+    32
+   ],
+   "ear": [
+    494,
+    326,
+    39
+   ],
+   "mane": [
+    770,
+    260,
+    78
+   ],
+   "shirt": [
+    260,
+    539,
+    30
+   ],
+   "spots": [
+    181,
+    306,
+    77
+   ]
+  },
+  "keep": [
+   "bin",
+   "ear",
+   "mane",
+   "shirt",
+   "spots"
+  ],
+  "neutral": []
+ },
+ "Level501": {
+  "auto": [],
+  "circles": {
+   "case": [
+    526,
+    564,
+    31
+   ],
+   "clock": [
+    850,
+    400,
+    38
+   ],
+   "desk": [
+    100,
+    406,
+    91
+   ],
+   "tail": [
+    662,
+    224,
+    44
+   ]
+  },
+  "keep": [
+   "case",
+   "clock",
+   "desk",
+   "tail"
+  ],
+  "neutral": []
+ },
+ "Level502": {
+  "auto": [],
+  "circles": {
+   "apples": [
+    62,
+    456,
+    47
+   ],
+   "board": [
+    450,
+    74,
+    74
+   ],
+   "bread": [
+    474,
+    478,
+    38
+   ],
+   "register": [
+    726,
+    420,
+    29
+   ]
+  },
+  "keep": [
+   "apples",
+   "board",
+   "bread",
+   "register"
+  ],
+  "neutral": []
+ },
+ "Level503": {
+  "auto": [],
+  "circles": {
+   "bucket": [
+    412,
+    534,
+    28
+   ],
+   "roof": [
+    450,
+    16,
+    74
+   ],
+   "shirt": [
+    660,
+    549,
+    27
+   ],
+   "tree": [
+    840,
+    255,
+    76
+   ]
+  },
+  "keep": [
+   "bucket",
+   "roof",
+   "shirt",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level504": {
+  "auto": [],
+  "circles": {
+   "bell": [
+    760,
+    236,
+    29
+   ],
+   "helmet": [
+    682,
+    487,
+    32
+   ],
+   "hydrant": [
+    50,
+    542,
+    43
+   ],
+   "ladder": [
+    352,
+    444,
+    108
+   ]
+  },
+  "keep": [
+   "bell",
+   "helmet",
+   "hydrant",
+   "ladder"
+  ],
+  "neutral": []
+ },
+ "Level505": {
+  "auto": [],
+  "circles": {
+   "apron": [
+    440,
+    324,
+    30
+   ],
+   "cup": [
+    792,
+    504,
+    24
+   ],
+   "loaf": [
+    238,
+    190,
+    45
+   ]
+  },
+  "keep": [
+   "apron",
+   "cup",
+   "loaf"
+  ],
+  "neutral": []
+ },
+ "Level506": {
+  "auto": [],
+  "circles": {
+   "bench": [
+    444,
+    494,
+    64
+   ],
+   "blossom": [
+    560,
+    182,
+    62
+   ],
+   "bridge": [
+    160,
+    348,
+    108
+   ],
+   "lamp": [
+    700,
+    384,
+    33
+   ]
+  },
+  "keep": [
+   "bench",
+   "blossom",
+   "bridge",
+   "lamp"
+  ],
+  "neutral": []
+ },
+ "Level507": {
+  "auto": [],
+  "circles": {
+   "door": [
+    660,
+    310,
+    41
+   ],
+   "flag": [
+    460,
+    426,
+    30
+   ],
+   "hat": [
+    840,
+    453,
+    31
+   ],
+   "jacket": [
+    640,
+    531,
+    33
+   ]
+  },
+  "keep": [
+   "door",
+   "flag",
+   "hat",
+   "jacket"
+  ],
+  "neutral": []
+ },
+ "Level508": {
+  "auto": [],
+  "circles": {
+   "buoy": [
+    140,
+    510,
+    32
+   ],
+   "roof": [
+    120,
+    210,
+    48
+   ],
+   "sail": [
+    472,
+    368,
+    57
+   ],
+   "stripe": [
+    800,
+    176,
+    82
+   ]
+  },
+  "keep": [
+   "buoy",
+   "roof",
+   "sail",
+   "stripe"
+  ],
+  "neutral": []
+ },
+ "Level509": {
+  "auto": [],
+  "circles": {
+   "books": [
+    757,
+    236,
+    58
+   ],
+   "chair": [
+    94,
+    514,
+    81
+   ],
+   "curtain": [
+    334,
+    176,
+    132
+   ],
+   "globe": [
+    780,
+    488,
+    52
+   ],
+   "lamp": [
+    540,
+    434,
+    30
+   ]
+  },
+  "keep": [
+   "books",
+   "chair",
+   "curtain",
+   "globe",
+   "lamp"
+  ],
+  "neutral": []
+ },
  "Level51": {
   "auto": [],
   "circles": {

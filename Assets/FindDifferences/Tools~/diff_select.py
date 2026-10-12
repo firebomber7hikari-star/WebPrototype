@@ -43,7 +43,7 @@ AUTO_SHIFTS = (150, 210, 120, 180)
 def scene_levels():
     """Level names in the order of the Test77 scene list."""
     import fdcore
-    names = {fdcore.guid_for("Levels/Level%02d.asset" % n): "Level%02d" % n for n in range(1, 200)}
+    names = {fdcore.guid_for("Levels/Level%02d.asset" % n): "Level%02d" % n for n in range(1, 1000)}
     text = open(os.path.join(fdcore.ROOT, "Test77.unity"), encoding="utf-8").read()
     block = text.split("  levels:", 1)[1].split("  startLevel:", 1)[0]
     return [names[g] for g in re.findall(r"guid: ([0-9a-f]{32})", block) if g in names]
