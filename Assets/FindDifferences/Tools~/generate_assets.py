@@ -30,6 +30,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_portrait.py  Level129 portrait gallery (old-master style portraits, a painter at his easel)
   levels_modern.py    Level130-135 modern life (football match / concert / expo hall / gas station / shopping mall / future city)
   levels_daily.py     Level500-509 everyday town (zoo / airport / supermarket / schoolyard / fire station / bakery / lakeside park / ski resort / lighthouse / library)
+  levels_daily2.py    Level510-519 everyday town 2 (aquarium / circus / flower shop / construction site / train platform / dinosaur museum / rainy cafe / pumpkin farm / ice rink / pet shop)
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
   levels_anime.py     Level25-27 anime cel style (sakura slope / shrine festival / summer sky)
@@ -88,6 +89,7 @@ import levels_gothic
 import levels_portrait
 import levels_modern
 import levels_daily
+import levels_daily2
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -99,7 +101,7 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_edo.LEVELS + levels_sanguo.LEVELS + levels_tangsong.LEVELS
               + levels_andersen.LEVELS + levels_xiyou.LEVELS + levels_akiba.LEVELS
               + levels_misc.LEVELS + levels_oblique.LEVELS + levels_gothic.LEVELS + levels_portrait.LEVELS
-              + levels_modern.LEVELS + levels_daily.LEVELS)
+              + levels_modern.LEVELS + levels_daily.LEVELS + levels_daily2.LEVELS)
 
 
 def main():

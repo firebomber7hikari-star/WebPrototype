@@ -523,6 +523,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7029a1541065a88cd39bf2f21ba3bbf1, type: 2}
   - {fileID: 11400000, guid: 8218b0ac58b697d41de62a62d1c77a84, type: 2}
   - {fileID: 11400000, guid: 43ff44e488e04512c2276e9ac035d30d, type: 2}
+  - {fileID: 11400000, guid: 5b68e2bb9784aa7c48d816f5e0b22f6f, type: 2}
+  - {fileID: 11400000, guid: db88021235bdbc90f6c0f6581dd63274, type: 2}
+  - {fileID: 11400000, guid: 0da6ef096ccea9890ca80e656df0f575, type: 2}
+  - {fileID: 11400000, guid: 4fc3468f85c551ade15da0d44a27c8f1, type: 2}
+  - {fileID: 11400000, guid: be3de06fcfa0f091fa968bbb63f20612, type: 2}
+  - {fileID: 11400000, guid: f342cc9ed52092de1939050d5b5e7063, type: 2}
+  - {fileID: 11400000, guid: da890523f3c16a97d378c13cafefff3c, type: 2}
+  - {fileID: 11400000, guid: d94174658d638c1a723da2c77b304a44, type: 2}
+  - {fileID: 11400000, guid: c3d1414223dc9f2287d8f754482ee2c9, type: 2}
+  - {fileID: 11400000, guid: f6d1a19417c9a1d8a0b448ee88f5bc80, type: 2}
   startLevel: 123
   campaignRandomOrder: 0
   survivalLevels:
@@ -666,6 +676,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7029a1541065a88cd39bf2f21ba3bbf1, type: 2}
   - {fileID: 11400000, guid: 8218b0ac58b697d41de62a62d1c77a84, type: 2}
   - {fileID: 11400000, guid: 43ff44e488e04512c2276e9ac035d30d, type: 2}
+  - {fileID: 11400000, guid: 5b68e2bb9784aa7c48d816f5e0b22f6f, type: 2}
+  - {fileID: 11400000, guid: db88021235bdbc90f6c0f6581dd63274, type: 2}
+  - {fileID: 11400000, guid: 0da6ef096ccea9890ca80e656df0f575, type: 2}
+  - {fileID: 11400000, guid: 4fc3468f85c551ade15da0d44a27c8f1, type: 2}
+  - {fileID: 11400000, guid: be3de06fcfa0f091fa968bbb63f20612, type: 2}
+  - {fileID: 11400000, guid: f342cc9ed52092de1939050d5b5e7063, type: 2}
+  - {fileID: 11400000, guid: da890523f3c16a97d378c13cafefff3c, type: 2}
+  - {fileID: 11400000, guid: d94174658d638c1a723da2c77b304a44, type: 2}
+  - {fileID: 11400000, guid: c3d1414223dc9f2287d8f754482ee2c9, type: 2}
+  - {fileID: 11400000, guid: f6d1a19417c9a1d8a0b448ee88f5bc80, type: 2}
   survivalRandomOrder: 0
   survivalTime: 180
   survivalBonusPerLevel: 10
