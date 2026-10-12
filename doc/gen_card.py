@@ -1,3 +1,7 @@
+"""Generate a black-and-white class card as SVG.
+
+Usage: python3 gen_card.py <warrior|rogue|mage> out.svg
+"""
 import math, sys
 def star(cx, cy, R, r=None):
     r = r or R*0.42
@@ -42,12 +46,13 @@ def divider(y):
     return "".join(out)
 s.append(divider(196))
 
-# ---- art: warrior bust, side profile facing right ----
+# ---- art: class bust, side profile facing right ----
 cx,cy,R=512,513,272
 s.append(f'<defs><clipPath id="art"><circle cx="{cx}" cy="{cy}" r="{R}"/></clipPath></defs>')
 s.append(f'<circle cx="{cx}" cy="{cy}" r="{R+14}" fill="none" stroke="{B}" stroke-width="2"/>')
 s.append(f'<circle cx="{cx}" cy="{cy}" r="{R+6}" fill="none" stroke="{B}" stroke-width="1" stroke-dasharray="4 8"/>')
-fig=[
+FIGS={}
+FIGS["warrior"]=[
  # sword grip over the back
  '<g transform="translate(-120,-30) rotate(-18)"><rect x="-9" y="-150" width="18" height="120" rx="4"/>'
    '<rect x="-44" y="-36" width="88" height="16" rx="5"/><circle cx="0" cy="-160" r="16"/>'
@@ -85,6 +90,71 @@ fig=[
  '<path d="M-10,-232 C-30,-290 -150,-280 -190,-170 C-170,-130 -150,-120 -140,-110 C-140,-180 -90,-220 -20,-210 Z"/>',
  '<path d="M-30,-242 C-100,-250 -150,-210 -168,-150 M-40,-228 C-100,-230 -135,-195 -150,-140" stroke="#fff" stroke-width="3" fill="none"/>',
 ]
+FIGS["rogue"]=[
+ # dagger hilts crossed behind the back
+ '<g transform="translate(-105,-20) rotate(-28)"><rect x="-8" y="-120" width="16" height="96" rx="4"/>'
+   '<path d="M-34,-20 C-20,-34 20,-34 34,-20 L34,-12 L-34,-12 Z"/><circle cx="0" cy="-128" r="13"/></g>',
+ '<g transform="translate(-140,10) rotate(-58)"><rect x="-8" y="-120" width="16" height="96" rx="4"/>'
+   '<path d="M-34,-20 C-20,-34 20,-34 34,-20 L34,-12 L-34,-12 Z"/><circle cx="0" cy="-128" r="13"/></g>',
+ # hood tail
+ '<path d="M-100,-160 C-175,-120 -200,-30 -185,60 L-100,40 Z"/>',
+ # torso
+ '<path d="M-80,10 L60,10 C95,40 140,100 160,170 L180,300 L-210,300 C-200,160 -150,60 -80,10 Z"/>',
+ # cloak edge over the shoulder
+ '<path d="M-40,-10 C-110,60 -150,170 -160,300" stroke="#fff" stroke-width="5" fill="none"/>',
+ '<path d="M66,30 C100,90 118,160 124,300" stroke="#fff" stroke-width="4" fill="none"/>',
+ # bandolier with throwing knives
+ '<path d="M-120,80 L110,250" stroke="#fff" stroke-width="30"/>',
+ '<path d="M-120,80 L110,250" stroke="#000" stroke-width="20"/>',
+ '<g fill="#fff"><path d="M-70,100 l14,10 l-34,50 Z"/><path d="M-20,137 l14,10 l-34,50 Z"/><path d="M30,174 l14,10 l-34,50 Z"/></g>',
+ '<rect x="58" y="196" width="34" height="30" transform="rotate(36 75 211)" stroke="#fff" stroke-width="5"/>',
+ # hood
+ '<path d="M-118,-60 C-150,-200 -40,-272 50,-232 C104,-206 112,-150 102,-110 L92,-60 C86,-20 70,0 60,14 L-90,24 Z"/>',
+ # face profile (masked below the eyes)
+ '<path d="M58,-150 L82,-112 L90,-98 L118,-76 L102,-64 L106,-40 L92,-14 L56,2 Z"/>',
+ # hood rim overhanging the brow
+ '<path d="M30,-222 C86,-206 100,-160 90,-120 C70,-128 60,-150 58,-150" stroke="#fff" stroke-width="5" fill="none"/>',
+ # sly eye
+ '<path d="M64,-108 L94,-103 L70,-97 Z" fill="#fff"/>',
+ # mask line and folds
+ '<path d="M58,-86 L112,-80" stroke="#fff" stroke-width="5" stroke-linecap="round"/>',
+ # hood folds
+ '<path d="M-60,-224 C-110,-180 -110,-110 -96,-50 M-20,-246 C-60,-190 -60,-120 -40,-60" stroke="#fff" stroke-width="3" fill="none"/>',
+]
+
+FIGS["mage"]=[
+ # staff with orb
+ '<rect x="176" y="-10" width="20" height="320" rx="6" stroke="#fff" stroke-width="5"/>',
+ '<path d="M186,-10 C150,-30 150,-80 170,-90 M186,-10 C222,-30 222,-80 202,-90" stroke="#000" stroke-width="10" fill="none"/>',
+ '<circle cx="186" cy="-58" r="30" stroke="#fff" stroke-width="5"/>',
+ '<circle cx="186" cy="-58" r="16" fill="#fff"/>',
+ '<path d="M186,-108 L186,-96 M136,-58 L148,-58 M224,-58 L236,-58 M150,-94 L158,-86 M222,-94 L214,-86" stroke="#000" stroke-width="4" stroke-linecap="round"/>',
+ # robe
+ '<path d="M-80,10 L60,10 C100,40 150,100 166,170 L176,300 L-210,300 C-200,160 -150,60 -80,10 Z"/>',
+ '<path d="M-40,0 C-110,70 -150,170 -160,300" stroke="#fff" stroke-width="5" fill="none"/>',
+ '<path d="M-70,30 C-120,100 -140,200 -146,300" stroke="#fff" stroke-width="2" fill="none"/>',
+ # high collar
+ '<path d="M-100,40 L-120,-60 L-60,-20 L-40,30 Z" stroke="#fff" stroke-width="4"/>',
+ # hand on the staff
+ '<path d="M148,150 C160,128 202,128 206,150 L206,190 C190,200 160,200 148,190 Z" stroke="#fff" stroke-width="5"/>',
+ '<path d="M154,164 L200,164 M154,178 L200,178" stroke="#fff" stroke-width="3"/>',
+ # head and face profile
+ '<path d="M-70,-120 L70,-120 L78,-100 L104,-76 L86,-66 L84,-56 L-60,-20 Z"/>',
+ '<path d="M60,-100 L80,-98" stroke="#fff" stroke-width="5" stroke-linecap="round"/>',
+ # long beard
+ '<path d="M-30,-70 C20,-70 60,-62 84,-56 C104,-30 104,30 84,90 C70,140 50,180 30,230 C20,150 -10,60 -30,-20 Z" stroke="#fff" stroke-width="5"/>',
+ '<path d="M40,-40 C64,20 60,90 40,170 M10,-30 C34,30 34,100 26,150 M70,-20 C84,30 80,80 66,120" stroke="#fff" stroke-width="3" fill="none"/>',
+ '<path d="M50,-58 C70,-60 92,-52 100,-36" stroke="#fff" stroke-width="4" fill="none"/>',
+ # hat cone with bent tip
+ '<path d="M-96,-128 L72,-134 C40,-180 0,-220 -50,-242 C-96,-262 -150,-252 -172,-222 C-130,-228 -104,-200 -96,-128 Z"/>',
+ # hat brim
+ '<path d="M-160,-118 C-70,-150 110,-150 168,-116 C110,-102 -70,-100 -160,-118 Z" stroke="#fff" stroke-width="5"/>',
+ '<path d="M-94,-142 C-30,-152 30,-152 74,-146" stroke="#fff" stroke-width="10" fill="none"/>',
+ '<g fill="#fff">'+star(-36,-184,16)+'</g>',
+ '<path d="M10,-206 a14,14 0 1,0 16,22 a10,10 0 1,1 -14,-19 Z" fill="#fff"/>',
+]
+
+cls=sys.argv[1]; fig=FIGS[cls]
 s.append(f'<g clip-path="url(#art)"><g transform="translate({cx+10},{cy+10}) scale(1.05)" fill="{B}" stroke-linejoin="round">'+"".join(fig)+'</g></g>')
 
 # ---- bottom band: defense ----
@@ -100,4 +170,4 @@ for i in range(6):
     s.append(star(X1-175-i*80, dy, 31))
 s.append('</g>')
 s.append('</svg>')
-open(sys.argv[1],'w').write("\n".join(s))
+open(sys.argv[2],'w').write("\n".join(s))
