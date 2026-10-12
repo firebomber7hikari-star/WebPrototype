@@ -42,57 +42,50 @@ def divider(y):
     return "".join(out)
 s.append(divider(196))
 
-# ---- art ----
-cx,cy=512,466
-s.append(f'<circle cx="{cx}" cy="{cy}" r="252" fill="none" stroke="{B}" stroke-width="2"/>')
-s.append(f'<circle cx="{cx}" cy="{cy}" r="240" fill="none" stroke="{B}" stroke-width="1" stroke-dasharray="4 8"/>')
-s.append(f'<line x1="{cx-200}" y1="{cy+232}" x2="{cx+200}" y2="{cy+232}" stroke="{B}" stroke-width="4" stroke-linecap="round"/>')
-g=f'<g transform="translate({cx},{cy+8})" fill="{B}" stroke-linejoin="round">'
+# ---- art: warrior bust, side profile facing right ----
+cx,cy,R=512,513,272
+s.append(f'<defs><clipPath id="art"><circle cx="{cx}" cy="{cy}" r="{R}"/></clipPath></defs>')
+s.append(f'<circle cx="{cx}" cy="{cy}" r="{R+14}" fill="none" stroke="{B}" stroke-width="2"/>')
+s.append(f'<circle cx="{cx}" cy="{cy}" r="{R+6}" fill="none" stroke="{B}" stroke-width="1" stroke-dasharray="4 8"/>')
 fig=[
- # cape
- '<path d="M-30,-118 C-95,-80 -120,40 -150,210 L-60,200 C-55,110 -40,10 -10,-100 Z"/>',
- # sword (far hand, raised behind)
- '<g transform="translate(-58,-120) rotate(-28)">'
-   '<polygon points="-8,-20 8,-20 8,-150 0,-168 -8,-150"/>'
-   '<line x1="0" y1="-30" x2="0" y2="-145" stroke="#fff" stroke-width="2"/>'
-   '<rect x="-30" y="-22" width="60" height="11" rx="4"/><rect x="-6" y="-12" width="12" height="34"/><circle cx="0" cy="26" r="9"/></g>',
- # far arm
- '<path d="M-10,-112 L-62,-140 L-48,-160 L5,-128 Z"/>',
- # legs
- '<path d="M-28,20 L-62,135 L-70,212 L-28,214 L-30,150 L5,40 Z"/>',
- '<path d="M-72,206 L-22,206 L-18,226 L-80,226 Z"/>',
- '<path d="M5,20 L58,120 L70,206 L108,208 L92,118 L42,15 Z"/>',
- '<path d="M64,200 L118,204 L128,226 L60,226 Z"/>',
+ # sword grip over the back
+ '<g transform="translate(-120,-30) rotate(-18)"><rect x="-9" y="-150" width="18" height="120" rx="4"/>'
+   '<rect x="-44" y="-36" width="88" height="16" rx="5"/><circle cx="0" cy="-160" r="16"/>'
+   '<path d="M-9,-130 L9,-120 M-9,-105 L9,-95 M-9,-80 L9,-70 M-9,-55 L9,-45" stroke="#fff" stroke-width="3"/></g>',
+ # cape / back
+ '<path d="M-60,20 C-140,40 -200,120 -230,300 L40,300 Z"/>',
  # torso
- '<path d="M-38,-122 C-10,-140 45,-138 62,-118 C78,-70 60,-20 50,25 L-40,25 C-48,-20 -52,-80 -38,-122 Z"/>',
- # belt
- '<rect x="-46" y="14" width="102" height="18" rx="3"/>',
- '<rect x="2" y="16" width="16" height="14" fill="none" stroke="#fff" stroke-width="3"/>',
- # tassets
- '<path d="M-44,32 L56,32 L66,72 L-50,72 Z"/>',
- '<line x1="6" y1="34" x2="8" y2="70" stroke="#fff" stroke-width="3"/>',
- # neck & helmet
- '<rect x="-2" y="-152" width="34" height="34"/>',
- '<path d="M-28,-170 C-30,-235 50,-250 66,-195 L74,-160 L56,-160 L54,-140 L-20,-140 C-30,-148 -30,-160 -28,-170 Z"/>',
+ '<path d="M-60,10 L55,10 C90,40 150,90 170,170 L190,300 L-200,300 C-190,160 -130,60 -60,10 Z"/>',
+ # chest plate lines
+ '<path d="M60,40 C110,90 135,170 140,300" stroke="#fff" stroke-width="5" fill="none"/>',
+ '<path d="M30,120 C70,140 100,180 110,300" stroke="#fff" stroke-width="2" fill="none"/>',
+ # neck
+ '<path d="M-48,-40 L46,-30 L58,20 L-58,20 Z"/>',
+ # gorget
+ '<path d="M-70,0 C-20,-20 40,-14 75,10 L80,40 C40,20 -20,18 -78,36 Z" stroke="#fff" stroke-width="4"/>',
+ # pauldron (layered)
+ '<path d="M-150,80 C-130,-10 30,-20 60,70 C20,100 -90,110 -150,80 Z" stroke="#fff" stroke-width="5"/>',
+ '<path d="M-160,120 C-120,90 20,100 60,110" stroke="#fff" stroke-width="4" fill="none"/>',
+ '<path d="M-168,160 C-120,130 20,140 66,150" stroke="#fff" stroke-width="4" fill="none"/>',
+ '<circle cx="-50" cy="40" r="7" fill="#fff"/><circle cx="0" cy="45" r="7" fill="#fff"/>',
+ # back of head / neck guard
+ '<path d="M-106,-76 L-40,-84 L-30,-20 L-56,20 L-110,30 Z"/>',
+ # face profile
+ '<path d="M-30,-150 L70,-150 L78,-118 L84,-100 L112,-74 L106,-66 L90,-62 L94,-50 L88,-44 L92,-36 '
+   'L86,-22 C80,-8 70,-4 52,-4 L40,-2 L-48,-2 Z"/>',
+ '<path d="M62,-98 L82,-96" stroke="#fff" stroke-width="5" stroke-linecap="round"/>',
+ # helmet dome with brim + cheek guard
+ '<path d="M-100,-110 C-110,-250 80,-270 92,-128 L96,-114 L60,-114 L56,-80 C50,-50 40,-36 22,-30 '
+   'L-10,-30 C-6,-60 -20,-80 -60,-80 L-104,-70 Z" stroke="#fff" stroke-width="5"/>',
+ '<path d="M-98,-128 C-60,-140 40,-140 92,-130" stroke="#fff" stroke-width="5" fill="none"/>',
+ '<path d="M-6,-226 L-6,-136" stroke="#fff" stroke-width="3"/>',
+ '<circle cx="-70" cy="-120" r="4" fill="#fff"/><circle cx="-30" cy="-124" r="4" fill="#fff"/><circle cx="20" cy="-124" r="4" fill="#fff"/><circle cx="60" cy="-122" r="4" fill="#fff"/>',
+ '<circle cx="20" cy="-62" r="7" fill="#fff"/>',
  # plume
- '<path d="M-5,-232 C-60,-262 -110,-230 -120,-180 C-95,-210 -55,-215 -20,-205 Z"/>',
- # helmet details (white)
- '<path d="M20,-188 L68,-188" stroke="#fff" stroke-width="7" stroke-linecap="round"/>',
- '<path d="M-24,-200 C0,-208 30,-210 62,-205" stroke="#fff" stroke-width="3" fill="none"/>',
- 
- # shoulder pauldron
- '<path d="M-30,-128 C-20,-150 40,-150 52,-118 C40,-102 -10,-100 -30,-128 Z" stroke="#fff" stroke-width="4"/>',
- # shield on near arm (front)
- '<circle cx="78" cy="-40" r="88" stroke="#fff" stroke-width="5"/>',
- '<circle cx="78" cy="-40" r="70" fill="none" stroke="#fff" stroke-width="3"/>',
- '<circle cx="78" cy="-40" r="18" fill="#fff"/><circle cx="78" cy="-40" r="8"/>',
- '<path d="M78,-110 L78,-58 M78,-22 L78,30 M8,-40 L60,-40 M96,-40 L148,-40" stroke="#fff" stroke-width="3"/>',
+ '<path d="M-10,-232 C-30,-290 -150,-280 -190,-170 C-170,-130 -150,-120 -140,-110 C-140,-180 -90,-220 -20,-210 Z"/>',
+ '<path d="M-30,-242 C-100,-250 -150,-210 -168,-150 M-40,-228 C-100,-230 -135,-195 -150,-140" stroke="#fff" stroke-width="3" fill="none"/>',
 ]
-s.append(g+"".join(fig)+'</g>')
-
-# name plate
-s.append(divider(740))
-s.append(f'<text x="512" y="798" font-family="Georgia,serif" font-size="40" font-weight="bold" text-anchor="middle" letter-spacing="12">WARRIOR</text>')
+s.append(f'<g clip-path="url(#art)"><g transform="translate({cx+10},{cy+10}) scale(1.05)" fill="{B}" stroke-linejoin="round">'+"".join(fig)+'</g></g>')
 
 # ---- bottom band: defense ----
 s.append(divider(830))
