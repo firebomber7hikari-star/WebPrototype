@@ -1,0 +1,1877 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed857bac3f4516804cee4d2ba7eb3a4c, type: 3}
+  m_Name: Level05
+  m_EditorClassIdentifier: 
+  levelName: "\u9b54\u6cd5\u68ee\u6797"
+  original: {fileID: 21300000, guid: 698560ed120a2e7810c7ef8a88a6e07b, type: 3}
+  modified: {fileID: 21300000, guid: 03d1aa1db1735f96aa1da83fe21368fc, type: 3}
+  timeLimit: 60
+  differences:
+  - id: treewindow
+    center: {x: 178, y: 270}
+    radius: 24
+  - id: lantern
+    center: {x: 240, y: 338}
+    radius: 32
+  - id: owl
+    center: {x: 305, y: 428}
+    radius: 28
+  - id: lotus
+    center: {x: 520, y: 134}
+    radius: 20
+  - id: brew
+    center: {x: 380, y: 85}
+    radius: 46
+  - id: mushroom
+    center: {x: 760, y: 75}
+    radius: 30
+  - id: bat
+    center: {x: 610, y: 510}
+    radius: 44
+  elements:
+  - id: moon_halo
+    spriteOriginal: {fileID: 21300000, guid: 028520949b96e69ae499571bac2314e6, type: 3}
+    spriteModified: {fileID: 21300000, guid: 028520949b96e69ae499571bac2314e6, type: 3}
+    position: {x: 720, y: 500}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.06
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.2
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.06
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.2
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: bat
+    spriteOriginal: {fileID: 21300000, guid: c9ae97d65f305749481402582ecd2d7b, type: 3}
+    spriteModified: {fileID: 0}
+    position: {x: 610, y: 510}
+    pivot: {x: 0.5, y: 0.4615}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 22, y: 9}
+      bobSpeed: 0.12
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0.6}
+      scaleSpeed: 3
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 22, y: 9}
+      bobSpeed: 0.12
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0.6}
+      scaleSpeed: 3
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: crystal_glow
+    spriteOriginal: {fileID: 21300000, guid: 3d0b53826355df99e13840f532725258, type: 3}
+    spriteModified: {fileID: 21300000, guid: 3d0b53826355df99e13840f532725258, type: 3}
+    position: {x: 600, y: 269}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 7}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.6
+      twinkle: 0.3
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 7}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.6
+      twinkle: 0.3
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: crystal
+    spriteOriginal: {fileID: 21300000, guid: 01dfe55c749be8f99a4c4e7a944f9152, type: 3}
+    spriteModified: {fileID: 21300000, guid: 01dfe55c749be8f99a4c4e7a944f9152, type: 3}
+    position: {x: 600, y: 269}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 7}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0.22
+      spinShade: 0.3
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 7}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0.22
+      spinShade: 0.3
+  - id: wisp
+    spriteOriginal: {fileID: 21300000, guid: 7b05d70bb01cfd6a0eb31789b16aee35, type: 3}
+    spriteModified: {fileID: 21300000, guid: 7b05d70bb01cfd6a0eb31789b16aee35, type: 3}
+    position: {x: 160, y: 300}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.3
+      twinkleSpeed: 1.2
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 90, y: 24}
+      orbitSpeed: 0.14
+      orbitDepth: 0.4
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.3
+      twinkleSpeed: 1.2
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 90, y: 24}
+      orbitSpeed: 0.14
+      orbitDepth: 0.4
+      spinSpeed: 0
+      spinShade: 0
+  - id: owl_head
+    spriteOriginal: {fileID: 21300000, guid: ad092f15ffbed6be3a67ce158b55c51f, type: 3}
+    spriteModified: {fileID: 21300000, guid: ad092f15ffbed6be3a67ce158b55c51f, type: 3}
+    position: {x: 305, y: 414}
+    pivot: {x: 0.5, y: 0.0476}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 22
+      swingSpeed: 0.22
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: lantern
+    spriteOriginal: {fileID: 21300000, guid: f2599be4e174dc9f5a6cc6390953dc2b, type: 3}
+    spriteModified: {fileID: 21300000, guid: 6b40112086b57d93301e5e864ec25d0f, type: 3}
+    position: {x: 240, y: 386}
+    pivot: {x: 0.5, y: 0.9789}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 6
+      swingSpeed: 0.35
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.15
+      twinkleSpeed: 2.2
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 6
+      swingSpeed: 0.35
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: ripple0
+    spriteOriginal: {fileID: 21300000, guid: faa798ccc9b78718a1a25b9723ff36fd, type: 3}
+    spriteModified: {fileID: 21300000, guid: faa798ccc9b78718a1a25b9723ff36fd, type: 3}
+    position: {x: 430, y: 103}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: ripple1
+    spriteOriginal: {fileID: 21300000, guid: 2133b140d3364d0d401c15be53f56c25, type: 3}
+    spriteModified: {fileID: 21300000, guid: 2133b140d3364d0d401c15be53f56c25, type: 3}
+    position: {x: 430, y: 103}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.5
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.5
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: ripple2
+    spriteOriginal: {fileID: 21300000, guid: 7d9a10e5704105bdc31eaa9a58aa0710, type: 3}
+    spriteModified: {fileID: 21300000, guid: 7d9a10e5704105bdc31eaa9a58aa0710, type: 3}
+    position: {x: 505, y: 95}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.25
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.25
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 0, y: -0.5}
+      driftLength: 2
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 1.8
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: brew
+    spriteOriginal: {fileID: 21300000, guid: 7c7a63c04c549fff3fafbd748fdc08a2, type: 3}
+    spriteModified: {fileID: 21300000, guid: 854347b6cc9c25df4bf3589db17f3fa2, type: 3}
+    position: {x: 380, y: 80}
+    pivot: {x: 0.5, y: 0.3667}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.05
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.5
+      twinkle: 0.25
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.05
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.5
+      twinkle: 0.25
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: bubble0
+    spriteOriginal: {fileID: 21300000, guid: ceaf189fafc5ee22f3b09ba1cc81bc98, type: 3}
+    spriteModified: {fileID: 21300000, guid: e6abbfc409803d100be3952742a5da44, type: 3}
+    position: {x: 370, y: 80}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: bubble1
+    spriteOriginal: {fileID: 21300000, guid: 39fd2eae428ea0f9e210b93a808e03d9, type: 3}
+    spriteModified: {fileID: 21300000, guid: e55aef75ff743933830d01fccfe00559, type: 3}
+    position: {x: 384, y: 80}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.3333
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.3333
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: bubble2
+    spriteOriginal: {fileID: 21300000, guid: 271dc6120ac47d7384617dd6bb6bb6e3, type: 3}
+    spriteModified: {fileID: 21300000, guid: 0e7db8f681bb31a3087a9af27734272a, type: 3}
+    position: {x: 392, y: 80}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.6667
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.6667
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 2, y: 24}
+      driftLength: 42
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0.5
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: flame
+    spriteOriginal: {fileID: 21300000, guid: 0f617c9f3d890961b382b22db08633bc, type: 3}
+    spriteModified: {fileID: 21300000, guid: 0f617c9f3d890961b382b22db08633bc, type: 3}
+    position: {x: 380, y: 8}
+    pivot: {x: 0.5, y: 0.3}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0.08, y: 0.3}
+      scaleSpeed: 5
+      twinkle: 0.15
+      twinkleSpeed: 3
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0.08, y: 0.3}
+      scaleSpeed: 5
+      twinkle: 0.15
+      twinkleSpeed: 3
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: mushroom_glow0
+    spriteOriginal: {fileID: 21300000, guid: b02bd9b5eacdd227fc1414641a444348, type: 3}
+    spriteModified: {fileID: 21300000, guid: b02bd9b5eacdd227fc1414641a444348, type: 3}
+    position: {x: 690, y: 58}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.3
+      twinkle: 0.45
+      twinkleSpeed: 0.3
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.3
+      twinkle: 0.45
+      twinkleSpeed: 0.3
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: mushroom_glow1
+    spriteOriginal: {fileID: 21300000, guid: f31915cacdfdd9dcdccd31da7e5a8757, type: 3}
+    spriteModified: {fileID: 21300000, guid: f31915cacdfdd9dcdccd31da7e5a8757, type: 3}
+    position: {x: 720, y: 40.5}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.27
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.37
+      twinkle: 0.45
+      twinkleSpeed: 0.37
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.27
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.37
+      twinkle: 0.45
+      twinkleSpeed: 0.37
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: mushroom_glow2
+    spriteOriginal: {fileID: 21300000, guid: 2dd083357ea32f1ab4c5a9772644641e, type: 3}
+    spriteModified: {fileID: 21300000, guid: 2dd083357ea32f1ab4c5a9772644641e, type: 3}
+    position: {x: 660, y: 36}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.54
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.44
+      twinkle: 0.45
+      twinkleSpeed: 0.44
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.54
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.44
+      twinkle: 0.45
+      twinkleSpeed: 0.44
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: mushroom_glow3
+    spriteOriginal: {fileID: 21300000, guid: e1e11a9c8b0dc0a88681097b000058c0, type: 3}
+    spriteModified: {fileID: 0}
+    position: {x: 760, y: 75.5}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.81
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.51
+      twinkle: 0.45
+      twinkleSpeed: 0.51
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.81
+      bobAmplitude: {x: 0, y: 0}
+      bobSpeed: 0
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0.12
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0.51
+      twinkle: 0.45
+      twinkleSpeed: 0.51
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly0
+    spriteOriginal: {fileID: 21300000, guid: 3f5dae3ecf627124e72018cf38f62376, type: 3}
+    spriteModified: {fileID: 21300000, guid: 3f5dae3ecf627124e72018cf38f62376, type: 3}
+    position: {x: 420, y: 200}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 12, y: 8}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 12, y: 8}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly1
+    spriteOriginal: {fileID: 21300000, guid: 788221c1a95cc81f26c7b4d0094ebc32, type: 3}
+    spriteModified: {fileID: 21300000, guid: 788221c1a95cc81f26c7b4d0094ebc32, type: 3}
+    position: {x: 560, y: 190}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.31
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 19, y: 13}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.31
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 19, y: 13}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly2
+    spriteOriginal: {fileID: 21300000, guid: 120e5ca517d7bfec1ebcf319dce23c98, type: 3}
+    spriteModified: {fileID: 21300000, guid: 120e5ca517d7bfec1ebcf319dce23c98, type: 3}
+    position: {x: 650, y: 150}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.62
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.75
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 26, y: 9}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.62
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.75
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 26, y: 9}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly3
+    spriteOriginal: {fileID: 21300000, guid: b714dc18417c657fa91819f013117d29, type: 3}
+    spriteModified: {fileID: 21300000, guid: b714dc18417c657fa91819f013117d29, type: 3}
+    position: {x: 820, y: 120}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.93
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 18, y: 14}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.93
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 18, y: 14}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly4
+    spriteOriginal: {fileID: 21300000, guid: 416134275e3ad8dd891bb94f74125987, type: 3}
+    spriteModified: {fileID: 21300000, guid: 416134275e3ad8dd891bb94f74125987, type: 3}
+    position: {x: 90, y: 180}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.24
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 1.05
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 25, y: 10}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.24
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 1.05
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 25, y: 10}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly5
+    spriteOriginal: {fileID: 21300000, guid: 00659c6cf2a37e8b477599152fcdd5cd, type: 3}
+    spriteModified: {fileID: 21300000, guid: 00659c6cf2a37e8b477599152fcdd5cd, type: 3}
+    position: {x: 290, y: 130}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.55
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 17, y: 15}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.55
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 17, y: 15}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly6
+    spriteOriginal: {fileID: 21300000, guid: 7484641dbaa11a5fb15e5be54245b4b5, type: 3}
+    spriteModified: {fileID: 21300000, guid: 7484641dbaa11a5fb15e5be54245b4b5, type: 3}
+    position: {x: 760, y: 220}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.86
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 24, y: 11}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.86
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 24, y: 11}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly7
+    spriteOriginal: {fileID: 21300000, guid: 80bd9b3f97ea099cb8ae6a217aee3b22, type: 3}
+    spriteModified: {fileID: 21300000, guid: 80bd9b3f97ea099cb8ae6a217aee3b22, type: 3}
+    position: {x: 340, y: 270}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.17
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.75
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 16, y: 16}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.17
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.75
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 16, y: 16}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly8
+    spriteOriginal: {fileID: 21300000, guid: 022f9c8318ef5da3aa130c1de9e3129b, type: 3}
+    spriteModified: {fileID: 21300000, guid: 022f9c8318ef5da3aa130c1de9e3129b, type: 3}
+    position: {x: 500, y: 40}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.48
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 23, y: 12}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.48
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.9
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 23, y: 12}
+      orbitSpeed: -0.12
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly9
+    spriteOriginal: {fileID: 21300000, guid: f64e1c62190f4857f5107312d4fb69df, type: 3}
+    spriteModified: {fileID: 21300000, guid: f64e1c62190f4857f5107312d4fb69df, type: 3}
+    position: {x: 860, y: 270}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.79
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 1.05
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 15, y: 8}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.79
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 1.05
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 15, y: 8}
+      orbitSpeed: 0.17
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly10
+    spriteOriginal: {fileID: 21300000, guid: b12bf299e645582e7bb6fe82244817f7, type: 3}
+    spriteModified: {fileID: 21300000, guid: b12bf299e645582e7bb6fe82244817f7, type: 3}
+    position: {x: 240, y: 40}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.1
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 22, y: 13}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.1
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.45
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 22, y: 13}
+      orbitSpeed: -0.22
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: firefly11
+    spriteOriginal: {fileID: 21300000, guid: 255191150d80c3cf67f058aebe54e7b4, type: 3}
+    spriteModified: {fileID: 21300000, guid: 255191150d80c3cf67f058aebe54e7b4, type: 3}
+    position: {x: 620, y: 340}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.41
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 14, y: 9}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.41
+      bobAmplitude: {x: 0, y: 6}
+      bobSpeed: 0.3
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: 0
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0.85
+      twinkleSpeed: 0.6
+      driftVelocity: {x: 0, y: 0}
+      driftLength: 0
+      driftStart: 0
+      driftFade: 0
+      driftGrow: 0
+      orbitRadius: {x: 14, y: 9}
+      orbitSpeed: 0.27
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: leaf0
+    spriteOriginal: {fileID: 21300000, guid: c2229ebd1a0d7f56a3a473f53509902e, type: 3}
+    spriteModified: {fileID: 21300000, guid: c2229ebd1a0d7f56a3a473f53509902e, type: 3}
+    position: {x: 110, y: 480}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -70
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -70
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: leaf1
+    spriteOriginal: {fileID: 21300000, guid: 1749a68686220deb5c2d0dd8546bfaea, type: 3}
+    spriteModified: {fileID: 21300000, guid: 1749a68686220deb5c2d0dd8546bfaea, type: 3}
+    position: {x: 260, y: 500}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.2
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -90
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.2
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -90
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: leaf2
+    spriteOriginal: {fileID: 21300000, guid: aa110b49e88495396d11ea1f4f9406fa, type: 3}
+    spriteModified: {fileID: 21300000, guid: aa110b49e88495396d11ea1f4f9406fa, type: 3}
+    position: {x: 60, y: 440}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.4
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -110
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.4
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -110
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: leaf3
+    spriteOriginal: {fileID: 21300000, guid: a97bd448c9a9d227c65c3eb80b811dfc, type: 3}
+    spriteModified: {fileID: 21300000, guid: a97bd448c9a9d227c65c3eb80b811dfc, type: 3}
+    position: {x: 330, y: 510}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.6
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -130
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.6
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -130
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+  - id: leaf4
+    spriteOriginal: {fileID: 21300000, guid: 14ca29bab467a5593d24449bf4e8ac2e, type: 3}
+    spriteModified: {fileID: 21300000, guid: 14ca29bab467a5593d24449bf4e8ac2e, type: 3}
+    position: {x: 190, y: 450}
+    pivot: {x: 0.5, y: 0.5}
+    animOriginal:
+      phase: 0.8
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -150
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
+    animModified:
+      phase: 0.8
+      bobAmplitude: {x: 14, y: 0}
+      bobSpeed: 0.35
+      bounce: 0
+      swingAngle: 0
+      swingSpeed: 0
+      rotateSpeed: -150
+      pulse: 0
+      stretch: {x: 0, y: 0}
+      scaleSpeed: 0
+      twinkle: 0
+      twinkleSpeed: 0
+      driftVelocity: {x: 8, y: -26}
+      driftLength: 380
+      driftStart: 0
+      driftFade: 1
+      driftGrow: 0
+      orbitRadius: {x: 0, y: 0}
+      orbitSpeed: 0
+      orbitDepth: 0
+      spinSpeed: 0
+      spinShade: 0
