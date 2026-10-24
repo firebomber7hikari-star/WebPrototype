@@ -30,6 +30,22 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_portrait.py  Level129 portrait gallery (old-master style portraits, a painter at his easel)
   levels_modern.py    Level130-135 modern life (football match / concert / expo hall / gas station / shopping mall / future city)
   levels_daily.py     Level500-509 everyday town (zoo / airport / supermarket / schoolyard / fire station / bakery / lakeside park / ski resort / lighthouse / library)
+  levels_festival.py  Level145-154 festivals (Spring Festival dinner / dragon boats / Mid-Autumn / Halloween / Christmas Eve / Christmas market / birthday / egg hunt / New Year countdown / carnival)
+  levels_retro.py     Level155-159 80s/90s video-game nostalgia (bedroom / rental shop / pixel platformer / pixel space shooter / arcade hall)
+  levels_sports2.py   Level215-224 sports part 2 (volleyball / table tennis / boxing / ice hockey / road cycling / golf / gymnastics / show jumping / archery / beach volleyball)
+  levels_gamecontent6.py Level225-234 inside video games part 6 (falling blocks / brick breaker / brawler / snake / whack-a-mole / star map / digging sandbox / magic school / pirate map / dinosaur park)
+  levels_mix1.py      Level235-244 mixed themes 1 (coral reef / rainforest / ancient Egypt / Arctic / orchard / night market / space station / candy kingdom / dinosaurs / balloon festival)
+  levels_mix2.py      Level245-254 mixed themes 2 (savanna / construction site / train platform / container port / glasshouse / insect garden / toy room / circus / pirate deck / desert bazaar)
+  levels_mix3.py      Level255-264 mixed themes 3 (Greek temple / jungle ruins / vineyard / dairy farm / fishing village / ice-cream parlour / flower shop / observatory / music classroom / snowy cabin)
+  levels_mix4.py      Level265-274 mixed themes 4 (bamboo pandas / aquarium / natural history museum / art studio / sushi bar / pet shop / barber shop / cafe / laundromat / clock shop)
+  levels_mix5.py      Level275-284 mixed themes 5 (tulip windmills / alpine pasture / rice terraces / red canyon / maple valley / firefly night / mangrove / lavender fields / treehouse village / fjord)
+  levels_mix6.py      Level285-294 mixed themes 6 (post office / vet clinic / skate park / water park / drive-in cinema / bowling alley / gym / flea market / rooftop garden / subway car)
+  levels_mix7.py      Level295-304 mixed themes 7 (apiary / tea plantation / castle kitchen / submarine / ice fishing / mushroom village / moon base / robot factory / sandcastle beach / island resort)
+  levels_mix8.py      Level305-314 mixed themes 8 (kite festival / canal town / wheat harvest / cherry-blossom river / snow festival / pumpkin farm / wetland / fish market / watermill / mountain railway)
+  levels_mix9.py      Level315-324 mixed themes 9 (toy shop / antique shop / doughnut shop / pizzeria / tailor / pottery studio / carpentry / sweet shop / hat shop / tea house)
+  levels_mix10.py     Level325-334 mixed themes 10 (undersea palace / rainbow valley / snowman village / penguin colony / pirate cove / alien garden / chocolate factory / weather station / rowing regatta / Roman forum)
+  levels_mix11.py     Level335-344 mixed themes 11 (Viking village / yurt grassland / whitewashed cliff village / hot-spring lagoon / aviary / morning market / pit stop / horse stable / bamboo rafting / aurora town)
+  levels_homes.py     Level136-144 home interiors (modern apartment / old American apartment / European manor: three rooms each)
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
   levels_anime.py     Level25-27 anime cel style (sakura slope / shrine festival / summer sky)
@@ -88,6 +104,29 @@ import levels_gothic
 import levels_portrait
 import levels_modern
 import levels_daily
+import levels_homes
+import levels_festival
+import levels_retro
+import levels_sports
+import levels_gamecontent
+import levels_gamecontent2
+import levels_gamecontent3
+import levels_gamecontent4
+import levels_gamecontent5
+import levels_dragon
+import levels_sports2
+import levels_gamecontent6
+import levels_mix1
+import levels_mix2
+import levels_mix3
+import levels_mix4
+import levels_mix5
+import levels_mix6
+import levels_mix7
+import levels_mix8
+import levels_mix9
+import levels_mix10
+import levels_mix11
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -99,7 +138,14 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_edo.LEVELS + levels_sanguo.LEVELS + levels_tangsong.LEVELS
               + levels_andersen.LEVELS + levels_xiyou.LEVELS + levels_akiba.LEVELS
               + levels_misc.LEVELS + levels_oblique.LEVELS + levels_gothic.LEVELS + levels_portrait.LEVELS
-              + levels_modern.LEVELS + levels_daily.LEVELS)
+              + levels_modern.LEVELS + levels_homes.LEVELS + levels_festival.LEVELS + levels_retro.LEVELS + levels_daily.LEVELS
+              + levels_sports.LEVELS + levels_gamecontent.LEVELS + levels_dragon.LEVELS
+              + levels_gamecontent2.LEVELS + levels_gamecontent3.LEVELS
+              + levels_gamecontent4.LEVELS + levels_gamecontent5.LEVELS
+              + levels_sports2.LEVELS + levels_gamecontent6.LEVELS
+              + levels_mix1.LEVELS + levels_mix2.LEVELS + levels_mix3.LEVELS
+              + levels_mix4.LEVELS + levels_mix5.LEVELS + levels_mix6.LEVELS + levels_mix7.LEVELS
+              + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS)
 
 
 def main():

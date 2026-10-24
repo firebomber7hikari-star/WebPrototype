@@ -16,8 +16,10 @@
 - 开局先选模式：
   - **A 通关模式**：每关独立计时（关卡 `timeLimit`，统一 60 s），按顺序打完全部关卡后显示「恭喜，您已通关！」并回到模式选择；超时可重新挑战或返回。
   - **B 生存模式**：总时间 `survivalTime`（180 s），每过一关 +`survivalBonusPerLevel`（10 s），过关后直接进入下一关；关卡用完后从第一关继续（新一轮）。时间用完或点「结束」后显示成绩（通过关数 / 找到不同数 / 坚持秒数），最佳纪录存在 PlayerPrefs（`fd.survival.bestLevels / bestDiffs`）。成绩通过 `FindDifferencesGame.SurvivalEnded` 事件发出，供今后接入排行榜。
+  - **测试关卡**：按 `releaseLevels`（正式版关卡数组）的顺序逐关试玩，规则同 A 模式（每关独立计时，从第一关开始，不随机、不受 `startLevel` 影响），顶栏显示「测试 N/总数」，打完后显示「测试关卡已全部完成」。
+  - `releaseRange`（Vector2Int，x = 起始编号、y = 结束编号，含两端；按关卡资源名中的编号匹配，如 Level170 = 170，从 A 模式 `levels` 列表中按其顺序取出）+ `releaseFromRange`（bool）：勾选后 `releaseLevels` 自动由 `levels` 中该范围的关卡生成（Inspector 中修改即生效，运行时 Awake 也会再生成一次），手动编辑的列表会被替换；不勾选则按手动编辑的 `releaseLevels` 使用。当前为 `releaseRange = (265, 344)`、`releaseFromRange` 勾选，即正式版关卡 = Level265～344（80 关）。
   - A/B 各有关卡数组和「随机顺序」开关（`campaignRandomOrder / survivalRandomOrder`）：开启后每轮内每关只出现一次，下一轮重新打乱（新一轮第一关不会与上一轮最后一关相同）。
-- 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **140 关**（Level06～Level135 + Level500～509，按场景顺序见第 4 节；500 起为新编号段，资源名不连续不影响游戏内「第 N 关」，它按场景顺序计数）；`survivalLevels`（B 模式）当前与 A 相同。
+- 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **349 关**（Level06～Level135 + Level500～509 + Level136～344，按场景顺序见第 4 节；500 起为新编号段，Level136～344 使用 500 之前的空余编号、追加在列表末尾；资源名不连续不影响游戏内「第 N 关」，它按场景顺序计数）；`survivalLevels`（B 模式）当前与 A 相同。
 - Level01～05（早期扁平经典 / 童话立体风格）仍会生成资源，但**不在场景列表中**。
 - 运行时全部 UI 由代码构建（竖屏 1080×1920 适配）；图片为 900×600 纹理。
 - 调试：`debugMode` 打开时画面显示「跳过本关 ▶」按钮（不加时、不弹结算）；`startLevel` 为 A 模式的起始关序号（随机顺序时无效；当前值由使用者在 Inspector 中设置，生成脚本不会改动）。
@@ -35,7 +37,7 @@
 
 # 3. 当前任务
 
-- 无进行中的任务（最近一次：新增城市日常主题 Level500～509（动物园 / 机场 / 超市 / 学校操场 / 消防站 / 面包店 / 湖畔公园 / 滑雪场 / 海边灯塔 / 图书馆），已加入 A、B 两个模式的关卡列表；`diff_select.py` 的关卡编号识别范围由 1～199 扩大到 1～999）。
+- 无进行中的任务（最近一次：新增任意主题 80 关 Level265～344（八个模块 levels_mix4～11，每模块 10 关），均已加入 A、B 两个模式的关卡列表，并设为正式版关卡（`releaseRange = (265, 344)`）；此前：新增 50 关并设为正式版关卡（`releaseLevels` = Level215～264）：体育竞技第 2 组 Level215～224（排球 / 乒乓球 / 拳击 / 冰球 / 公路自行车 / 高尔夫 / 体操 / 马术 / 射箭 / 沙滩排球），电子游戏内容第 6 组 Level225～234（果冻堆叠 / 打砖块 / 清版动作 / 贪吃蛇 / 打地鼠 / 星际星图 / 挖矿沙盒 / 魔法学院 / 海盗航海 / 恐龙乐园），任意主题 Level235～264（三个模块 levels_mix1～3，共 30 关），均已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 4、5 组 Level195～214（隐藏物品 / 竖版弹幕 / 潜行博物馆 / MMO主城 / 地牢肉鸽 / 游乐园经营 / 台球 / 拼图 / 大逃杀 / MOBA对线 / 银河城地图 / 浮岛平台 / 餐厅经营 / 医院经营 / 火星基地 / 家居设计 / 卡车驾驶 / 合成游戏 / 派对棋盘 / 文字冒险），已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 3 组 Level185～194（无尽跑酷 / 点击冒险 / 宠物养成 / 迷你高尔夫 / 荒岛求生 / 料理游戏 / 战棋策略 / 视觉小说 / 水管谜题 / 世界地图），已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 2 组 Level175～184（像素城堡探险 / 回合制战斗 / 农场模拟 / 城市建造 / 节奏音游 / 弹球台 / 卡牌对战 / 星际驾驶舱 / 推箱子 / 钓鱼游戏），已加入 A、B 两个模式的关卡列表；此前：新增运动竞技 Level160～164（篮球馆 / 网球场 / 游泳馆 / 田径场 / 棒球场）、电子游戏内容 Level165～169（像素RPG村庄 / 赛车游戏 / 塔防游戏 / 宝石消除 / 电竞赛场）、勇者与恶龙 Level170～174（勇者启程 / 王城觐见 / 地下城 / 恶龙巢穴 / 屠龙决战），已加入 A、B 两个模式的关卡列表（未加入 `releaseLevels`）；此前：新增 80/90 年代游戏主题 Level155～159（游戏卧室 / 卡带店 / 像素平台 / 像素太空 / 街机厅），已加入 A、B 两个模式的关卡列表；此前：新增节日主题 Level145～154（年夜饭 / 端午龙舟 / 中秋赏月 / 万圣节 / 圣诞夜 / 圣诞集市 / 生日派对 / 彩蛋寻宝 / 新年倒数 / 狂欢节游行），已加入 A、B 两个模式的关卡列表；此前：新增居家室内主题 Level136～144（现代公寓 / 美式老公寓 / 欧洲庄园，各 3 个房间）；`FindDifferencesGame` 新增 `releaseLevels`（正式版关卡数组）；模式选择菜单新增「测试关卡」按钮，按顺序试玩 `releaseLevels`）。
 
 ---
 
@@ -187,6 +189,215 @@
 | 138 | Level507 | 滑雪场 | levels_daily | 缆车、木屋、旗门、雪人、滑雪者 | 天气（雪 / 雾） |
 | 139 | Level508 | 海边灯塔 | levels_daily | 悬崖灯塔、渔村、栈桥、帆船（夜间灯塔光束扫动） | 昼夜 |
 | 140 | Level509 | 图书馆 | levels_daily | 室内（高书架 + 移动梯、拱窗、阅读桌、地球仪、睡猫） | |
+| 141 | Level136 | 现代公寓·客厅 | levels_homes | 室内正面（落地玻璃窗外城市、灰沙发、壁挂电视、弧形落地灯、扫地机器人） | |
+| 142 | Level137 | 现代公寓·厨房 | levels_homes | 开放式厨房（中岛 + 吧椅、吊灯、不锈钢冰箱、厨师） | |
+| 143 | Level138 | 现代公寓·卧室 | levels_homes | 大窗外城市（夜间窗外换夜景 + 床头灯光晕） | 昼夜 |
+| 144 | Level139 | 美式老公寓·客厅 | levels_homes | 条纹墙纸、暖气片、窗外砖楼与消防梯、老式电视、扶手椅 | |
+| 145 | Level140 | 美式老公寓·厨房 | levels_homes | 黑白格地板、圆角冰箱、搪瓷灶台、格子布帘、窗外晾衣绳 | |
+| 146 | Level141 | 美式老公寓·浴室 | levels_homes | 地铁砖墙、爪足浴缸、立柱洗手盆、高水箱马桶 | |
+| 147 | Level142 | 欧洲庄园·门厅 | levels_homes | 双分大楼梯、水晶吊灯、肖像、盔甲、落地钟 | |
+| 148 | Level143 | 欧洲庄园·书房 | levels_homes | 大理石壁炉（火焰）、壁炉上方风景画、书柜、切斯特菲尔德沙发、睡狗 | |
+| 149 | Level144 | 欧洲庄园·宴会厅 | levels_homes | 三扇垂帘高窗、长餐桌 + 烛台、用餐者、管家 | |
+| 150 | Level145 | 年夜饭 | levels_festival | 室内（圆桌团圆饭、春联、福字、灯笼，窗外烟花） | |
+| 151 | Level146 | 端午龙舟 | levels_festival | 侧视河面（两条龙舟、划桨动画、鼓手、粽子摊、远处宝塔） | |
+| 152 | Level147 | 中秋赏月 | levels_festival | 夜景庭院（满月、月洞门、桂花树、月饼茶具、兔子灯，`npiece` 暗色切边） | |
+| 153 | Level148 | 万圣节 | levels_festival | 黄昏街道（南瓜灯、扮装小孩、蝙蝠、黑猫） | |
+| 154 | Level149 | 圣诞夜 | levels_festival | 室内（圣诞树、壁炉长袜、礼物、窗外落雪） | |
+| 155 | Level150 | 圣诞集市 | levels_festival | 木筋屋广场、条纹摊位、大圣诞树、购物者 | 天气（雪） |
+| 156 | Level151 | 生日派对 | levels_festival | 后院（彩旗、气球、蛋糕桌、派对帽小孩、泡泡、狗） | |
+| 157 | Level152 | 彩蛋寻宝 | levels_festival | 春日花园（彩蛋、提篮小孩、跳跃的兔子、樱花树） | |
+| 158 | Level153 | 新年倒数 | levels_festival | 夜景广场（钟楼、大屏幕、人群、烟花、彩纸） | |
+| 159 | Level154 | 狂欢节游行 | levels_festival | 彩色排屋阳台、孔雀花车、羽饰舞者、鼓手、彩纸 | |
+| 160 | Level155 | 游戏卧室 | levels_retro | 90 年代卧室（显像管电视 + 游戏机、懒人沙发、卡带架、米色电脑） | |
+| 161 | Level156 | 卡带店 | levels_retro | 游戏出租店（满墙游戏盒、柜台掌机、演示电视） | |
+| 162 | Level157 | 像素平台 | levels_retro | 8 位像素画面本身（砖块平台、旋转金币、史莱姆、终点旗、HUD） | |
+| 163 | Level158 | 像素太空 | levels_retro | 8 位太空射击（外星人编队、护盾、飞船、带环行星、HUD） | |
+| 164 | Level159 | 街机厅 | levels_retro | 90 年代游戏厅（一排街机、游戏币柜台、日光灯、玩家） | |
+| 165 | Level160 | 篮球馆 | levels_sports | 室内球馆（看台观众、吊挂记分牌、冠军旗、篮架、球员、替补席，暗色切边） | |
+| 166 | Level161 | 网球场 | levels_sports | 底线后视角（挡风围网、看台、球网、裁判椅、球员、球童） | |
+| 167 | Level162 | 游泳馆 | levels_sports | 玻璃拱顶、看台、分道线、游泳者（划臂动画）、跳台、救生员 | |
+| 168 | Level163 | 田径场 | levels_sports | 看台 + 大屏 + 圣火台（火焰元素）、跳高 / 沙坑、跨栏、短跑、终点线 | |
+| 169 | Level164 | 棒球场 | levels_sports | 本垒后视角（外野墙、记分牌、菱形内野、投手、打者、捕手、小贩） | |
+| 170 | Level165 | 像素RPG村庄 | levels_gamecontent | 16 位 RPG 俯视瓦片（房屋、河桥、井、农田、羊圈、NPC、对话框 HUD） | |
+| 171 | Level166 | 赛车游戏 | levels_gamecontent | 伪 3D 赛道（路面分带 + 路肩、棕榈、弯道牌、检查点拱门、对手车、HUD / 小地图 / 速度表），中线虚线为透视漂移元素 | |
+| 172 | Level167 | 塔防游戏 | levels_gamecontent | 卡通描边俯视地图（蜿蜒道路、箭塔 / 炮塔 / 水晶塔、史莱姆沿路移动、城堡、建造栏） | |
+| 173 | Level168 | 宝石消除 | levels_gamecontent | 8×7 宝石棋盘、猫头鹰法师吉祥物、分数 / 步数 / 目标面板、道具按钮 | |
+| 174 | Level169 | 电竞赛场 | levels_gamecontent | 现实纸艺暗场（主屏地图、两侧战队徽章屏、选手席、奖杯、解说台、荧光棒观众） | |
+| 175 | Level170 | 勇者启程 | levels_dragon | 新手村侧视（武器店 / 旅店招牌、任务告示板、井、长老送别勇者，远处恶龙山与盘旋的龙） | |
+| 176 | Level171 | 王城觐见 | levels_dragon | 王座厅正面（尖拱窗光束、旗帜、国王 / 公主 / 大臣、卫兵、红毯上跪拜的勇者、吊灯烛火） | |
+| 177 | Level172 | 地下城 | levels_dragon | 上下两层剖面（火把、勇者小队、锁门、蛛网、尖刺陷阱、史莱姆、宝箱、拉杆），暗色切边 | |
+| 178 | Level173 | 恶龙巢穴 | levels_dragon | 洞穴金币堆上沉睡的红龙（Zzz 漂移）、水晶、钟乳石、发光蘑菇、举火把潜入的勇者 | |
+| 179 | Level174 | 屠龙决战 | levels_dragon | 火山之巅黄昏（飞行喷火的黑龙、残破城墙、勇者举盾、法师魔法阵旋转、熔岩与火星） | |
+| 180 | Level175 | 像素城堡探险 | levels_gamecontent2 | 像素横版城堡（月夜拱窗、旗帜、平台与梯子、烛台闪烁、宝珠台座、HP / MP / 道具 HUD） | |
+| 181 | Level176 | 回合制战斗 | levels_gamecontent2 | 战斗画面（史莱姆王、蘑菇怪 vs 三人 Q 版小队、伤害数字、指令框 + 状态栏） | |
+| 182 | Level177 | 农场模拟 | levels_gamecontent2 | 俯视农场（农舍、谷仓、果树、三块作物田、稻草人、池塘鸭子、日历 / 金币 / 工具栏） | |
+| 183 | Level178 | 城市建造 | levels_gamecontent2 | 等距城市（十字道路 + 行驶车辆、高楼、工厂烟囱、公园喷泉、住宅区、建造菜单） | |
+| 184 | Level179 | 节奏音游 | levels_gamecontent2 | 四轨透视音符下落（漂移元素）、判定键、偶像歌手、连击数、均衡器、音箱、灯架 | |
+| 185 | Level180 | 弹球台 | levels_gamecontent2 | 弹球桌面（顶部灯道、缓冲器、坡道、落靶、弹弓、挡板摆动、背板分数、机柜侧面画） | |
+| 186 | Level181 | 卡牌对战 | levels_gamecontent2 | 卡牌桌面（双方头像、场上 6 张生物卡 + 攻防宝石、手牌扇形、法力水晶、结束回合按钮） | |
+| 187 | Level182 | 星际驾驶舱 | levels_gamecontent2 | 第一人称驾驶舱（带环行星、空间站、陨石、准星；雷达扫描、曲线屏、按钮阵列、推力杆） | |
+| 188 | Level183 | 推箱子 | levels_gamecontent2 | 像素仓库谜题（18×12 瓦片地图 `MAP183`、箱子 / 目标点 / 油桶 / 盆栽 / 工人、步数 HUD） | |
+| 189 | Level184 | 钓鱼游戏 | levels_gamecontent2 | 水上码头 + 帆船、水下剖面（大鱼、海草、珊瑚、沉箱）、张力槽、渔获记录 | |
+| 190 | Level185 | 无尽跑酷 | levels_gamecontent3 | 黄昏屋顶横版跑酷（水塔、广告牌、天线、路障、旋转金币、跳跃的跑者、距离 / 金币 HUD） | |
+| 191 | Level186 | 点击冒险 | levels_gamecontent3 | 阁楼书房（圆窗月夜、书架、歪挂的画、挂钟、上锁木盒、地毯、物品栏、鼠标指针） | |
+| 192 | Level187 | 宠物养成 | levels_gamecontent3 | 宠物房间（圆滚滚的宠物在坐垫上、食盆、球、窗帘、状态条、行动按钮、飘起的爱心） | |
+| 193 | Level188 | 迷你高尔夫 | levels_gamecontent3 | 俯视 U 形球道（旋转风车、水池小桥、沙坑、岩石、花坛、旗洞、杆数 / 力度条） | |
+| 194 | Level189 | 荒岛求生 | levels_gamecontent3 | 海滩营地（椰子树、帐篷、篝火与烟、木筏帆、木箱、螃蟹、生存条、快捷栏、天数） | |
+| 195 | Level190 | 料理游戏 | levels_gamecontent3 | 厨房（订单小票 + 计时条、调料罐、灶台火焰与蒸汽、砧板、食材盒、出餐盘、厨师） | |
+| 196 | Level191 | 战棋策略 | levels_gamecontent3 | 六角格地图（`TERRAIN` 字符串：草地 / 森林 / 水 / 山 / 城堡 / 村庄 / 桥）、蓝红两军单位、移动范围高亮、单位面板 | |
+| 197 | Level192 | 视觉小说 | levels_gamecontent3 | 黄昏天台（教学楼、护栏）、女主角立绘（会眨眼）、对话框 + 名字标签、菜单按钮 | |
+| 198 | Level193 | 水管谜题 | levels_gamecontent3 | 8×6 水管格（`PIPES` 开口掩码、已通水路径）、水箱阀门、排水桶、岩石、星级 / 步数 | |
+| 199 | Level194 | 世界地图 | levels_gamecontent3 | 游戏地图界面（大陆、山脉、森林、湖、虚线道路、城镇、任务标记、战争迷雾、罗盘、图例、标签页） | |
+| 200 | Level195 | 隐藏物品 | levels_gamecontent4 | 古董店三排货架塞满古玩（花瓶、茶壶、地球仪、钟、面具、台灯）、柜台、伞架、猫、底部待找物品清单 | |
+| 201 | Level196 | 竖版弹幕 | levels_gamecontent4 | 竖版射击（海岛、Boss 与核心、旋转弹幕环、无人机编队、道具胶囊、玩家战机与僚机、炸弹 / 残机） | |
+| 202 | Level197 | 潜行博物馆 | levels_gamecontent4 | 俯视夜间展厅（展柜宝石 / 王冠 / 花瓶、雕像、激光网、守卫手电视野摆动、监控、通风口、警觉条） | |
+| 203 | Level198 | MMO主城 | levels_gamecontent4 | 主城广场（公会大厅旗帜、喷泉雕像、交易摊、带名字条的玩家、宠物、聊天框、技能栏、小地图） | |
+| 204 | Level199 | 地牢肉鸽 | levels_gamecontent4 | 俯视地牢房间（四向门、商店地毯 + 价格、宝箱、雕像、陶罐、尖刺、史莱姆、心 / 金币 / 遗物 / 房间地图 HUD） | |
+| 205 | Level200 | 游乐园经营 | levels_gamecontent4 | 等距游乐园（过山车轨道、旋转摩天轮、旋转木马、咖啡杯、售票亭、气球摊、喷泉、游客、建造菜单） | |
+| 206 | Level201 | 台球 | levels_gamecontent4 | 俯视球桌（15 球三角阵、母球、球杆 + 瞄准线、巧克粉、三角框、双方面板、比分、力度条） | |
+| 207 | Level202 | 拼图 | levels_gamecontent4 | 木桌上的半成品风景拼图、散落碎片、悬浮拿起的碎片、盒盖、茶杯与杯垫、计时 | |
+| 208 | Level203 | 大逃杀 | levels_gamecontent4 | 俯瞰海岛（河流与桥、城镇屋顶、森林、灯塔、船、空投箱、安全区圈、风暴、跳伞玩家、航线） | |
+| 209 | Level204 | MOBA对线 | levels_gamecontent4 | 对角线兵线 + 河道（双方防御塔水晶、小兵、英雄血条、野怪、草丛、守卫、KDA、技能栏、小地图） | |
+| 210 | Level205 | 银河城地图 | levels_gamecontent5 | 像素地下基地剖面（8 个房间、彩色门、存档点、电梯、宝珠、水晶、房间地图 HUD） | |
+| 211 | Level206 | 浮岛平台 | levels_gamecontent5 | 等距空中浮岛（木桥、风车、小屋、弹簧、宝箱、旗帜、旋转星星、移动平台、云海） | |
+| 212 | Level207 | 餐厅经营 | levels_gamecontent5 | 餐厅前厅（菜单黑板、吊灯、厨房窗口、三桌顾客 + 心愿气泡、服务员走动、满意度条） | |
+| 213 | Level208 | 医院经营 | levels_gamecontent5 | 两层医院剖面（诊床、X 光屏、扫描仪、病房、候诊椅、药房药瓶、电梯；不使用红十字标志） | |
+| 214 | Level209 | 火星基地 | levels_gamecontent5 | 火星殖民地（温室穹顶、居住舱、太阳能板、卫星天线、火箭发射台、漫游车、宇航员、资源条） | |
+| 215 | Level210 | 家居设计 | levels_gamecontent5 | 俯视户型图（卧室 / 客厅 / 厨房家具、拖拽中的家具与吸附框、家具目录面板、工具栏） | |
+| 216 | Level211 | 卡车驾驶 | levels_gamecontent5 | 驾驶室视角（公路、前车、路牌、后视镜、仪表、导航屏、方向盘、咖啡杯、仪表台摇头公仔） | |
+| 217 | Level212 | 合成游戏 | levels_gamecontent5 | 7×6 合成棋盘（`GRID212`：花 / 浆果篮 / 金币 / 蛋与小鸡 / 岩石）、订单卡、体力、宝箱、木箱 | |
+| 218 | Level213 | 派对棋盘 | levels_gamecontent5 | 海岛棋盘（22 个彩色格子、星星商店、小游戏帐篷、棋子、跳动的骰子、四个玩家面板、帆船） | |
+| 219 | Level214 | 文字冒险 | levels_gamecontent5 | 单色绿屏电脑（文字行、房间地图、像素城堡图、光标闪烁、扫描线）、键盘、软盘、便利贴、马克杯、台灯 | |
+| 220 | Level215 | 排球馆 | levels_sports2 | 端线后视角（高网、拦网队员、裁判台、球车、计分板） | |
+| 221 | Level216 | 乒乓球馆 | levels_sports2 | 暗场蓝地胶（红色挡板、透视球桌、翻分牌、毛巾箱、大屏） | |
+| 222 | Level217 | 拳击擂台 | levels_sports2 | 暗场擂台（三色围绳、角柱、拳手、裁判、铃台、聚光灯） | |
+| 223 | Level218 | 冰球场 | levels_sports2 | 冰面 + 挡板广告（球门、守门员、持杆球员、浇冰车、受罚席） | |
+| 224 | Level219 | 公路自行车赛 | levels_sports2 | 侧视爬坡公路（车手、路边观众、带车架的随队车、终点拱门、摄像摩托） | |
+| 225 | Level220 | 高尔夫球场 | levels_sports2 | 果岭（旗洞、沙坑、池塘、推杆球员、球童、观众、排行榜、球车） | |
+| 226 | Level221 | 体操馆 | levels_sports2 | 平衡木 / 高低杠 / 自由操地毯、裁判席举分、镁粉碗 | |
+| 227 | Level222 | 马术障碍赛 | levels_sports2 | 沙地赛场（彩条障碍、跳跃中的马与骑手、水障、花箱、计时牌） | |
+| 228 | Level223 | 射箭场 | levels_sports2 | 靶位一排、拉弓射手、风向旗、帐篷、箭筒、计分板 | |
+| 229 | Level224 | 沙滩排球 | levels_sports2 | 沙滩球场（拦网、遮阳伞、冷藏箱、救生塔、帆船） | |
+| 230 | Level225 | 果冻堆叠 | levels_gamecontent6 | 下落果冻对消除（井内果冻、下一组、积分、猫形吉祥物；不使用方块骨牌外形） | |
+| 231 | Level226 | 打砖块 | levels_gamecontent6 | 砖墙、金属块、挡板、球、道具胶囊、炮台、残机 | |
+| 232 | Level227 | 清版动作 | levels_gamecontent6 | 横版街道（店面遮阳篷、霓虹招牌、Q 版主角、卡通混混、血条、GO 箭头） | |
+| 233 | Level228 | 贪吃蛇 | levels_gamecontent6 | 格子草坪（长蛇、水果、岩石、花、蜜蜂、分数 / 爱心） | |
+| 234 | Level229 | 打地鼠 | levels_gamecontent6 | 游乐摊（地洞、冒出的地鼠、锤子、计时钟、奖品架、彩票） | |
+| 235 | Level230 | 星际星图 | levels_gamecontent6 | 4X 星图（星系与航线、势力范围、舰队、环形行星、空间站、资源栏、小地图） | |
+| 236 | Level231 | 挖矿沙盒 | levels_gamecontent6 | 2D 剖面（地表小屋与树、隧道、矿石、地下湖、火把、矿工、快捷栏） | |
+| 237 | Level232 | 魔法学院 | levels_gamecontent6 | 石墙教室（符文黑板、坩埚、飞书、戴尖帽的学生、猫头鹰、任务面板） | |
+| 238 | Level233 | 海盗航海 | levels_gamecontent6 | 俯视海图（岛屿、港口小镇、帆船、宝藏 X、漩涡、海怪触手、罗盘） | |
+| 239 | Level234 | 恐龙乐园 | levels_gamecontent6 | 等距乐园（围栏展区、长颈龙、三角龙、雕像、游客、礼品店、建造菜单） | |
+| 240 | Level235 | 海底世界 | levels_mix1 | 珊瑚礁（光束、沉船、宝箱、海龟、鱼群、潜水员、水母） | |
+| 241 | Level236 | 热带雨林 | levels_mix1 | 峡谷瀑布、巨叶、巨嘴鸟、猴子、青蛙、独木舟探险家、鹦鹉 | |
+| 242 | Level237 | 古埃及 | levels_mix1 | 尼罗河畔（金字塔、方尖碑、神庙柱、三角帆船、骆驼、搬运石块的工人） | |
+| 243 | Level238 | 极地冰原 | levels_mix1 | 北极海湾（极光、冰山、科考小屋、冰屋、北极熊、海豹、狗拉雪橇） | |
+| 244 | Level239 | 秋日果园 | levels_mix1 | 苹果树、红色谷仓、风车、梯子上的采摘者、果篮、拖拉机、南瓜 | |
+| 245 | Level240 | 夜市小吃街 | levels_mix1 | 夜景纸艺（灯笼串、三个摊位、蒸笼蒸汽、气球摊、餐桌、人群） | |
+| 246 | Level241 | 太空站内部 | levels_mix1 | 舱内（地球舷窗、漂浮宇航员、水培架、屏幕、工具箱、睡袋、灭火器） | |
+| 247 | Level242 | 糖果王国 | levels_mix1 | 软糖城堡、棒棒糖树、巧克力河、姜饼屋、甜甜圈、拐杖糖、小熊软糖 | |
+| 248 | Level243 | 恐龙时代 | levels_mix1 | 火山、蕨类、长颈龙、三角龙、翼龙、恐龙蛋巢 | |
+| 249 | Level244 | 热气球节 | levels_mix1 | 草地上空的热气球群（静态 + 飘动）、帐篷、旗帜、充气中的气球、野餐观众 | |
+| 250 | Level245 | 非洲草原 | levels_mix2 | 水源地（金合欢、长颈鹿、大象、斑马、狮子、雪顶山、越野车） | |
+| 251 | Level246 | 建筑工地 | levels_mix2 | 塔吊、钢结构楼、挖掘机、搅拌车、自卸车、安全帽工人、锥桶 | |
+| 252 | Level247 | 火车站月台 | levels_mix2 | 雨棚挂钟、发车信息屏、通勤列车、长椅、旅客、行李箱、自动售货机 | |
+| 253 | Level248 | 集装箱码头 | levels_mix2 | 岸桥、集装箱船、堆场、集卡、跨运车、拖轮、灯塔 | |
+| 254 | Level249 | 植物温室 | levels_mix2 | 玻璃温室（吊篮、仙人掌架、兰花架、棕榈、浇水壶、园丁、种子箱） | |
+| 255 | Level250 | 昆虫花园 | levels_mix2 | 昆虫视角（巨草、向日葵、露珠、蝴蝶、瓢虫、蜗牛、蚂蚁搬叶、毛虫、蘑菇） | |
+| 256 | Level251 | 玩具房 | levels_mix2 | 儿童房（风筝、积木塔、玩具架、泰迪熊、摇摇马、小火车、机器人） | |
+| 257 | Level252 | 马戏团 | levels_mix2 | 大帐篷内（条纹顶、秋千台、聚光灯、观众、驯兽圈、杂耍、海豹顶球、小丑车） | |
+| 258 | Level253 | 海盗船甲板 | levels_mix2 | 桅杆与帆、瞭望台旗、船长、鹦鹉、木桶、大炮、舵轮、宝箱 | |
+| 259 | Level254 | 沙漠集市 | levels_mix2 | 圆顶小镇、挂毯、吊灯、香料堆、陶罐、骆驼、商人 | |
+| 260 | Level255 | 古希腊神庙 | levels_mix3 | 海边山丘神庙（柱廊、山花、雕像、橄榄树、哲人、双耳瓶、山羊、三列桨船） | |
+| 261 | Level256 | 丛林遗迹 | levels_mix3 | 阶梯金字塔、石雕太阳盘、石头巨像、藤蔓、金刚鹦鹉、黄金神像、探险家 | |
+| 262 | Level257 | 葡萄园 | levels_mix3 | 葡萄藤行、塔楼农舍、柏树、采摘者、木桶、葡萄箱、热气球 | |
+| 263 | Level258 | 奶牛牧场 | levels_mix3 | 筒仓与谷仓、风力水泵、奶牛、奶桶、鸡、干草、农夫 | |
+| 264 | Level259 | 渔村 | levels_mix3 | 高脚屋、渔船、晒网、浮标、鱼箱、渔夫、猫 | |
+| 265 | Level260 | 冰淇淋店 | levels_mix3 | 菜单板、霓虹甜筒、甜筒展示架、冷柜冰淇淋桶、棋盘地砖、高脚凳、圣代 | |
+| 266 | Level261 | 花店 | levels_mix3 | 吊盆、橱窗花箱、花桶、包花的店员、丝带卷、浇水壶、睡猫 | |
+| 267 | Level262 | 天文台 | levels_mix3 | 夜景纸艺（月亮、星座、环形行星、开缝圆顶、望远镜、星图板、笔记本电脑） | |
+| 268 | Level263 | 音乐教室 | levels_mix3 | 五线谱黑板、海报、挂钟、吉他墙、钢琴、架子鼓、木琴、乐器箱 | |
+| 269 | Level264 | 雪夜小木屋 | levels_mix3 | 雪夜森林（月亮、亮星、亮窗木屋、烟囱、雪人、雪橇、路灯、鹿、飘雪） | |
+| 270 | Level265 | 竹林熊猫 | levels_mix4 | 竹林（熊猫吃竹、岩上幼崽、山脊凉亭、仙鹤、锦鲤溪、石灯笼、竹笋） | |
+| 271 | Level266 | 水族馆 | levels_mix4 | 水族馆（大水槽：魔鬼鱼、鲨鱼、海龟、黄鱼群、珊瑚、宝箱；参观者、说明牌、长椅） | |
+| 272 | Level267 | 自然博物馆 | levels_mix4 | 博物馆大厅（恐龙骨架、悬挂翼龙骨架、拱形天窗、旗幡、宝石展柜、参观者） | |
+| 273 | Level268 | 画室 | levels_mix4 | 画室（大窗、画架与风景画、戴贝雷帽的画家、石膏像、颜料罐、静物桌） | |
+| 274 | Level269 | 寿司店 | levels_mix4 | 寿司店（暖帘、木牌菜单、红灯笼、厨师、鱼柜、寿司盘、高脚凳） | |
+| 275 | Level270 | 宠物店 | levels_mix4 | 宠物店（鱼缸、鹦鹉笼、牵引绳墙、猫爬架、仓鼠笼、小狗围栏、猫篮、粮袋） | |
+| 276 | Level271 | 理发店 | levels_mix4 | 理发店（镜子、理发椅、旋转灯柱、挂钟、毛巾、等候长椅） | |
+| 277 | Level272 | 咖啡馆 | levels_mix4 | 咖啡馆（粉笔菜单、吊灯、咖啡机、甜点柜、餐桌、笔记本电脑） | |
+| 278 | Level273 | 洗衣房 | levels_mix4 | 洗衣房（一排滚筒洗衣机（滚动衣物）、海报、挂钟、洗衣液架、折叠台、洗衣篮） | |
+| 279 | Level274 | 钟表店 | levels_mix4 | 钟表店（满墙挂钟（转动指针）、布谷鸟钟、落地钟摆、修表台、齿轮、表柜） | |
+| 280 | Level275 | 郁金香风车 | levels_mix5 | 郁金香花田（彩色花带、风车（转动叶片）、运河小船、骑车人、木鞋、花篮） | |
+| 281 | Level276 | 高山牧场 | levels_mix5 | 高山牧场（雪峰、缆车、木屋、戴铃奶牛、徒步者、阿尔卑斯长号） | |
+| 282 | Level277 | 梯田 | levels_mix5 | 梯田（层层水田、茅屋、水牛、戴斗笠的农夫、秧苗篮、白鹭） | |
+| 283 | Level278 | 红岩峡谷 | levels_mix5 | 红岩峡谷（台地、石拱、河上漂流筏、仙人掌、鹰、帐篷、蜥蜴） | |
+| 284 | Level279 | 枫叶溪谷 | levels_mix5 | 枫叶溪谷（红枫、瀑布、红色拱桥、徒步者、小鹿、石灯笼、落叶） | |
+| 285 | Level280 | 萤火虫之夜 | levels_mix5 | 萤火虫夏夜（夜景：帐篷、篝火、萤火虫、池塘月影、青蛙、灯笼、萤火虫瓶） | |
+| 286 | Level281 | 红树林 | levels_mix5 | 红树林（气根树、木栈道、苍鹭、皮划艇、泥滩螃蟹、弹涂鱼、指示牌） | |
+| 287 | Level282 | 薰衣草花田 | levels_mix5 | 薰衣草花田（透视花垄、石头农舍、柏树、向日葵、写生画家、蜂箱） | |
+| 288 | Level283 | 树屋村 | levels_mix5 | 树屋村（巨树、树屋、绳桥、灯笼串、梯子、吊桶、秋千、蘑菇） | |
+| 289 | Level284 | 峡湾 | levels_mix5 | 峡湾（陡崖瀑布、红色木屋、游轮、渔船、皮划艇、海鹦） | |
+| 290 | Level285 | 邮局 | levels_mix6 | 邮局（信箱墙、柜台窗口、包裹秤、邮票海报、邮袋、邮筒、寄信人） | |
+| 291 | Level286 | 宠物医院 | levels_mix6 | 宠物医院（X 光灯箱、药柜、诊疗台与小狗、兽医、体重秤、猫包、抱兔子的主人） | |
+| 292 | Level287 | 滑板公园 | levels_mix6 | 滑板公园（U 型台、扶手杆、楔形坡、滑板少年、壁画墙、长椅、垃圾桶） | |
+| 293 | Level288 | 水上乐园 | levels_mix6 | 水上乐园（螺旋滑梯、泳池、游泳圈、小黄鸭、救生塔、遮阳伞、沙滩球） | |
+| 294 | Level289 | 露天电影院 | levels_mix6 | 露天电影院（夜景：大银幕帆船画面、车尾排列、放映光束、霓虹小吃亭、爆米花） | |
+| 295 | Level290 | 保龄球馆 | levels_mix6 | 保龄球馆（暗场霓虹星、计分屏、透视球道、球瓶、回球机、球鞋架） | |
+| 296 | Level291 | 健身房 | levels_mix6 | 健身房（镜墙、跑步机、哑铃架、沙袋、瑜伽垫、壶铃、卧推凳、饮水机） | |
+| 297 | Level292 | 跳蚤市场 | levels_mix6 | 跳蚤市场（条纹遮篷摊位、花瓶、旧收音机、唱片、台灯、泰迪熊、椅子、彩旗） | |
+| 298 | Level293 | 屋顶花园 | levels_mix6 | 屋顶花园（城市天际线、水塔、太阳能板、种植箱、葡萄架串灯、遮阳伞、鸟屋） | |
+| 299 | Level294 | 地铁车厢 | levels_mix6 | 地铁车厢（座椅、拉环、线路图、广告、乘客、隧道灯光掠过） | |
+| 300 | Level295 | 养蜂场 | levels_mix7 | 养蜂场（蜂箱排、戴面纱帽的养蜂人、喷烟器、蜂蜜摊、蜂巢框、工具棚） | |
+| 301 | Level296 | 茶园 | levels_mix7 | 茶园（层层圆形茶垄、背篓采茶人、山顶凉亭、遮阳伞、茶车、晨雾） | |
+| 302 | Level297 | 城堡厨房 | levels_mix7 | 城堡厨房（石墙壁炉与大锅（火焰）、挂锅、火腿、洋葱串、餐桌馅饼、厨师） | |
+| 303 | Level298 | 潜水艇 | levels_mix7 | 潜水艇（舷窗游鱼、管道阀门轮、潜望镜、声呐屏、仪表盘、海图桌、船长） | |
+| 304 | Level299 | 冰上钓鱼 | levels_mix7 | 冰上钓鱼（冰湖、钓鱼小屋、冰洞旗、坐桶钓鱼人、雪橇、小狗、飘雪） | |
+| 305 | Level300 | 蘑菇村 | levels_mix7 | 蘑菇村（蘑菇屋、小径、水井、灯柱、尖帽小精灵、蜗牛、花） | |
+| 306 | Level301 | 月球基地 | levels_mix7 | 月球基地（夜景：地球、穹顶舱、天线碟、着陆器、旗、月球车、宇航员） | |
+| 307 | Level302 | 机器人工厂 | levels_mix7 | 机器人工厂（传送带、摆动机械臂、组装中的机器人、警示灯、控制室、货箱） | |
+| 308 | Level303 | 沙滩城堡 | levels_mix7 | 沙滩城堡（沙堡与旗、护城河、水桶铲子、孩子、遮阳伞、贝壳、螃蟹、远帆） | |
+| 309 | Level304 | 海岛度假村 | levels_mix7 | 海岛度假村（日落、水上屋、帆船、棕榈、吊床、皮划艇、躺椅、饮料、海星） | |
+| 310 | Level305 | 风筝节 | levels_mix8 | 风筝节（各式风筝（飘动尾巴）、放风筝的人、野餐毯、帐篷、草地上的风筝、小狗） | |
+| 311 | Level306 | 江南水乡 | levels_mix8 | 江南水乡（白墙黛瓦、石拱桥、乌篷船、货船、红灯笼、柳树、伞摊） | |
+| 312 | Level307 | 麦田收割 | levels_mix8 | 麦田收割（联合收割机、圆草捆、稻草人与乌鸦、农用卡车、农夫、水壶） | |
+| 313 | Level308 | 樱花河畔 | levels_mix8 | 樱花河畔（樱花树、河上划船、小桥、灯笼串、野餐、自行车） | |
+| 314 | Level309 | 冰雪节 | levels_mix8 | 冰雪节（夜景：冰城堡、天鹅冰雕、灯柱、溜冰场、小吃摊、雪人） | |
+| 315 | Level310 | 南瓜农场 | levels_mix8 | 南瓜农场（南瓜地、红谷仓、干草迷宫、拖拉机拖车、苹果摊、手推车） | |
+| 316 | Level311 | 湿地观鸟 | levels_mix8 | 湿地观鸟（火烈鸟、电线杆鹳巢、苍鹭、观鸟屋、木栈道、望远镜） | |
+| 317 | Level312 | 渔港鱼市 | levels_mix8 | 渔港鱼市（渔船、遮篷、价格牌、鱼摊冰鲜、章鱼盆、鱼贩、提篮顾客） | |
+| 318 | Level313 | 水车磨坊 | levels_mix8 | 水车磨坊（磨坊、转动水车、引水槽、磨盘、面粉袋、磨坊主、鸭子、推车） | |
+| 319 | Level314 | 山间铁路 | levels_mix8 | 山间铁路（雪山、石拱高架桥、蒸汽火车（烟）、徒步者、路牌、山羊） | |
+| 320 | Level315 | 玩具店 | levels_mix9 | 玩具店（风筝、积木架、泰迪熊、机器人与火箭、木马、轨道小火车） | |
+| 321 | Level316 | 古董店 | levels_mix9 | 古董店（油画、落地钟、地球仪、留声机、柜台古玩、旅行箱、猫） | |
+| 322 | Level317 | 甜甜圈店 | levels_mix9 | 甜甜圈店（巨型甜甜圈招牌、菜单、咖啡机、甜甜圈展柜、纸盒、咖啡杯） | |
+| 323 | Level318 | 披萨店 | levels_mix9 | 披萨店（砖砌烤炉（火焰）、菜单板、挂辣椒大蒜、抛饼厨师、格子桌布） | |
+| 324 | Level319 | 裁缝店 | levels_mix9 | 裁缝店（布卷架、穿衣镜、人台、皮尺、缝纫机、针插、剪刀） | |
+| 325 | Level320 | 陶艺工坊 | levels_mix9 | 陶艺工坊（陶罐架、窑炉、釉料罐、拉坯机（转动陶坯）、陶艺师、陶泥桶） | |
+| 326 | Level321 | 木工坊 | levels_mix9 | 木工坊（洞洞板工具墙、锯、锤、夹具、斜靠木板、工作台刨子、半成品椅） | |
+| 327 | Level322 | 糖果店 | levels_mix9 | 糖果店（室内条纹遮篷、糖果罐架、棒棒糖架、秤、扭蛋机、孩子） | |
+| 328 | Level323 | 帽子店 | levels_mix9 | 帽子店（帽架帽子、镜子、试帽顾客、帽盒堆、柜台店主、伞桶） | |
+| 329 | Level324 | 茶馆 | levels_mix9 | 茶馆（花格窗、说书台与卷轴、红灯笼、茶桌茶壶、长嘴壶伙计、鸟笼） | |
+| 330 | Level325 | 海底宫殿 | levels_mix10 | 海底宫殿（贝壳圆顶宫殿、珍珠、珊瑚塔、海马、海王宝座、宝箱、水母） | |
+| 331 | Level326 | 彩虹山谷 | levels_mix10 | 彩虹山谷（彩虹、瀑布、蘑菇小屋、翼马、大花、水晶） | |
+| 332 | Level327 | 雪人村 | levels_mix10 | 雪人村（雪坡雪橇、雪砖屋、雪人一家、冰滑梯、雪球堆、孩子、飘雪） | |
+| 333 | Level328 | 企鹅聚居地 | levels_mix10 | 企鹅聚居地（冰山、科考船、企鹅群、小企鹅、浮冰海豹、科考员、旗） | |
+| 334 | Level329 | 海盗港湾 | levels_mix10 | 海盗港湾（黄昏：海盗船、酒馆、吊牌、海盗与鹦鹉、金币箱、木桶、船锚） | |
+| 335 | Level330 | 外星花园 | levels_mix10 | 外星花园（夜景：双月、飞碟光束、奇异植物、螺旋草、圆形外星生物、发光蘑菇） | |
+| 336 | Level331 | 巧克力工厂 | levels_mix10 | 巧克力工厂（熔化罐、巧克力河、拐杖糖桥、巧克力传送带、工人、礼盒） | |
+| 337 | Level332 | 气象站 | levels_mix10 | 气象站（山顶站房、雷达罩、风速计（转动）、风向标、百叶箱、探空气球、太阳能板） | |
+| 338 | Level333 | 赛艇湖 | levels_mix10 | 赛艇湖（船屋、看台观众、浮标航道、划桨赛艇（桨摆动）、终点浮标、裁判船、天鹅） | |
+| 339 | Level334 | 古罗马广场 | levels_mix10 | 古罗马广场（神庙柱廊、凯旋门、引水渠、喷泉雕像、集市摊、托加长袍市民、战车） | |
+| 340 | Level335 | 维京村庄 | levels_mix11 | 维京村庄（峡湾、龙首长船（盾牌、帆）、草顶长屋、戴盔村民、绵羊、篝火锅） | |
+| 341 | Level336 | 草原毡房 | levels_mix11 | 草原毡房（蒙古包、彩带杆、马群、骑手、羊群、奶桶） | |
+| 342 | Level337 | 白色崖城 | levels_mix11 | 白色崖城（悬崖白屋、蓝圆顶、钟楼、三角梅、台阶、帆船、海边咖啡座） | |
+| 343 | Level338 | 温泉泻湖 | levels_mix11 | 温泉泻湖（熔岩地、乳蓝温泉、蒸汽、泡温泉的人、水疗小屋、木台毛巾、吧台） | |
+| 344 | Level339 | 热带鸟园 | levels_mix11 | 热带鸟园（网棚、树枝上的金刚鹦鹉 / 巨嘴鸟、喂食器、池塘、游客、介绍牌） | |
+| 345 | Level340 | 清晨菜市场 | levels_mix11 | 清晨菜市场（街屋背景、三个摊位、蔬菜箱、花桶、秤、提篮顾客、小狗） | |
+| 346 | Level341 | 赛车维修站 | levels_mix11 | 赛车维修站（看台、横幅、计时屏、维修墙、赛车、换胎技师、轮胎堆、指挥牌） | |
+| 347 | Level342 | 马厩 | levels_mix11 | 马厩（草料阁楼、三间马栏（探头的马）、马衣、马鞍架、水桶、马夫、干草捆） | |
+| 348 | Level343 | 竹筏漂流 | levels_mix11 | 竹筏漂流（喀斯特群峰、山顶塔、河边村屋、竹筏、撑篙船夫、阳伞游客、水牛、鸬鹚） | |
+| 349 | Level344 | 极光小镇 | levels_mix11 | 极光小镇（夜景：极光（流动）、弯月、彩色木屋、教堂尖塔、路灯、狗拉雪橇、雪人灯笼） | |
 
 「基准关」：用户指定的满幅构图标准为场景序 1–5、9、13、20、22、30。
 
@@ -197,6 +408,7 @@
 - 天气循环 WeatherCycle：Clear / Overcast / Rain / Snow / Fog / Thunder / Heat，元素可按天气掩码显示。
 - 环绕镜头 CameraOrbit（多视角帧切换，不同处随视角重新定位，转场时禁止点击）。
 - 调试跳关按钮、错点冷却、提示。
+- 背景音乐：`FindDifferencesGame.bgm / bgmVolume`，当前为 `Audio/fd_bgm_loop.wav`（复制自 Gamemaster Fun Casual Sounds 的 `music_fun_funky_whistle_groove_loop`，原生循环素材，40.93 s）。单个 2D AudioSource 全程循环（菜单与关卡间切换都不重新播放），保证无缝衔接。换曲时须用首尾可衔接的循环素材，Load Type 保持 Decompress On Load（不要用 Streaming：WebGL 下走 HTML audio 元素，循环点会有空隙）。
 
 ---
 
@@ -253,6 +465,18 @@
 - **中国**（levels_sanguo / tangsong / xiyou + `cn_kit`）：曲线翘角屋顶 `cn_roof`、斗拱色带、殿堂 `cn_hall`、宝塔、城墙城楼、拱桥、灯笼；人物 `hanfu`（futou / wing / guan / tang_lady / lady / bun / straw）、武将 `warrior`（blade / snake / spear / sword）；西游四人 `wukong / tangseng / bajie / shaseng`。
 - **童话**（levels_andersen）：明亮童话配色，可用尺度对比（拇指姑娘的巨物视角）。
 - **城市日常**（levels_daily，Level500～）：侧视纸艺，明亮日常配色；人物统一用 `modern()`，招牌 / 屏幕文字用 `sign_box()` 随机笔画；不同以「整件换色 / 整件增删」为主（灯具改为整个灯头换色，避免只换小灯芯导致像素不足）。
+- **居家室内**（levels_homes，Level136～144）：房间正面视角（墙面 → 窗 / 墙饰 → 家具 → 地板），三种风格各 3 个房间：现代公寓（浅色墙、窗外城市 `city_window()`、简约家具）、美式老公寓（条纹 / 菱形墙纸、护墙板、暖气片、窗外砖楼 `brick_facade()`、复古电器）、欧洲庄园（金框肖像 `frame()+bust()`、吊灯 / 烛台火焰、大理石与深色木作）。地板必须在床 / 沙发等落地家具之前绘制；窗帘类大面积物件只改其中一侧或一部分，避免判定圈过大。
+- **节日**（levels_festival，Level145～154）：沿用纸艺侧视 / 室内正面；夜景关用 `npiece()`（暗色切边）；烟花用 `fireworks()`（闪烁元素）、彩纸用 `confetti()`（飘落元素）、彩旗 `bunting()`、串灯 `string_lights()+lights_el()`；人群 `crowd_row()` 可加派对帽。
+- **80/90 年代游戏**（levels_retro，Level155～159）：现实场景沿用纸艺；「游戏画面内」的关（像素平台 / 像素太空）用 `sprite()` 像素图（字符串位图）、`block()` 砖块、`digits()` 像素数字，无纸片切边；**所有游戏机、卡带、角色、外星人均为原创外形，不出现真实主机、品牌或角色**（不用绿色水管、问号砖、经典外星人原型等可识别元素）。
+- **运动竞技**（levels_sports，Level160～164）：侧视 / 观众视角纸艺；看台用 `stands()`（复用 `levels_modern.crowd()`），广告板 `ad_boards()` 用随机笔画；球员复用 `player()`，短跑 `runner()`；室内暗场用 `dpiece()`；相机闪光 `flash_el()`；**不出现真实球队、联赛、赛事标志（不用奥运五环等）**。
+- **电子游戏内容**（levels_gamecontent，Level165～169）：与 levels_retro 区分，表现当代游戏类型的画面本身——像素 RPG（`sprite()` 位图、`rpg_house()`）、伪 3D 赛车（`depth_ys()/road_hw()` 透视分带）、卡通描边手游（`toon()`：深色描边 + 柔和投影）、三消棋盘（`gem()` 6 种宝石形状）；UI 文字用 `glyph_line()` 随机字形；电竞赛场为现实场景（纸艺暗场）。全部原创，不出现真实游戏、角色或品牌。
+- **电子游戏内容 第 2 组**（levels_gamecontent2，Level175～184）：同上规则，复用 `toon()/glyph_line()/sprite()/digits()/block()/rpg_house()`；Q 版角色 `chibi()`、进度条 `bar()`、旋转矩形 `rot_poly()`；城市建造用等距 `P(i, j)/iso_box()/iso_house()/iso_tree()`（物件按 i + j 由后向前绘制）。
+- **电子游戏内容 第 3 组**（levels_gamecontent3，Level185～194）：同上规则，复用第 1、2 组的辅助函数；新增 `panel()` 面板、`heart()`、`dish()` 菜品、`hex_c()` 六角格坐标、`pipe_tile()` 水管格。
+- **电子游戏内容 第 4、5 组**（levels_gamecontent4 / 5，Level195～214）：同上规则，复用前几组的辅助函数（等距 `P/iso_*`、`chibi()`、`panel()` 等）；医院类场景不使用红十字等受保护标志。
+- **运动竞技 第 2 组**（levels_sports2，Level215～224）：同 levels_sports 规则（`stands()`、`ad_boards()`、`flash_el()`、暗场 `dpiece()`）；新增 `arms_up()` 举手、`banner()` 冠军旗、`wood_floor()`、`horse()`（可跳跃姿势）、`boxer()`、`stick_player()` 冰球员、`cyclist()`、`target_face()` 箭靶、`parasol()`；球网 / 围绳 / 平衡木这类细长物件**不要整条换色**（判定圈会过大），改为局部小件。
+- **电子游戏内容 第 6 组**（levels_gamecontent6，Level225～234）：同前几组规则；下落消除类用圆形果冻 `jelly()`，**不使用四格方块骨牌的外形与 10×20 井**（避免与知名方块游戏的受保护外观相似）；新增 `thug()` 卡通混混、`fruit()`、`mole()`、`ship()` 俯视帆船、`island()`、`dino()`（long / horn / rex，描边卡通）。
+- **任意主题**（levels_mix1～11，Level235～344）：侧视纸艺 / 室内正面，夜景关用 `npiece()`；辅助函数见 10.6。大面积物件（整排花田、整条彩虹、整座高架桥、整面遮阳篷）不要整件换色——判定圈会超过 170 px 拟合范围，只改其中一段 / 一个桥墩 / 一块牌子。
+- **勇者与恶龙**（levels_dragon，Level170～174）：纸艺侧视 / 室内正面；原创角色 `hero()`（刺猬头 + 披风，剑 side/up）、`mage()`、`healer()`、`elder()`、`king()`、`princess()`、`slime()`、`chest()`，以及 `dragon()`（stand / fly / sleep 三种姿势，可左右朝向，`pk=dpiece` 用于暗场）；夜间 / 洞穴关用 `dpiece()`；不血腥（无骷髅、无伤口）。
 - **现代 / 秋叶原**（levels_akiba）：`modern()` 人物、`maid()`、`sign_box()` 竖排招牌（用随机笔画代替文字）、`chibi()` 手办；**不使用真实品牌、商标或现有角色**。
 - **格斗游戏风格**（levels_misc）：原创格斗家（`fighter_gi / fighter_kungfu / wrestler`）+ 顶部血条 / 七段数字倒计时 HUD；**不复刻任何版权角色**。
 - **心理恐怖**（levels_horror）：不血腥，靠「不对劲」营造氛围（空洞的眼、黑影、镜中人），深度雾 + 冷暖对比的光源。
@@ -343,6 +567,29 @@ python diff_select.py verify                  # 检查已生成的 Levels/*.asse
 | `jp_kit.py` | 日式建筑与人物（天守、町屋、鸟居、和服、武士、足轻、洋装、人力车、机车、汽船） |
 | `levels_modern.py` 内 | `crowd()` 看台观众、`player()` 足球员、`car_side()` 侧视汽车、`pump()` 油泵（可供以后的现代题材复用） |
 | `levels_daily.py` 内 | `giraffe / elephant / lion / dalmatian` 动物、`airliner()` 客机、`shelf_unit()` 超市货架、`bookcase()` 书架、`fire_truck()`、`firefighter()`、`skier()`、`snowman()`、`blossom_tree()`、`loaf()` 面包、`cake()`、`balloon_bunch()` 气球元素 |
+| `levels_homes.py` 内 | `planks()` 木地板、`monstera()` 龟背竹、`sofa()`、`pendant()` 吊灯元素、`tabletop_lamp()`、`framed()` 现代画框、`steam()` 蒸汽元素、`city_window()` 窗外城市、`brick_facade()` 砖墙、`gingham()` 格子布 |
+| `levels_festival.py` 内 | `npiece()` 夜景纸片、`party_hat()`、`bunting()` 彩旗、`string_lights()` / `lights_el()` 串灯、`gift()` 礼物盒、`fireworks()` 烟花元素、`confetti()` 彩纸元素、`crowd_row()` 人群、`dragon_boat()`、`timber_house()` 木筋屋、`stall()` 集市摊位、`egg()` 彩蛋 |
+| `levels_retro.py` 内 | `sprite()` 像素位图、`block()` 像素砖块、`digits()` 像素数字、`crt()` 显像管电视、`mini_game()` 屏幕内小游戏画面、`pad()` 手柄、`cartridge()` 卡带、`game_box()` 游戏盒、`cabinet()` 街机 |
+| `levels_sports.py` 内 | `stands()` 看台、`ad_boards()` 广告板、`flash_el()` 闪光元素、`racket()` 球拍、`runner()` 短跑者、`hurdle()` 栏架 |
+| `levels_gamecontent.py` 内 | `toon()` 卡通描边、`glyph_line()` 伪文字、`npc()/tree_tile()/rpg_house()` RPG 瓦片、`car_rear()` 赛车尾视、`archer_tower()/cannon_tower()/crystal_tower()`、`gem()` 宝石、`gamer()/monitor()/emblem()` 电竞 |
+| `levels_gamecontent2.py` 内 | `chibi()` Q 版角色、`bar()` 进度条、`rot_poly()`、`P()/iso_box()/iso_house()/iso_tree()` 等距、`crop()` 作物、`card()` 卡牌、`lane_x()` 音游轨道 |
+| `levels_gamecontent3.py` 内 | `panel()`、`heart()`、`roof_block()` 屋顶楼块、`dish()` 菜品、`hex_c()` 六角格、`pipe_tile()` 水管格 |
+| `levels_gamecontent4.py` 内 | `vase()`、`plane()` 战机、`drone()`、`namebar()` 名字条、`ball()` 台球、`piece_shape()` 拼图块、`tower()` MOBA 塔 |
+| `levels_gamecontent5.py` 内 | `float_island()` 等距浮岛、`table()/wish()` 餐桌与心愿气泡、`dome()` 穹顶、`merge_item()` 合成物品 |
+| `levels_dragon.py` 内 | `hero()`、`mage()`、`healer()`、`elder()`、`king()`、`princess()`、`slime()`、`chest()`、`dragon()`（stand / fly / sleep）、`coin_pile()` 金币堆 |
+| `levels_sports2.py` 内 | `arms_up()`、`banner()`、`wood_floor()`、`horse()`、`boxer()`、`stick_player()`、`cyclist()`、`target_face()`、`parasol()` |
+| `levels_gamecontent6.py` 内 | `jelly()` 果冻块、`thug()`、`cell()/fruit()` 贪吃蛇格、`mole()`、`ship()/island()` 俯视海图、`dino()` |
+| `levels_mix1.py` 内 | `balloon()` 热气球、`lantern()` 灯笼、`fern()`、`big_leaf()`、`coral()/seaweed()`、`toucan()/monkey()/frog()`、`pyramid()/worker()/camel()`、`polar_bear()/seal()`、`apple_tree()/pumpkin()/basket()`、`stall()` 夜市摊、`astronaut()`、`lollipop()/gumdrop()`、`longneck()/horned()` 纸艺恐龙 |
+| `levels_mix2.py` 内 | `hard_hat()`、`wheel()`、`container()` 集装箱、`acacia()/zebra()/jeep()`、`pot_plant()/hanging_basket()`、`ladybird()`、`teddy()`、`dome_house()` |
+| `levels_mix3.py` 内 | `column()` 希腊柱、`toga()`、`amphora()`、`olive_tree()`、`goat()`、`grape_vine_row()`、`cow()/churn()/chicken()`、`boat()/stilt_house()`、`cone()` 甜筒、`bucket_flowers()`、`note()/guitar()` |
+| `levels_mix4.py` 内 | `bamboo()`、`panda()`、`easel()`、`barber_chair()`、`wall_clock()/hands_el()` 钟面与转动指针、`drum_el()` 洗衣机滚筒 |
+| `levels_mix5.py` 内 | `straw_hat()`、`windmill()/sails_el()`、`chalet()`、`buffalo()`、`mesa()`、`maple()`、`mangrove()`、`treehouse()`、`fireflies()` |
+| `levels_mix6.py` 内 | `wall_poster()`、`dog()`、`skater()`、`tube_slide()`、`car_rear()`、`pin()` 保龄球瓶、`awning()`、`planter()`、`seat_row()` |
+| `levels_mix7.py` 内 | `bee_el()`、`hive()`、`tea_row()`、`valve()`、`fishing_hut()`、`mush_house()/folk()`、`robot()/arm_el()`、`bungalow()` |
+| `levels_mix8.py` 内 | `blanket()`、`kite()/tail_el()`、`ww_house()` 白墙黛瓦、`combine()`、`blossom()`、`pumpkin()`、`flamingo()` |
+| `levels_mix9.py` 内 | `shelf_board()/room()`、`donut()`、`dress_form()`、`pot()`、`candy_jar()`、`hat_on_stand()`、`teapot()` |
+| `levels_mix10.py` 内 | `pony()`、`snowman()`、`penguin()`、`rowing_boat()/oar_el()` |
+| `levels_mix11.py` 内 | `horse_side()`、`longhouse()`、`yurt()`、`wh_house()`、`parrot()`、`veg_crate()`、`race_car()`、`karst()`、`town_house()` |
 | `cn_kit.py` | 中式建筑与人物（屋顶、殿堂、宝塔、城墙城楼、拱桥、灯笼、汉服、武将、马、骆驼、帆船） |
 
 ---

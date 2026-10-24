@@ -13,7 +13,7 @@ namespace FindDifferences
     public class FindDifferencesGame : MonoBehaviour
     {
         enum State { Menu, Playing, Won, Lost }
-        enum Mode { Campaign, Survival }
+        enum Mode { Campaign, Survival, Test }   // Test: plays releaseLevels in order with campaign rules
 
         /// <summary>Outcome of a survival run (to be reported to a leaderboard later).</summary>
         public struct SurvivalResult
@@ -46,6 +46,16 @@ namespace FindDifferences
         [Tooltip("Seconds added to the clock for every level cleared in survival mode.")]
         [SerializeField] float survivalBonusPerLevel = 10f;
 
+        [Header("Release levels (test mode)")]
+        [Tooltip("Levels planned for the release version. Played in order by the menu's test button (campaign rules).")]
+        [SerializeField] FindDifferencesLevel[] releaseLevels;
+        [Tooltip("Level number range for the release list: x = first, y = last (inclusive), matched against the number in the " +
+                 "level asset name (Level170 = 170). Levels are taken from the campaign list, in campaign order.")]
+        [SerializeField] Vector2Int releaseRange = new Vector2Int(1, 1);
+        [Tooltip("When on, Release Levels is regenerated from the campaign levels in Release Range " +
+                 "(the hand-edited list is replaced). When off, Release Levels is used as edited.")]
+        [SerializeField] bool releaseFromRange;
+
         [Header("Rules")]
         [SerializeField] float wrongTapPenalty = 5f;
         [SerializeField] int hintsPerLevel = 2;
@@ -59,6 +69,14 @@ namespace FindDifferences
         [SerializeField] Sprite circleSprite;
         [SerializeField] Sprite roundBoxSprite;
         [SerializeField] Sprite starSprite;
+
+        [Header("Audio")]
+        [Tooltip("Background music, looped for the whole session (menu and levels) and never restarted, so the loop stays " +
+                 "seamless. Use a clip authored as a loop and keep its Load Type off Streaming (WebGL streams through an " +
+                 "HTML audio element, which leaves a gap at the loop point).")]
+        [SerializeField] AudioClip bgm;
+        [Range(0f, 1f)]
+        [SerializeField] float bgmVolume = 0.5f;
 
         [Header("Debug")]
         [Tooltip("Shows a \"skip level\" button on screen (can be toggled while playing).")]
@@ -85,6 +103,7 @@ namespace FindDifferences
         static readonly Color TextDark = new Color32(90, 60, 40, 255);
         static readonly Color CampaignColor = new Color32(90, 170, 240, 255);
         static readonly Color SurvivalColor = new Color32(240, 110, 80, 255);
+        static readonly Color TestColor = new Color32(150, 120, 210, 255);
         static readonly Color SecondaryColor = new Color32(170, 160, 150, 255);
 
         // runtime
@@ -112,25 +131,79 @@ namespace FindDifferences
         float _cooldownUntil;
         State _state = State.Menu;
         Coroutine _timerFlash;
+        AudioSource _bgmSource;
 
         // survival run
         int _levelsCleared, _diffsFound;
         float _secondsPlayed;
 
-        FindDifferencesLevel[] ModeLevels => _mode == Mode.Campaign ? levels : survivalLevels;
-        bool ModeRandom => _mode == Mode.Campaign ? campaignRandomOrder : survivalRandomOrder;
+        public FindDifferencesLevel[] ReleaseLevels => releaseLevels;
+        FindDifferencesLevel[] ModeLevels => _mode == Mode.Campaign ? levels : _mode == Mode.Test ? releaseLevels : survivalLevels;
+        bool ModeRandom => _mode == Mode.Campaign ? campaignRandomOrder : _mode == Mode.Survival && survivalRandomOrder;
+        bool PerLevelClock => _mode != Mode.Survival;   // campaign and test: each level has its own clock, the run ends after the last
+
+        void OnValidate()
+        {
+            releaseRange.x = Mathf.Max(1, releaseRange.x);
+            releaseRange.y = Mathf.Max(releaseRange.x, releaseRange.y);
+            ApplyReleaseRange();
+            if (_bgmSource != null) _bgmSource.volume = bgmVolume;
+        }
+
+        /// <summary>releaseFromRange: rebuild releaseLevels from the campaign levels whose asset number (LevelNNN) is in releaseRange.</summary>
+        void ApplyReleaseRange()
+        {
+            if (!releaseFromRange || levels == null)
+                return;
+            var list = new List<FindDifferencesLevel>();
+            foreach (var l in levels)
+            {
+                int n = LevelNumber(l);
+                if (n >= releaseRange.x && n <= releaseRange.y)
+                    list.Add(l);
+            }
+            releaseLevels = list.ToArray();
+        }
+
+        /// <summary>Number at the end of the level asset name ("Level170" -> 170), -1 if none.</summary>
+        static int LevelNumber(FindDifferencesLevel level)
+        {
+            if (level == null)
+                return -1;
+            string name = level.name;
+            int i = name.Length;
+            while (i > 0 && char.IsDigit(name[i - 1]))
+                i--;
+            return i < name.Length && int.TryParse(name.Substring(i), out int n) ? n : -1;
+        }
 
         void Awake()
         {
+            ApplyReleaseRange();
             if (font == null)
                 font = Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Source Han Sans SC", "Droid Sans Fallback", "SimHei", "Arial" }, 48);
             EnsureEventSystem();
             BuildUI();
+            SetupBgm();
         }
 
         void Start()
         {
+            if (_bgmSource != null) _bgmSource.Play();
             ShowMenu();
+        }
+
+        /// <summary>One 2D looping source for the background music; mode/level changes never touch it.</summary>
+        void SetupBgm()
+        {
+            if (bgm == null) return;
+            _bgmSource = gameObject.AddComponent<AudioSource>();
+            _bgmSource.clip = bgm;
+            _bgmSource.loop = true;
+            _bgmSource.playOnAwake = false;
+            _bgmSource.spatialBlend = 0f;
+            _bgmSource.priority = 0;
+            _bgmSource.volume = bgmVolume;
         }
 
         void Update()
@@ -185,7 +258,7 @@ namespace FindDifferences
             _timerText.rectTransform.localScale = Vector3.one;
             _bonusText.gameObject.SetActive(false);
             _menu.SetActive(false);
-            _restartText.text = mode == Mode.Campaign ? "重来" : "结束";
+            _restartText.text = PerLevelClock ? "重来" : "结束";
             BuildOrder(null);
             _orderPos = mode == Mode.Campaign && !ModeRandom ? Mathf.Clamp(startLevel, 0, _order.Count - 1) : 0;
             if (mode == Mode.Survival)
@@ -234,7 +307,7 @@ namespace FindDifferences
             _level = _order[_orderPos];
             _found = new bool[_level.differences.Count];
             _foundCount = 0;
-            if (_mode == Mode.Campaign) _timeLeft = _level.timeLimit;
+            if (PerLevelClock) _timeLeft = _level.timeLimit;
             _hintsLeft = hintsPerLevel;
             _state = State.Playing;
 
@@ -242,8 +315,9 @@ namespace FindDifferences
             _picBottom.Init(_level, true);
             _overlay.SetActive(false);
 
-            int number = _mode == Mode.Campaign ? _orderPos + 1 : _levelsCleared + 1;
-            _levelText.text = $"第 {number} 关\n<size=30>{_level.levelName}</size>";
+            int number = PerLevelClock ? _orderPos + 1 : _levelsCleared + 1;
+            string prefix = _mode == Mode.Test ? $"测试 {number}/{_order.Count}" : $"第 {number} 关";
+            _levelText.text = $"{prefix}\n<size=30>{_level.levelName}</size>";
             BuildDots(_found.Length);
             UpdateProgress();
             UpdateHint();
@@ -255,7 +329,7 @@ namespace FindDifferences
         {
             _orderPos++;
             if (_orderPos < _order.Count) return true;
-            if (_mode == Mode.Campaign) return false;
+            if (PerLevelClock) return false;
             BuildOrder(_order[_order.Count - 1]);
             _orderPos = 0;
             return true;
@@ -302,7 +376,7 @@ namespace FindDifferences
             UpdateProgress();
 
             if (_foundCount >= _found.Length)
-                StartCoroutine(_mode == Mode.Campaign ? WinRoutine() : SurvivalWinRoutine());
+                StartCoroutine(PerLevelClock ? WinRoutine() : SurvivalWinRoutine());
         }
 
         void Wrong(DifferencePicture source, Vector2 px)
@@ -342,7 +416,7 @@ namespace FindDifferences
             int stars = ratio > 0.5f ? 3 : ratio > 0.2f ? 2 : 1;
             string sub = $"用时 {Mathf.CeilToInt(_level.timeLimit - _timeLeft)} 秒";
             if (_orderPos >= _order.Count - 1)
-                ShowOverlay("恭喜，您已通关！", sub, stars, "返回模式选择", ShowMenu);
+                ShowOverlay(_mode == Mode.Test ? "测试关卡已全部完成" : "恭喜，您已通关！", sub, stars, "返回模式选择", ShowMenu);
             else
                 ShowOverlay("太棒了！", sub, stars, "下一关", () => { Advance(); StartLevel(); });
         }
@@ -367,7 +441,7 @@ namespace FindDifferences
         void Lose()
         {
             _state = State.Lost;
-            if (_mode == Mode.Campaign)
+            if (PerLevelClock)
                 ShowOverlay("时间到！", $"找到了 {_foundCount} / {_found.Length} 处不同", 0, "重新挑战", StartLevel,
                     "返回模式选择", ShowMenu);
             else
@@ -403,7 +477,7 @@ namespace FindDifferences
         void OnRestartButton()
         {
             if (_state == State.Menu || _level == null) return;
-            if (_mode == Mode.Campaign) StartLevel();
+            if (PerLevelClock) StartLevel();
             else if (_state == State.Playing) EndSurvival("挑战结束");
         }
 
@@ -702,7 +776,7 @@ namespace FindDifferences
             _overlay.SetActive(false);
         }
 
-        /// <summary>Mode selection shown before playing: campaign (A) or survival (B).</summary>
+        /// <summary>Mode selection shown before playing: campaign (A), survival (B) or test (release levels in order).</summary>
         void BuildMenu()
         {
             var dim = CreateImage("ModeMenu", _root, null, new Color(0, 0, 0, 0.6f));
@@ -712,7 +786,7 @@ namespace FindDifferences
             drt.sizeDelta = new Vector2(RefW * 4, RefH * 4); // covers letterbox area too
 
             var card = CreateImage("Card", drt, roundBoxSprite, Color.white);
-            Place(card.rectTransform, new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(860, 860), new Vector2(0.5f, 0.5f));
+            Place(card.rectTransform, new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(860, 1120), new Vector2(0.5f, 0.5f));
 
             var title = CreateText("Title", card.rectTransform, "选择模式", 84, TextAnchor.MiddleCenter, TextDark);
             Place(title.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -110), new Vector2(800, 120), new Vector2(0.5f, 0.5f));
@@ -722,9 +796,15 @@ namespace FindDifferences
                 $"每关限时 {Mathf.RoundToInt(campaignTime)} 秒，挑战全部关卡", () => StartMode(Mode.Campaign));
             MenuButton(card.rectTransform, -580, SurvivalColor, "生存模式",
                 $"总计 {Mathf.RoundToInt(survivalTime)} 秒，每过一关 +{Mathf.RoundToInt(survivalBonusPerLevel)} 秒", () => StartMode(Mode.Survival));
+            int releaseCount = 0;
+            if (releaseLevels != null)
+                foreach (var l in releaseLevels)
+                    if (l != null) releaseCount++;
+            MenuButton(card.rectTransform, -840, TestColor, "测试关卡",
+                $"按顺序试玩正式版关卡（共 {releaseCount} 关）", () => StartMode(Mode.Test));
 
             _menuBest = CreateText("Best", card.rectTransform, "", 34, TextAnchor.MiddleCenter, TextDark);
-            Place(_menuBest.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -775), new Vector2(800, 60), new Vector2(0.5f, 0.5f));
+            Place(_menuBest.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -1035), new Vector2(800, 60), new Vector2(0.5f, 0.5f));
             _menu.SetActive(false);
         }
 
