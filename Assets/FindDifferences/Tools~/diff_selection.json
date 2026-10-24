@@ -11030,6 +11030,311 @@
   ],
   "neutral": []
  },
+ "Level540": {
+  "auto": [],
+  "circles": {
+   "flowers": [
+    634,
+    296,
+    47
+   ],
+   "rail": [
+    140,
+    360,
+    113
+   ],
+   "rock": [
+    760,
+    568,
+    75
+   ],
+   "tree": [
+    830,
+    18,
+    45
+   ]
+  },
+  "keep": [
+   "flowers",
+   "rail",
+   "rock",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level541": {
+  "auto": [],
+  "circles": {
+   "buoy": [
+    860,
+    408,
+    31
+   ],
+   "pup": [
+    590,
+    432,
+    82
+   ],
+   "roof": [
+    830,
+    56,
+    57
+   ]
+  },
+  "keep": [
+   "buoy",
+   "pup",
+   "roof"
+  ],
+  "neutral": []
+ },
+ "Level542": {
+  "auto": [],
+  "circles": {
+   "canopy": [
+    860,
+    60,
+    74
+   ],
+   "fawn": [
+    460,
+    391,
+    65
+   ],
+   "rabbit": [
+    822,
+    568,
+    35
+   ]
+  },
+  "keep": [
+   "canopy",
+   "fawn",
+   "rabbit"
+  ],
+  "neutral": []
+ },
+ "Level543": {
+  "auto": [],
+  "circles": {
+   "berries": [
+    866,
+    574,
+    41
+   ],
+   "box": [
+    140,
+    482,
+    37
+   ],
+   "cabin": [
+    400,
+    226,
+    50
+   ],
+   "fox": [
+    632,
+    417,
+    80
+   ]
+  },
+  "keep": [
+   "berries",
+   "box",
+   "cabin",
+   "fox"
+  ],
+  "neutral": []
+ },
+ "Level544": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    410,
+    100,
+    55
+   ],
+   "bucket": [
+    144,
+    540,
+    37
+   ],
+   "fur": [
+    520,
+    417,
+    53
+   ],
+   "towel": [
+    800,
+    306,
+    27
+   ]
+  },
+  "keep": [
+   "banner",
+   "bucket",
+   "fur",
+   "towel"
+  ],
+  "neutral": []
+ },
+ "Level545": {
+  "auto": [
+   [
+    126,
+    506,
+    150,
+    "hue",
+    158,
+    520,
+    57
+   ],
+   [
+    386,
+    296,
+    210,
+    "hue",
+    390,
+    314,
+    35
+   ]
+  ],
+  "circles": {
+   "basket": [
+    410,
+    560,
+    46
+   ],
+   "roof": [
+    770,
+    150,
+    121
+   ]
+  },
+  "keep": [
+   "basket",
+   "roof"
+  ],
+  "neutral": []
+ },
+ "Level546": {
+  "auto": [],
+  "circles": {
+   "hat": [
+    302,
+    488,
+    38
+   ],
+   "petals": [
+    820,
+    460,
+    55
+   ],
+   "roof": [
+    680,
+    136,
+    94
+   ]
+  },
+  "keep": [
+   "hat",
+   "petals",
+   "roof"
+  ],
+  "neutral": []
+ },
+ "Level547": {
+  "auto": [
+   [
+    296,
+    306,
+    150,
+    "hue",
+    300,
+    328,
+    46
+   ]
+  ],
+  "circles": {
+   "cactus": [
+    700,
+    384,
+    76
+   ],
+   "tent": [
+    80,
+    560,
+    67
+   ]
+  },
+  "keep": [
+   "cactus",
+   "tent"
+  ],
+  "neutral": []
+ },
+ "Level548": {
+  "auto": [],
+  "circles": {
+   "bucket": [
+    714,
+    586,
+    30
+   ],
+   "palm": [
+    862,
+    290,
+    52
+   ],
+   "rope": [
+    120,
+    564,
+    65
+   ],
+   "shell": [
+    380,
+    520,
+    26
+   ]
+  },
+  "keep": [
+   "bucket",
+   "palm",
+   "rope",
+   "shell"
+  ],
+  "neutral": []
+ },
+ "Level549": {
+  "auto": [
+   [
+    186,
+    156,
+    150,
+    "hue",
+    200,
+    190,
+    69
+   ]
+  ],
+  "circles": {
+   "bridge": [
+    464,
+    439,
+    97
+   ],
+   "maple": [
+    661,
+    182,
+    74
+   ]
+  },
+  "keep": [
+   "bridge",
+   "maple"
+  ],
+  "neutral": []
+ },
  "Level55": {
   "auto": [],
   "circles": {
