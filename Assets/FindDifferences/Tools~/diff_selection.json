@@ -11361,6 +11361,297 @@
   ],
   "neutral": []
  },
+ "Level550": {
+  "auto": [],
+  "circles": {
+   "bouquet": [
+    478,
+    326,
+    29
+   ],
+   "cake": [
+    810,
+    288,
+    31
+   ],
+   "roses": [
+    388,
+    122,
+    48
+   ],
+   "sign": [
+    150,
+    296,
+    24
+   ]
+  },
+  "keep": [
+   "bouquet",
+   "cake",
+   "roses",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level551": {
+  "auto": [],
+  "circles": {
+   "camera": [
+    382,
+    528,
+    32
+   ],
+   "flowers": [
+    720,
+    258,
+    27
+   ],
+   "window": [
+    190,
+    130,
+    54
+   ]
+  },
+  "keep": [
+   "camera",
+   "flowers",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level552": {
+  "auto": [],
+  "circles": {
+   "lava": [
+    152,
+    344,
+    30
+   ],
+   "poster": [
+    802,
+    180,
+    59
+   ],
+   "robot": [
+    450,
+    352,
+    67
+   ]
+  },
+  "keep": [
+   "lava",
+   "poster",
+   "robot"
+  ],
+  "neutral": []
+ },
+ "Level553": {
+  "auto": [
+   [
+    116,
+    196,
+    150,
+    "hue",
+    102,
+    224,
+    52
+   ],
+   [
+    876,
+    246,
+    210,
+    "hue",
+    870,
+    260,
+    29
+   ]
+  ],
+  "circles": {
+   "blanket": [
+    160,
+    550,
+    128
+   ],
+   "singer": [
+    660,
+    231,
+    33
+   ]
+  },
+  "keep": [
+   "blanket",
+   "singer"
+  ],
+  "neutral": []
+ },
+ "Level554": {
+  "auto": [],
+  "circles": {
+   "coat": [
+    760,
+    425,
+    41
+   ],
+   "dress": [
+    430,
+    409,
+    46
+   ],
+   "logo": [
+    450,
+    84,
+    121
+   ]
+  },
+  "keep": [
+   "coat",
+   "dress",
+   "logo"
+  ],
+  "neutral": []
+ },
+ "Level555": {
+  "auto": [],
+  "circles": {
+   "rabbit": [
+    530,
+    308,
+    35
+   ],
+   "star": [
+    230,
+    146,
+    44
+   ],
+   "tassel": [
+    820,
+    318,
+    43
+   ],
+   "trunk": [
+    220,
+    410,
+    62
+   ]
+  },
+  "keep": [
+   "rabbit",
+   "star",
+   "tassel",
+   "trunk"
+  ],
+  "neutral": []
+ },
+ "Level556": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    134,
+    580,
+    45
+   ],
+   "kid": [
+    560,
+    470,
+    33
+   ],
+   "roof": [
+    450,
+    98,
+    167
+   ]
+  },
+  "keep": [
+   "basket",
+   "kid",
+   "roof"
+  ],
+  "neutral": []
+ },
+ "Level557": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    300,
+    578,
+    40
+   ],
+   "leotard": [
+    520,
+    507,
+    31
+   ],
+   "sheet": [
+    100,
+    448,
+    48
+   ],
+   "tutu": [
+    800,
+    542,
+    49
+   ]
+  },
+  "keep": [
+   "bag",
+   "leotard",
+   "sheet",
+   "tutu"
+  ],
+  "neutral": []
+ },
+ "Level558": {
+  "auto": [],
+  "circles": {
+   "jar": [
+    280,
+    86,
+    35
+   ],
+   "pot": [
+    700,
+    94,
+    35
+   ],
+   "station": [
+    730,
+    526,
+    109
+   ]
+  },
+  "keep": [
+   "jar",
+   "pot",
+   "station"
+  ],
+  "neutral": []
+ },
+ "Level559": {
+  "auto": [],
+  "circles": {
+   "bird": [
+    290,
+    263,
+    26
+   ],
+   "jacket": [
+    530,
+    424,
+    32
+   ],
+   "roof": [
+    740,
+    132,
+    158
+   ]
+  },
+  "keep": [
+   "bird",
+   "jacket",
+   "roof"
+  ],
+  "neutral": []
+ },
  "Level56": {
   "auto": [],
   "circles": {

@@ -49,6 +49,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_daily3.py    Level520-529 everyday town 3: shops and services (car wash / optician / bookshop / stationery / music shop / bike repair / photo studio / breakfast shop / hot pot / shoe shop)
   levels_daily4.py    Level530-539 everyday town 4: city outdoors (bus terminal / fountain square / window cleaners / interchange / parking garage / ferry / arcade street / community garden / street performers / snowy bus stop)
   levels_daily5.py    Level540-549 everyday town 5: nature trips (waterfall / sea lions / deer glade / snow foxes / snow monkeys / lotus pond / sunflowers / cactus desert / turtle beach / autumn trail)
+  levels_daily6.py    Level550-559 everyday town 6: events and leisure (garden wedding / graduation / science fair / lawn festival / fashion show / magic show / puppet theatre / ballet studio / cooking class / park chess)
   levels_daily2.py    Level510-519 everyday town 2 (aquarium / circus / flower shop / construction site / train platform / dinosaur museum / rainy cafe / pumpkin farm / ice rink / pet shop)
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
@@ -135,6 +136,7 @@ import levels_daily2
 import levels_daily3
 import levels_daily4
 import levels_daily5
+import levels_daily6
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -154,7 +156,7 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_mix1.LEVELS + levels_mix2.LEVELS + levels_mix3.LEVELS
               + levels_mix4.LEVELS + levels_mix5.LEVELS + levels_mix6.LEVELS + levels_mix7.LEVELS
               + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS + levels_daily2.LEVELS
-              + levels_daily3.LEVELS + levels_daily4.LEVELS + levels_daily5.LEVELS)
+              + levels_daily3.LEVELS + levels_daily4.LEVELS + levels_daily5.LEVELS + levels_daily6.LEVELS)
 
 
 def main():
