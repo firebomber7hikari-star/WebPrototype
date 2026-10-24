@@ -10706,6 +10706,298 @@
    "telescope"
   ]
  },
+ "Level530": {
+  "auto": [
+   [
+    76,
+    206,
+    150,
+    "hue",
+    127,
+    234,
+    70
+   ],
+   [
+    666,
+    306,
+    210,
+    "hue",
+    682,
+    318,
+    34
+   ]
+  ],
+  "circles": {
+   "ad": [
+    828,
+    524,
+    57
+   ],
+   "route": [
+    460,
+    218,
+    43
+   ]
+  },
+  "keep": [
+   "ad",
+   "route"
+  ],
+  "neutral": []
+ },
+ "Level531": {
+  "auto": [],
+  "circles": {
+   "balloon": [
+    380,
+    478,
+    28
+   ],
+   "bench": [
+    760,
+    534,
+    80
+   ],
+   "roof": [
+    450,
+    22,
+    67
+   ]
+  },
+  "keep": [
+   "balloon",
+   "bench",
+   "roof"
+  ],
+  "neutral": []
+ },
+ "Level532": {
+  "auto": [],
+  "circles": {
+   "flag": [
+    714,
+    300,
+    34
+   ],
+   "pane": [
+    512,
+    188,
+    47
+   ],
+   "pot": [
+    230,
+    456,
+    26
+   ]
+  },
+  "keep": [
+   "flag",
+   "pane",
+   "pot"
+  ],
+  "neutral": []
+ },
+ "Level533": {
+  "auto": [],
+  "circles": {
+   "billboard": [
+    180,
+    128,
+    110
+   ],
+   "pillar": [
+    450,
+    385,
+    88
+   ],
+   "sign": [
+    784,
+    180,
+    64
+   ]
+  },
+  "keep": [
+   "billboard",
+   "pillar",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level534": {
+  "auto": [
+   [
+    286,
+    496,
+    150,
+    "hue",
+    300,
+    514,
+    79
+   ],
+   [
+    166,
+    46,
+    210,
+    "flat",
+    196,
+    71,
+    49
+   ]
+  ],
+  "circles": {
+   "booth": [
+    800,
+    482,
+    55
+   ],
+   "gone": [
+    602,
+    224,
+    89
+   ]
+  },
+  "keep": [
+   "booth",
+   "gone"
+  ],
+  "neutral": []
+ },
+ "Level535": {
+  "auto": [],
+  "circles": {
+   "boat": [
+    104,
+    548,
+    88
+   ],
+   "coat": [
+    740,
+    375,
+    27
+   ],
+   "funnel": [
+    484,
+    218,
+    41
+   ]
+  },
+  "keep": [
+   "boat",
+   "coat",
+   "funnel"
+  ],
+  "neutral": []
+ },
+ "Level536": {
+  "auto": [],
+  "circles": {
+   "scooter": [
+    602,
+    524,
+    57
+   ],
+   "shutter": [
+    360,
+    110,
+    63
+   ],
+   "sign": [
+    876,
+    230,
+    75
+   ]
+  },
+  "keep": [
+   "scooter",
+   "shutter",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level537": {
+  "auto": [],
+  "circles": {
+   "barrow": [
+    136,
+    540,
+    80
+   ],
+   "cabbage": [
+    590,
+    430,
+    162
+   ],
+   "shed": [
+    110,
+    128,
+    107
+   ]
+  },
+  "keep": [
+   "barrow",
+   "cabbage",
+   "shed"
+  ],
+  "neutral": []
+ },
+ "Level538": {
+  "auto": [],
+  "circles": {
+   "awning": [
+    443,
+    210,
+    141
+   ],
+   "hat": [
+    110,
+    550,
+    31
+   ],
+   "shirt": [
+    680,
+    538,
+    35
+   ]
+  },
+  "keep": [
+   "awning",
+   "hat",
+   "shirt"
+  ],
+  "neutral": []
+ },
+ "Level539": {
+  "auto": [],
+  "circles": {
+   "coat": [
+    560,
+    438,
+    35
+   ],
+   "hat": [
+    130,
+    498,
+    29
+   ],
+   "roof": [
+    825,
+    188,
+    81
+   ],
+   "window": [
+    238,
+    220,
+    31
+   ]
+  },
+  "keep": [
+   "coat",
+   "hat",
+   "roof",
+   "window"
+  ],
+  "neutral": []
+ },
  "Level54": {
   "auto": [],
   "circles": {

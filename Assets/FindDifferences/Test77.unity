@@ -752,6 +752,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c24ddae155797775e804857583c0903d, type: 2}
   - {fileID: 11400000, guid: f78b229acfb49c28d838eb79e3d47561, type: 2}
   - {fileID: 11400000, guid: b592c803d8edc4d856ba6aad271639f5, type: 2}
+  - {fileID: 11400000, guid: a1254f8ae0b31c158de840b121632797, type: 2}
+  - {fileID: 11400000, guid: 7e01691939f511b9aa2d2fe7db1ffde9, type: 2}
+  - {fileID: 11400000, guid: c349da1eda6333c38ddb2cc36a4c738e, type: 2}
+  - {fileID: 11400000, guid: abb8e5f1d2a8004466f777b1282a13ec, type: 2}
+  - {fileID: 11400000, guid: 1b0acf307ee13a82636b922077f5c680, type: 2}
+  - {fileID: 11400000, guid: 960577bdcd5a246f0aa8bf27fbe87889, type: 2}
+  - {fileID: 11400000, guid: 039f8052c9ec30bed821261e7dc412ca, type: 2}
+  - {fileID: 11400000, guid: 0fdb5f970716cc810e5fcc755630a4e4, type: 2}
+  - {fileID: 11400000, guid: e8a362c9ff5246289a074142c00d15aa, type: 2}
+  - {fileID: 11400000, guid: 41a746cc4d326149b4824e1b4e5cd8f7, type: 2}
   startLevel: 130
   campaignRandomOrder: 0
   survivalLevels:
@@ -1124,6 +1134,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c24ddae155797775e804857583c0903d, type: 2}
   - {fileID: 11400000, guid: f78b229acfb49c28d838eb79e3d47561, type: 2}
   - {fileID: 11400000, guid: b592c803d8edc4d856ba6aad271639f5, type: 2}
+  - {fileID: 11400000, guid: a1254f8ae0b31c158de840b121632797, type: 2}
+  - {fileID: 11400000, guid: 7e01691939f511b9aa2d2fe7db1ffde9, type: 2}
+  - {fileID: 11400000, guid: c349da1eda6333c38ddb2cc36a4c738e, type: 2}
+  - {fileID: 11400000, guid: abb8e5f1d2a8004466f777b1282a13ec, type: 2}
+  - {fileID: 11400000, guid: 1b0acf307ee13a82636b922077f5c680, type: 2}
+  - {fileID: 11400000, guid: 960577bdcd5a246f0aa8bf27fbe87889, type: 2}
+  - {fileID: 11400000, guid: 039f8052c9ec30bed821261e7dc412ca, type: 2}
+  - {fileID: 11400000, guid: 0fdb5f970716cc810e5fcc755630a4e4, type: 2}
+  - {fileID: 11400000, guid: e8a362c9ff5246289a074142c00d15aa, type: 2}
+  - {fileID: 11400000, guid: 41a746cc4d326149b4824e1b4e5cd8f7, type: 2}
   survivalRandomOrder: 0
   survivalTime: 180
   survivalBonusPerLevel: 10
