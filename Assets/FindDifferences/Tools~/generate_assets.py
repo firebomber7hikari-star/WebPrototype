@@ -30,7 +30,6 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_portrait.py  Level129 portrait gallery (old-master style portraits, a painter at his easel)
   levels_modern.py    Level130-135 modern life (football match / concert / expo hall / gas station / shopping mall / future city)
   levels_daily.py     Level500-509 everyday town (zoo / airport / supermarket / schoolyard / fire station / bakery / lakeside park / ski resort / lighthouse / library)
-<<<<<<< HEAD
   levels_festival.py  Level145-154 festivals (Spring Festival dinner / dragon boats / Mid-Autumn / Halloween / Christmas Eve / Christmas market / birthday / egg hunt / New Year countdown / carnival)
   levels_retro.py     Level155-159 80s/90s video-game nostalgia (bedroom / rental shop / pixel platformer / pixel space shooter / arcade hall)
   levels_sports2.py   Level215-224 sports part 2 (volleyball / table tennis / boxing / ice hockey / road cycling / golf / gymnastics / show jumping / archery / beach volleyball)
@@ -47,9 +46,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_mix10.py     Level325-334 mixed themes 10 (undersea palace / rainbow valley / snowman village / penguin colony / pirate cove / alien garden / chocolate factory / weather station / rowing regatta / Roman forum)
   levels_mix11.py     Level335-344 mixed themes 11 (Viking village / yurt grassland / whitewashed cliff village / hot-spring lagoon / aviary / morning market / pit stop / horse stable / bamboo rafting / aurora town)
   levels_homes.py     Level136-144 home interiors (modern apartment / old American apartment / European manor: three rooms each)
-=======
   levels_daily2.py    Level510-519 everyday town 2 (aquarium / circus / flower shop / construction site / train platform / dinosaur museum / rainy cafe / pumpkin farm / ice rink / pet shop)
->>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
   levels_anime.py     Level25-27 anime cel style (sakura slope / shrine festival / summer sky)
@@ -108,7 +105,6 @@ import levels_gothic
 import levels_portrait
 import levels_modern
 import levels_daily
-<<<<<<< HEAD
 import levels_homes
 import levels_festival
 import levels_retro
@@ -132,9 +128,7 @@ import levels_mix8
 import levels_mix9
 import levels_mix10
 import levels_mix11
-=======
 import levels_daily2
->>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -146,7 +140,6 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_edo.LEVELS + levels_sanguo.LEVELS + levels_tangsong.LEVELS
               + levels_andersen.LEVELS + levels_xiyou.LEVELS + levels_akiba.LEVELS
               + levels_misc.LEVELS + levels_oblique.LEVELS + levels_gothic.LEVELS + levels_portrait.LEVELS
-<<<<<<< HEAD
               + levels_modern.LEVELS + levels_homes.LEVELS + levels_festival.LEVELS + levels_retro.LEVELS + levels_daily.LEVELS
               + levels_sports.LEVELS + levels_gamecontent.LEVELS + levels_dragon.LEVELS
               + levels_gamecontent2.LEVELS + levels_gamecontent3.LEVELS
@@ -154,10 +147,7 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_sports2.LEVELS + levels_gamecontent6.LEVELS
               + levels_mix1.LEVELS + levels_mix2.LEVELS + levels_mix3.LEVELS
               + levels_mix4.LEVELS + levels_mix5.LEVELS + levels_mix6.LEVELS + levels_mix7.LEVELS
-              + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS)
-=======
-              + levels_modern.LEVELS + levels_daily.LEVELS + levels_daily2.LEVELS)
->>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
+              + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS + levels_daily2.LEVELS)
 
 
 def main():
