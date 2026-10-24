@@ -46,6 +46,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_mix10.py     Level325-334 mixed themes 10 (undersea palace / rainbow valley / snowman village / penguin colony / pirate cove / alien garden / chocolate factory / weather station / rowing regatta / Roman forum)
   levels_mix11.py     Level335-344 mixed themes 11 (Viking village / yurt grassland / whitewashed cliff village / hot-spring lagoon / aviary / morning market / pit stop / horse stable / bamboo rafting / aurora town)
   levels_homes.py     Level136-144 home interiors (modern apartment / old American apartment / European manor: three rooms each)
+  levels_daily3.py    Level520-529 everyday town 3: shops and services (car wash / optician / bookshop / stationery / music shop / bike repair / photo studio / breakfast shop / hot pot / shoe shop)
   levels_daily2.py    Level510-519 everyday town 2 (aquarium / circus / flower shop / construction site / train platform / dinosaur museum / rainy cafe / pumpkin farm / ice rink / pet shop)
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
@@ -129,6 +130,7 @@ import levels_mix9
 import levels_mix10
 import levels_mix11
 import levels_daily2
+import levels_daily3
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -147,7 +149,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_sports2.LEVELS + levels_gamecontent6.LEVELS
               + levels_mix1.LEVELS + levels_mix2.LEVELS + levels_mix3.LEVELS
               + levels_mix4.LEVELS + levels_mix5.LEVELS + levels_mix6.LEVELS + levels_mix7.LEVELS
-              + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS + levels_daily2.LEVELS)
+              + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS + levels_daily2.LEVELS
+              + levels_daily3.LEVELS)
 
 
 def main():
