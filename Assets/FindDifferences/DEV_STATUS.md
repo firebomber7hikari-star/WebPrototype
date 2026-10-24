@@ -19,7 +19,11 @@
   - **测试关卡**：按 `releaseLevels`（正式版关卡数组）的顺序逐关试玩，规则同 A 模式（每关独立计时，从第一关开始，不随机、不受 `startLevel` 影响），顶栏显示「测试 N/总数」，打完后显示「测试关卡已全部完成」。
   - `releaseRange`（Vector2Int，x = 起始编号、y = 结束编号，含两端；按关卡资源名中的编号匹配，如 Level170 = 170，从 A 模式 `levels` 列表中按其顺序取出）+ `releaseFromRange`（bool）：勾选后 `releaseLevels` 自动由 `levels` 中该范围的关卡生成（Inspector 中修改即生效，运行时 Awake 也会再生成一次），手动编辑的列表会被替换；不勾选则按手动编辑的 `releaseLevels` 使用。当前为 `releaseRange = (265, 344)`、`releaseFromRange` 勾选，即正式版关卡 = Level265～344（80 关）。
   - A/B 各有关卡数组和「随机顺序」开关（`campaignRandomOrder / survivalRandomOrder`）：开启后每轮内每关只出现一次，下一轮重新打乱（新一轮第一关不会与上一轮最后一关相同）。
+<<<<<<< HEAD
 - 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **349 关**（Level06～Level135 + Level500～509 + Level136～344，按场景顺序见第 4 节；500 起为新编号段，Level136～344 使用 500 之前的空余编号、追加在列表末尾；资源名不连续不影响游戏内「第 N 关」，它按场景顺序计数）；`survivalLevels`（B 模式）当前与 A 相同。
+=======
+- 场景：`Assets/FindDifferences/Test77.unity`，对象 `FindDifferencesGame` 的 `levels`（A 模式）列表当前 **150 关**（Level06～Level135 + Level500～519，按场景顺序见第 4 节；500 起为新编号段，资源名不连续不影响游戏内「第 N 关」，它按场景顺序计数）；`survivalLevels`（B 模式）当前与 A 相同。
+>>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 - Level01～05（早期扁平经典 / 童话立体风格）仍会生成资源，但**不在场景列表中**。
 - 运行时全部 UI 由代码构建（竖屏 1080×1920 适配）；图片为 900×600 纹理。
 - 调试：`debugMode` 打开时画面显示「跳过本关 ▶」按钮（不加时、不弹结算）；`startLevel` 为 A 模式的起始关序号（随机顺序时无效；当前值由使用者在 Inspector 中设置，生成脚本不会改动）。
@@ -37,7 +41,11 @@
 
 # 3. 当前任务
 
+<<<<<<< HEAD
 - 无进行中的任务（最近一次：新增任意主题 80 关 Level265～344（八个模块 levels_mix4～11，每模块 10 关），均已加入 A、B 两个模式的关卡列表，并设为正式版关卡（`releaseRange = (265, 344)`）；此前：新增 50 关并设为正式版关卡（`releaseLevels` = Level215～264）：体育竞技第 2 组 Level215～224（排球 / 乒乓球 / 拳击 / 冰球 / 公路自行车 / 高尔夫 / 体操 / 马术 / 射箭 / 沙滩排球），电子游戏内容第 6 组 Level225～234（果冻堆叠 / 打砖块 / 清版动作 / 贪吃蛇 / 打地鼠 / 星际星图 / 挖矿沙盒 / 魔法学院 / 海盗航海 / 恐龙乐园），任意主题 Level235～264（三个模块 levels_mix1～3，共 30 关），均已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 4、5 组 Level195～214（隐藏物品 / 竖版弹幕 / 潜行博物馆 / MMO主城 / 地牢肉鸽 / 游乐园经营 / 台球 / 拼图 / 大逃杀 / MOBA对线 / 银河城地图 / 浮岛平台 / 餐厅经营 / 医院经营 / 火星基地 / 家居设计 / 卡车驾驶 / 合成游戏 / 派对棋盘 / 文字冒险），已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 3 组 Level185～194（无尽跑酷 / 点击冒险 / 宠物养成 / 迷你高尔夫 / 荒岛求生 / 料理游戏 / 战棋策略 / 视觉小说 / 水管谜题 / 世界地图），已加入 A、B 两个模式的关卡列表；此前：新增电子游戏内容第 2 组 Level175～184（像素城堡探险 / 回合制战斗 / 农场模拟 / 城市建造 / 节奏音游 / 弹球台 / 卡牌对战 / 星际驾驶舱 / 推箱子 / 钓鱼游戏），已加入 A、B 两个模式的关卡列表；此前：新增运动竞技 Level160～164（篮球馆 / 网球场 / 游泳馆 / 田径场 / 棒球场）、电子游戏内容 Level165～169（像素RPG村庄 / 赛车游戏 / 塔防游戏 / 宝石消除 / 电竞赛场）、勇者与恶龙 Level170～174（勇者启程 / 王城觐见 / 地下城 / 恶龙巢穴 / 屠龙决战），已加入 A、B 两个模式的关卡列表（未加入 `releaseLevels`）；此前：新增 80/90 年代游戏主题 Level155～159（游戏卧室 / 卡带店 / 像素平台 / 像素太空 / 街机厅），已加入 A、B 两个模式的关卡列表；此前：新增节日主题 Level145～154（年夜饭 / 端午龙舟 / 中秋赏月 / 万圣节 / 圣诞夜 / 圣诞集市 / 生日派对 / 彩蛋寻宝 / 新年倒数 / 狂欢节游行），已加入 A、B 两个模式的关卡列表；此前：新增居家室内主题 Level136～144（现代公寓 / 美式老公寓 / 欧洲庄园，各 3 个房间）；`FindDifferencesGame` 新增 `releaseLevels`（正式版关卡数组）；模式选择菜单新增「测试关卡」按钮，按顺序试玩 `releaseLevels`）。
+=======
+- 无进行中的任务（最近一次：新增城市日常主题第二组 Level510～519（水族馆 / 马戏团 / 花店 / 建筑工地 / 火车站台 / 恐龙博物馆 / 雨天街角咖啡 / 南瓜农场 / 露天溜冰场 / 宠物店），已加入 A、B 两个模式的关卡列表。上一次：Level500～509，`diff_select.py` 的关卡编号识别范围由 1～199 扩大到 1～999）。
+>>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 
 ---
 
@@ -189,6 +197,7 @@
 | 138 | Level507 | 滑雪场 | levels_daily | 缆车、木屋、旗门、雪人、滑雪者 | 天气（雪 / 雾） |
 | 139 | Level508 | 海边灯塔 | levels_daily | 悬崖灯塔、渔村、栈桥、帆船（夜间灯塔光束扫动） | 昼夜 |
 | 140 | Level509 | 图书馆 | levels_daily | 室内（高书架 + 移动梯、拱窗、阅读桌、地球仪、睡猫） | |
+<<<<<<< HEAD
 | 141 | Level136 | 现代公寓·客厅 | levels_homes | 室内正面（落地玻璃窗外城市、灰沙发、壁挂电视、弧形落地灯、扫地机器人） | |
 | 142 | Level137 | 现代公寓·厨房 | levels_homes | 开放式厨房（中岛 + 吧椅、吊灯、不锈钢冰箱、厨师） | |
 | 143 | Level138 | 现代公寓·卧室 | levels_homes | 大窗外城市（夜间窗外换夜景 + 床头灯光晕） | 昼夜 |
@@ -398,6 +407,18 @@
 | 347 | Level342 | 马厩 | levels_mix11 | 马厩（草料阁楼、三间马栏（探头的马）、马衣、马鞍架、水桶、马夫、干草捆） | |
 | 348 | Level343 | 竹筏漂流 | levels_mix11 | 竹筏漂流（喀斯特群峰、山顶塔、河边村屋、竹筏、撑篙船夫、阳伞游客、水牛、鸬鹚） | |
 | 349 | Level344 | 极光小镇 | levels_mix11 | 极光小镇（夜景：极光（流动）、弯月、彩色木屋、教堂尖塔、路灯、狗拉雪橇、雪人灯笼） | |
+=======
+| 141 | Level510 | 水族馆 | levels_daily2 | 暗场大厅 + 巨型水槽（珊瑚、鱼群、沉箱、水母） | |
+| 142 | Level511 | 马戏团 | levels_daily2 | 帐篷室内（放射条纹、表演圈、空中秋千、象站鼓、小丑） | |
+| 143 | Level512 | 花店 | levels_daily2 | 室内（阶梯花桶、吊篮、橱窗、花束柜台） | |
+| 144 | Level513 | 建筑工地 | levels_daily2 | 塔吊、钢结构、脚手架、挖掘机、自卸车 | |
+| 145 | Level514 | 火车站台 | levels_daily2 | 雨棚、停靠列车、时刻屏、站钟、自动售货机（远处快车驶过） | |
+| 146 | Level515 | 恐龙博物馆 | levels_daily2 | 大厅（霸王龙骨架、展柜、讲解员与学生） | |
+| 147 | Level516 | 雨天街角咖啡 | levels_daily2 | 咖啡馆外景（条纹遮阳篷、露天桌伞、自行车、打伞行人） | 天气（雨） |
+| 148 | Level517 | 南瓜农场 | levels_daily2 | 秋季农场（谷仓、拖拉机、稻草人、南瓜田；夜间南瓜灯） | 昼夜 |
+| 149 | Level518 | 露天溜冰场 | levels_daily2 | 小镇溜冰场（圣诞树、滑冰者、热可可摊、彩灯） | 天气（雪） |
+| 150 | Level519 | 宠物店 | levels_daily2 | 室内（鱼缸、鸟笼、猫爬架、小狗围栏、仓鼠轮） | |
+>>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 
 「基准关」：用户指定的满幅构图标准为场景序 1–5、9、13、20、22、30。
 
@@ -464,6 +485,7 @@
 - **日本**（levels_heian / heian2 / sengoku / meiji / edo + `jp_kit`）：平安用金色霞带 `kasumi`、桧皮弯曲屋顶 `curved_roof`、竹帘 `hall()`、十二单 `lady_seated`；战国用天守 `castle_keep`、町屋 `machiya`、武士 / 足轻；明治用红砖拱廊 `brick_front`、煤气灯、人力车、机车、汽船；江户带浮世绘配色（普鲁士蓝 `PRUSSIAN`）。
 - **中国**（levels_sanguo / tangsong / xiyou + `cn_kit`）：曲线翘角屋顶 `cn_roof`、斗拱色带、殿堂 `cn_hall`、宝塔、城墙城楼、拱桥、灯笼；人物 `hanfu`（futou / wing / guan / tang_lady / lady / bun / straw）、武将 `warrior`（blade / snake / spear / sword）；西游四人 `wukong / tangseng / bajie / shaseng`。
 - **童话**（levels_andersen）：明亮童话配色，可用尺度对比（拇指姑娘的巨物视角）。
+<<<<<<< HEAD
 - **城市日常**（levels_daily，Level500～）：侧视纸艺，明亮日常配色；人物统一用 `modern()`，招牌 / 屏幕文字用 `sign_box()` 随机笔画；不同以「整件换色 / 整件增删」为主（灯具改为整个灯头换色，避免只换小灯芯导致像素不足）。
 - **居家室内**（levels_homes，Level136～144）：房间正面视角（墙面 → 窗 / 墙饰 → 家具 → 地板），三种风格各 3 个房间：现代公寓（浅色墙、窗外城市 `city_window()`、简约家具）、美式老公寓（条纹 / 菱形墙纸、护墙板、暖气片、窗外砖楼 `brick_facade()`、复古电器）、欧洲庄园（金框肖像 `frame()+bust()`、吊灯 / 烛台火焰、大理石与深色木作）。地板必须在床 / 沙发等落地家具之前绘制；窗帘类大面积物件只改其中一侧或一部分，避免判定圈过大。
 - **节日**（levels_festival，Level145～154）：沿用纸艺侧视 / 室内正面；夜景关用 `npiece()`（暗色切边）；烟花用 `fireworks()`（闪烁元素）、彩纸用 `confetti()`（飘落元素）、彩旗 `bunting()`、串灯 `string_lights()+lights_el()`；人群 `crowd_row()` 可加派对帽。
@@ -477,6 +499,9 @@
 - **电子游戏内容 第 6 组**（levels_gamecontent6，Level225～234）：同前几组规则；下落消除类用圆形果冻 `jelly()`，**不使用四格方块骨牌的外形与 10×20 井**（避免与知名方块游戏的受保护外观相似）；新增 `thug()` 卡通混混、`fruit()`、`mole()`、`ship()` 俯视帆船、`island()`、`dino()`（long / horn / rex，描边卡通）。
 - **任意主题**（levels_mix1～11，Level235～344）：侧视纸艺 / 室内正面，夜景关用 `npiece()`；辅助函数见 10.6。大面积物件（整排花田、整条彩虹、整座高架桥、整面遮阳篷）不要整件换色——判定圈会超过 170 px 拟合范围，只改其中一段 / 一个桥墩 / 一块牌子。
 - **勇者与恶龙**（levels_dragon，Level170～174）：纸艺侧视 / 室内正面；原创角色 `hero()`（刺猬头 + 披风，剑 side/up）、`mage()`、`healer()`、`elder()`、`king()`、`princess()`、`slime()`、`chest()`，以及 `dragon()`（stand / fly / sleep 三种姿势，可左右朝向，`pk=dpiece` 用于暗场）；夜间 / 洞穴关用 `dpiece()`；不血腥（无骷髅、无伤口）。
+=======
+- **城市日常**（levels_daily / levels_daily2，Level500～）：侧视纸艺，明亮日常配色；人物统一用 `modern()`，招牌 / 屏幕文字用 `sign_box()` 随机笔画；不同以「整件换色 / 整件增删」为主（灯具改为整个灯头换色，避免只换小灯芯导致像素不足）。
+>>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 - **现代 / 秋叶原**（levels_akiba）：`modern()` 人物、`maid()`、`sign_box()` 竖排招牌（用随机笔画代替文字）、`chibi()` 手办；**不使用真实品牌、商标或现有角色**。
 - **格斗游戏风格**（levels_misc）：原创格斗家（`fighter_gi / fighter_kungfu / wrestler`）+ 顶部血条 / 七段数字倒计时 HUD；**不复刻任何版权角色**。
 - **心理恐怖**（levels_horror）：不血腥，靠「不对劲」营造氛围（空洞的眼、黑影、镜中人），深度雾 + 冷暖对比的光源。
@@ -567,6 +592,7 @@ python diff_select.py verify                  # 检查已生成的 Levels/*.asse
 | `jp_kit.py` | 日式建筑与人物（天守、町屋、鸟居、和服、武士、足轻、洋装、人力车、机车、汽船） |
 | `levels_modern.py` 内 | `crowd()` 看台观众、`player()` 足球员、`car_side()` 侧视汽车、`pump()` 油泵（可供以后的现代题材复用） |
 | `levels_daily.py` 内 | `giraffe / elephant / lion / dalmatian` 动物、`airliner()` 客机、`shelf_unit()` 超市货架、`bookcase()` 书架、`fire_truck()`、`firefighter()`、`skier()`、`snowman()`、`blossom_tree()`、`loaf()` 面包、`cake()`、`balloon_bunch()` 气球元素 |
+<<<<<<< HEAD
 | `levels_homes.py` 内 | `planks()` 木地板、`monstera()` 龟背竹、`sofa()`、`pendant()` 吊灯元素、`tabletop_lamp()`、`framed()` 现代画框、`steam()` 蒸汽元素、`city_window()` 窗外城市、`brick_facade()` 砖墙、`gingham()` 格子布 |
 | `levels_festival.py` 内 | `npiece()` 夜景纸片、`party_hat()`、`bunting()` 彩旗、`string_lights()` / `lights_el()` 串灯、`gift()` 礼物盒、`fireworks()` 烟花元素、`confetti()` 彩纸元素、`crowd_row()` 人群、`dragon_boat()`、`timber_house()` 木筋屋、`stall()` 集市摊位、`egg()` 彩蛋 |
 | `levels_retro.py` 内 | `sprite()` 像素位图、`block()` 像素砖块、`digits()` 像素数字、`crt()` 显像管电视、`mini_game()` 屏幕内小游戏画面、`pad()` 手柄、`cartridge()` 卡带、`game_box()` 游戏盒、`cabinet()` 街机 |
@@ -590,6 +616,9 @@ python diff_select.py verify                  # 检查已生成的 Levels/*.asse
 | `levels_mix9.py` 内 | `shelf_board()/room()`、`donut()`、`dress_form()`、`pot()`、`candy_jar()`、`hat_on_stand()`、`teapot()` |
 | `levels_mix10.py` 内 | `pony()`、`snowman()`、`penguin()`、`rowing_boat()/oar_el()` |
 | `levels_mix11.py` 内 | `horse_side()`、`longhouse()`、`yurt()`、`wh_house()`、`parrot()`、`veg_crate()`、`race_car()`、`karst()`、`town_house()` |
+=======
+| `levels_daily2.py` 内 | `coral()`、`big_fish()`、`bucket()` 花桶、`bloom()`、`worker()` 工人、`train_car()`、`trex()` 骨架、`umbrella()`、`pumpkin()`、`skater()` |
+>>>>>>> eede08bc80c8a907215b70d7f1350070d8bbfb1b
 | `cn_kit.py` | 中式建筑与人物（屋顶、殿堂、宝塔、城墙城楼、拱桥、灯笼、汉服、武将、马、骆驼、帆船） |
 
 ---

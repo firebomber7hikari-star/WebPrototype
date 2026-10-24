@@ -10040,6 +10040,302 @@
    "mill"
   ]
  },
+ "Level510": {
+  "auto": [],
+  "circles": {
+   "chest": [
+    634,
+    354,
+    52
+   ],
+   "fish": [
+    404,
+    219,
+    79
+   ],
+   "plaque": [
+    130,
+    508,
+    29
+   ]
+  },
+  "keep": [
+   "chest",
+   "fish",
+   "plaque"
+  ],
+  "neutral": []
+ },
+ "Level511": {
+  "auto": [],
+  "circles": {
+   "hat": [
+    252,
+    430,
+    31
+   ],
+   "popcorn": [
+    838,
+    573,
+    36
+   ],
+   "spot": [
+    850,
+    22,
+    38
+   ],
+   "wig": [
+    642,
+    472,
+    44
+   ]
+  },
+  "keep": [
+   "hat",
+   "popcorn",
+   "spot",
+   "wig"
+  ],
+  "neutral": []
+ },
+ "Level512": {
+  "auto": [],
+  "circles": {
+   "apron": [
+    790,
+    346,
+    34
+   ],
+   "can": [
+    601,
+    554,
+    53
+   ],
+   "tulips": [
+    310,
+    316,
+    39
+   ]
+  },
+  "keep": [
+   "apron",
+   "can",
+   "tulips"
+  ],
+  "neutral": []
+ },
+ "Level513": {
+  "auto": [],
+  "circles": {
+   "brace": [
+    516,
+    198,
+    51
+   ],
+   "digger": [
+    206,
+    447,
+    109
+   ],
+   "load": [
+    642,
+    456,
+    78
+   ]
+  },
+  "keep": [
+   "brace",
+   "digger",
+   "load"
+  ],
+  "neutral": []
+ },
+ "Level514": {
+  "auto": [],
+  "circles": {
+   "case": [
+    432,
+    566,
+    29
+   ],
+   "clock": [
+    160,
+    126,
+    43
+   ],
+   "door": [
+    780,
+    364,
+    59
+   ],
+   "screen": [
+    734,
+    132,
+    30
+   ],
+   "vending": [
+    64,
+    514,
+    88
+   ]
+  },
+  "keep": [
+   "case",
+   "clock",
+   "door",
+   "screen",
+   "vending"
+  ],
+  "neutral": []
+ },
+ "Level515": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    750,
+    130,
+    82
+   ],
+   "guide": [
+    120,
+    528,
+    35
+   ],
+   "post": [
+    562,
+    492,
+    39
+   ]
+  },
+  "keep": [
+   "banner",
+   "guide",
+   "post"
+  ],
+  "neutral": []
+ },
+ "Level516": {
+  "auto": [],
+  "circles": {
+   "bike": [
+    660,
+    534,
+    54
+   ],
+   "cat": [
+    192,
+    156,
+    29
+   ],
+   "sign": [
+    538,
+    214,
+    35
+   ],
+   "umbrella": [
+    300,
+    415,
+    77
+   ]
+  },
+  "keep": [
+   "bike",
+   "cat",
+   "sign",
+   "umbrella"
+  ],
+  "neutral": []
+ },
+ "Level517": {
+  "auto": [],
+  "circles": {
+   "door": [
+    150,
+    274,
+    71
+   ],
+   "hay": [
+    421,
+    374,
+    55
+   ],
+   "pumpkin": [
+    660,
+    522,
+    62
+   ],
+   "tree": [
+    700,
+    210,
+    64
+   ]
+  },
+  "keep": [
+   "door",
+   "hay",
+   "pumpkin",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level518": {
+  "auto": [],
+  "circles": {
+   "awning": [
+    790,
+    508,
+    101
+   ],
+   "gift": [
+    494,
+    309,
+    25
+   ],
+   "scarf": [
+    330,
+    422,
+    26
+   ],
+   "star": [
+    450,
+    64,
+    35
+   ]
+  },
+  "keep": [
+   "awning",
+   "gift",
+   "scarf",
+   "star"
+  ],
+  "neutral": []
+ },
+ "Level519": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    758,
+    182,
+    38
+   ],
+   "plant": [
+    246,
+    188,
+    58
+   ],
+   "puppy": [
+    204,
+    560,
+    39
+   ]
+  },
+  "keep": [
+   "bag",
+   "plant",
+   "puppy"
+  ],
+  "neutral": []
+ },
  "Level52": {
   "auto": [
    [
