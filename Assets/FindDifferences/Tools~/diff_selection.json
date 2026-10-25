@@ -12361,6 +12361,295 @@
    "train2"
   ]
  },
+ "Level580": {
+  "auto": [],
+  "circles": {
+   "apples": [
+    636,
+    316,
+    48
+   ],
+   "pumpkin": [
+    760,
+    560,
+    38
+   ],
+   "scale": [
+    450,
+    440,
+    40
+   ]
+  },
+  "keep": [
+   "apples",
+   "pumpkin",
+   "scale"
+  ],
+  "neutral": []
+ },
+ "Level581": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    446,
+    533,
+    25
+   ],
+   "chilli": [
+    502,
+    93,
+    54
+   ],
+   "jar": [
+    754,
+    272,
+    25
+   ],
+   "spice": [
+    730,
+    498,
+    40
+   ]
+  },
+  "keep": [
+   "bag",
+   "chilli",
+   "jar",
+   "spice"
+  ],
+  "neutral": []
+ },
+ "Level582": {
+  "auto": [],
+  "circles": {
+   "ball": [
+    600,
+    536,
+    25
+   ],
+   "scarf": [
+    812,
+    440,
+    26
+   ],
+   "yarn": [
+    388,
+    228,
+    44
+   ]
+  },
+  "keep": [
+   "ball",
+   "scarf",
+   "yarn"
+  ],
+  "neutral": []
+ },
+ "Level583": {
+  "auto": [],
+  "circles": {
+   "floor": [
+    840,
+    570,
+    45
+   ],
+   "hat": [
+    206,
+    228,
+    33
+   ],
+   "tank": [
+    584,
+    304,
+    81
+   ]
+  },
+  "keep": [
+   "floor",
+   "hat",
+   "tank"
+  ],
+  "neutral": []
+ },
+ "Level584": {
+  "auto": [],
+  "circles": {
+   "box": [
+    840,
+    564,
+    54
+   ],
+   "ladder": [
+    540,
+    360,
+    114
+   ],
+   "paint": [
+    806,
+    128,
+    27
+   ],
+   "tool": [
+    210,
+    158,
+    79
+   ]
+  },
+  "keep": [
+   "box",
+   "ladder",
+   "paint",
+   "tool"
+  ],
+  "neutral": []
+ },
+ "Level585": {
+  "auto": [],
+  "circles": {
+   "bottle": [
+    108,
+    320,
+    25
+   ],
+   "coat": [
+    700,
+    532,
+    37
+   ],
+   "display": [
+    450,
+    374,
+    34
+   ]
+  },
+  "keep": [
+   "bottle",
+   "coat",
+   "display"
+  ],
+  "neutral": []
+ },
+ "Level586": {
+  "auto": [],
+  "circles": {
+   "box": [
+    180,
+    576,
+    47
+   ],
+   "frame": [
+    790,
+    94,
+    85
+   ],
+   "screen": [
+    308,
+    130,
+    46
+   ]
+  },
+  "keep": [
+   "box",
+   "frame",
+   "screen"
+  ],
+  "neutral": []
+ },
+ "Level587": {
+  "auto": [
+   [
+    246,
+    96,
+    150,
+    "hue",
+    254,
+    118,
+    39
+   ],
+   [
+    616,
+    96,
+    210,
+    "hue",
+    626,
+    118,
+    39
+   ]
+  ],
+  "circles": {
+   "lantern": [
+    820,
+    544,
+    56
+   ],
+   "pillar": [
+    450,
+    414,
+    59
+   ]
+  },
+  "keep": [
+   "lantern",
+   "pillar"
+  ],
+  "neutral": []
+ },
+ "Level588": {
+  "auto": [],
+  "circles": {
+   "dress": [
+    140,
+    182,
+    82
+   ],
+   "machine": [
+    430,
+    434,
+    64
+   ],
+   "stack": [
+    778,
+    328,
+    37
+   ]
+  },
+  "keep": [
+   "dress",
+   "machine",
+   "stack"
+  ],
+  "neutral": []
+ },
+ "Level589": {
+  "auto": [
+   [
+    446,
+    246,
+    150,
+    "hue",
+    450,
+    254,
+    27
+   ]
+  ],
+  "circles": {
+   "plinth": [
+    380,
+    550,
+    73
+   ],
+   "shade": [
+    680,
+    354,
+    51
+   ]
+  },
+  "keep": [
+   "plinth",
+   "shade"
+  ],
+  "neutral": []
+ },
  "Level59": {
   "auto": [],
   "circles": {
