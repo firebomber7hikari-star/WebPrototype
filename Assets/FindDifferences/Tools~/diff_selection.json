@@ -13331,6 +13331,305 @@
    "bobble"
   ]
  },
+ "Level610": {
+  "auto": [],
+  "circles": {
+   "coat": [
+    560,
+    538,
+    35
+   ],
+   "deer": [
+    150,
+    398,
+    124
+   ],
+   "star": [
+    760,
+    354,
+    80
+   ]
+  },
+  "keep": [
+   "coat",
+   "deer",
+   "star"
+  ],
+  "neutral": []
+ },
+ "Level611": {
+  "auto": [
+   [
+    26,
+    76,
+    150,
+    "hue",
+    48,
+    104,
+    49
+   ],
+   [
+    836,
+    76,
+    210,
+    "hue",
+    860,
+    104,
+    49
+   ]
+  ],
+  "circles": {
+   "drum": [
+    820,
+    550,
+    60
+   ],
+   "sign": [
+    454,
+    192,
+    116
+   ]
+  },
+  "keep": [
+   "drum",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level612": {
+  "auto": [],
+  "circles": {
+   "haw": [
+    730,
+    378,
+    31
+   ],
+   "plaque": [
+    450,
+    140,
+    58
+   ],
+   "shirt": [
+    580,
+    535,
+    36
+   ]
+  },
+  "keep": [
+   "haw",
+   "plaque",
+   "shirt"
+  ],
+  "neutral": []
+ },
+ "Level613": {
+  "auto": [],
+  "circles": {
+   "eave": [
+    160,
+    126,
+    70
+   ],
+   "lantern": [
+    560,
+    406,
+    73
+   ],
+   "maple": [
+    857,
+    246,
+    70
+   ]
+  },
+  "keep": [
+   "eave",
+   "lantern",
+   "maple"
+  ],
+  "neutral": []
+ },
+ "Level614": {
+  "auto": [],
+  "circles": {
+   "elf": [
+    525,
+    322,
+    42
+   ],
+   "stocking": [
+    144,
+    260,
+    41
+   ],
+   "toy": [
+    742,
+    232,
+    31
+   ]
+  },
+  "keep": [
+   "elf",
+   "stocking",
+   "toy"
+  ],
+  "neutral": []
+ },
+ "Level615": {
+  "auto": [],
+  "circles": {
+   "door": [
+    750,
+    250,
+    67
+   ],
+   "kid": [
+    680,
+    558,
+    26
+   ],
+   "pie": [
+    520,
+    324,
+    27
+   ],
+   "pumpkin": [
+    220,
+    336,
+    69
+   ]
+  },
+  "keep": [
+   "door",
+   "kid",
+   "pie",
+   "pumpkin"
+  ],
+  "neutral": []
+ },
+ "Level616": {
+  "auto": [],
+  "circles": {
+   "boat": [
+    130,
+    584,
+    92
+   ],
+   "lantern": [
+    380,
+    508,
+    29
+   ],
+   "moon": [
+    760,
+    80,
+    47
+   ]
+  },
+  "keep": [
+   "boat",
+   "lantern",
+   "moon"
+  ],
+  "neutral": []
+ },
+ "Level617": {
+  "auto": [
+   [
+    746,
+    516,
+    150,
+    "hue",
+    760,
+    536,
+    32
+   ]
+  ],
+  "circles": {
+   "cart": [
+    370,
+    564,
+    59
+   ],
+   "gantry": [
+    640,
+    162,
+    122
+   ]
+  },
+  "keep": [
+   "cart",
+   "gantry"
+  ],
+  "neutral": []
+ },
+ "Level618": {
+  "auto": [],
+  "circles": {
+   "mars": [
+    160,
+    120,
+    60
+   ],
+   "planet": [
+    430,
+    200,
+    42
+   ],
+   "ring": [
+    700,
+    110,
+    83
+   ],
+   "seat": [
+    670,
+    518,
+    57
+   ],
+   "seat2": [
+    172,
+    574,
+    65
+   ]
+  },
+  "keep": [
+   "mars",
+   "planet",
+   "ring",
+   "seat",
+   "seat2"
+  ],
+  "neutral": []
+ },
+ "Level619": {
+  "auto": [
+   [
+    126,
+    486,
+    150,
+    "hue",
+    104,
+    498,
+    76
+   ]
+  ],
+  "circles": {
+   "canopy": [
+    470,
+    224,
+    96
+   ],
+   "sign": [
+    770,
+    330,
+    74
+   ]
+  },
+  "keep": [
+   "canopy",
+   "sign"
+  ],
+  "neutral": []
+ },
  "Level62": {
   "auto": [],
   "circles": {
