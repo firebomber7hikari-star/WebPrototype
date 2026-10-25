@@ -13012,6 +13012,285 @@
    "steam2"
   ]
  },
+ "Level600": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    840,
+    580,
+    33
+   ],
+   "belayer": [
+    520,
+    538,
+    35
+   ],
+   "climber": [
+    460,
+    155,
+    27
+   ]
+  },
+  "keep": [
+   "bag",
+   "belayer",
+   "climber"
+  ],
+  "neutral": []
+ },
+ "Level601": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    794,
+    84,
+    105
+   ],
+   "pad": [
+    638,
+    540,
+    87
+   ],
+   "parent": [
+    130,
+    76,
+    23
+   ]
+  },
+  "keep": [
+   "banner",
+   "pad",
+   "parent"
+  ],
+  "neutral": []
+ },
+ "Level602": {
+  "auto": [],
+  "circles": {
+   "marshal": [
+    860,
+    538,
+    35
+   ],
+   "roof": [
+    724,
+    110,
+    170
+   ],
+   "tyre": [
+    80,
+    420,
+    34
+   ]
+  },
+  "keep": [
+   "marshal",
+   "roof",
+   "tyre"
+  ],
+  "neutral": []
+ },
+ "Level603": {
+  "auto": [],
+  "circles": {
+   "arch": [
+    280,
+    210,
+    93
+   ],
+   "cup": [
+    810,
+    375,
+    27
+   ],
+   "vest": [
+    380,
+    509,
+    30
+   ]
+  },
+  "keep": [
+   "arch",
+   "cup",
+   "vest"
+  ],
+  "neutral": []
+ },
+ "Level604": {
+  "auto": [],
+  "circles": {
+   "boulder": [
+    560,
+    417,
+    57
+   ],
+   "guide": [
+    80,
+    405,
+    27
+   ],
+   "sign": [
+    800,
+    366,
+    40
+   ]
+  },
+  "keep": [
+   "boulder",
+   "guide",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level605": {
+  "auto": [],
+  "circles": {
+   "church": [
+    380,
+    470,
+    59
+   ],
+   "mat": [
+    114,
+    364,
+    84
+   ],
+   "tree": [
+    780,
+    396,
+    68
+   ]
+  },
+  "keep": [
+   "church",
+   "mat",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level606": {
+  "auto": [
+   [
+    286,
+    306,
+    150,
+    "hue",
+    300,
+    330,
+    47
+   ],
+   [
+    586,
+    306,
+    210,
+    "hue",
+    600,
+    330,
+    47
+   ]
+  ],
+  "circles": {
+   "blanket": [
+    860,
+    564,
+    57
+   ],
+   "tree": [
+    835,
+    189,
+    86
+   ]
+  },
+  "keep": [
+   "blanket",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level607": {
+  "auto": [],
+  "circles": {
+   "mat": [
+    562,
+    526,
+    76
+   ],
+   "sun": [
+    450,
+    250,
+    62
+   ],
+   "towel": [
+    860,
+    572,
+    47
+   ]
+  },
+  "keep": [
+   "mat",
+   "sun",
+   "towel"
+  ],
+  "neutral": []
+ },
+ "Level608": {
+  "auto": [],
+  "circles": {
+   "board": [
+    400,
+    330,
+    48
+   ],
+   "rashie": [
+    560,
+    538,
+    35
+   ],
+   "stuck": [
+    200,
+    520,
+    64
+   ],
+   "tower": [
+    790,
+    424,
+    66
+   ]
+  },
+  "keep": [
+   "board",
+   "rashie",
+   "stuck",
+   "tower"
+  ],
+  "neutral": []
+ },
+ "Level609": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    54,
+    580,
+    31
+   ],
+   "banner": [
+    800,
+    104,
+    83
+   ],
+   "stone": [
+    701,
+    437,
+    36
+   ]
+  },
+  "keep": [
+   "bag",
+   "banner",
+   "stone"
+  ],
+  "neutral": []
+ },
  "Level61": {
   "auto": [],
   "circles": {

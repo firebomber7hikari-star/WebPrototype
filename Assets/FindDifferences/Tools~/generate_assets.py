@@ -54,6 +54,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_daily8.py    Level570-579 everyday town 8: neighbourhood life (flower-bird market / rooftop laundry / moving day / parcel station / square dancing / kindergarten / pet grooming / roadside BBQ / rainy bus / garage band)
   levels_daily9.py    Level580-589 everyday town 9: more shops (greengrocer / spice shop / yarn shop / balloon shop / hardware / perfume / repair shop / candles / fabric / lighting)
   levels_daily10.py   Level590-599 everyday town 10: more nature (glacier / strawberries / butterflies / tide pools / crater lake / camel caravan / rime forest / rapeseed / cave / puffins)
+  levels_daily11.py   Level600-609 everyday town 11: sports and hobbies (climbing gym / trampolines / go-karts / marathon / kayaking / paragliding / frisbee dogs / beach yoga / surfing / curling)
   levels_daily2.py    Level510-519 everyday town 2 (aquarium / circus / flower shop / construction site / train platform / dinosaur museum / rainy cafe / pumpkin farm / ice rink / pet shop)
   levels_medieval.py  Level19-21 medieval (castle / market / tavern)
   levels_cyber.py     Level22-24 cyberpunk (rain street / rooftop / crossroads)
@@ -145,6 +146,7 @@ import levels_daily7
 import levels_daily8
 import levels_daily9
 import levels_daily10
+import levels_daily11
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -166,7 +168,7 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_mix8.LEVELS + levels_mix9.LEVELS + levels_mix10.LEVELS + levels_mix11.LEVELS + levels_daily2.LEVELS
               + levels_daily3.LEVELS + levels_daily4.LEVELS + levels_daily5.LEVELS + levels_daily6.LEVELS
               + levels_daily7.LEVELS + levels_daily8.LEVELS + levels_daily9.LEVELS
-              + levels_daily10.LEVELS)
+              + levels_daily10.LEVELS + levels_daily11.LEVELS)
 
 
 def main():
