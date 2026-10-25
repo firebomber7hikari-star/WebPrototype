@@ -12020,6 +12020,303 @@
    "fall0"
   ]
  },
+ "Level570": {
+  "auto": [],
+  "circles": {
+   "awning": [
+    454,
+    164,
+    152
+   ],
+   "fish": [
+    754,
+    338,
+    36
+   ],
+   "pot": [
+    200,
+    360,
+    23
+   ],
+   "shirt": [
+    820,
+    538,
+    35
+   ]
+  },
+  "keep": [
+   "awning",
+   "fish",
+   "pot",
+   "shirt"
+  ],
+  "neutral": []
+ },
+ "Level571": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    320,
+    546,
+    57
+   ],
+   "door": [
+    810,
+    314,
+    58
+   ],
+   "shirt": [
+    540,
+    200,
+    44
+   ],
+   "tank": [
+    200,
+    244,
+    63
+   ]
+  },
+  "keep": [
+   "basket",
+   "door",
+   "shirt",
+   "tank"
+  ],
+  "neutral": []
+ },
+ "Level572": {
+  "auto": [],
+  "circles": {
+   "neighbour": [
+    520,
+    173,
+    24
+   ],
+   "sofa": [
+    720,
+    504,
+    97
+   ],
+   "van": [
+    150,
+    360,
+    111
+   ]
+  },
+  "keep": [
+   "neighbour",
+   "sofa",
+   "van"
+  ],
+  "neutral": []
+ },
+ "Level573": {
+  "auto": [],
+  "circles": {
+   "clock": [
+    700,
+    120,
+    43
+   ],
+   "parcel": [
+    358,
+    210,
+    40
+   ],
+   "trike": [
+    120,
+    550,
+    87
+   ]
+  },
+  "keep": [
+   "clock",
+   "parcel",
+   "trike"
+  ],
+  "neutral": []
+ },
+ "Level574": {
+  "auto": [],
+  "circles": {
+   "dancer": [
+    670,
+    446,
+    31
+   ],
+   "lamp": [
+    840,
+    334,
+    28
+   ],
+   "moon": [
+    500,
+    70,
+    47
+   ],
+   "speaker": [
+    154,
+    514,
+    67
+   ]
+  },
+  "keep": [
+   "dancer",
+   "lamp",
+   "moon",
+   "speaker"
+  ],
+  "neutral": []
+ },
+ "Level575": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    180,
+    228,
+    31
+   ],
+   "drawing": [
+    790,
+    140,
+    42
+   ],
+   "letter": [
+    366,
+    42,
+    37
+   ],
+   "table": [
+    600,
+    504,
+    114
+   ]
+  },
+  "keep": [
+   "bag",
+   "drawing",
+   "letter",
+   "table"
+  ],
+  "neutral": []
+ },
+ "Level576": {
+  "auto": [
+   [
+    736,
+    506,
+    150,
+    "hue",
+    750,
+    530,
+    37
+   ],
+   [
+    746,
+    96,
+    210,
+    "hue",
+    744,
+    122,
+    35
+   ]
+  ],
+  "circles": {
+   "collar": [
+    118,
+    554,
+    61
+   ],
+   "dryer": [
+    416,
+    332,
+    56
+   ]
+  },
+  "keep": [
+   "collar",
+   "dryer"
+  ],
+  "neutral": []
+ },
+ "Level577": {
+  "auto": [],
+  "circles": {
+   "crate": [
+    340,
+    580,
+    49
+   ],
+   "sign": [
+    560,
+    162,
+    93
+   ],
+   "stool": [
+    860,
+    580,
+    32
+   ]
+  },
+  "keep": [
+   "crate",
+   "sign",
+   "stool"
+  ],
+  "neutral": []
+ },
+ "Level578": {
+  "auto": [],
+  "circles": {
+   "button": [
+    452,
+    260,
+    28
+   ],
+   "display": [
+    450,
+    18,
+    76
+   ],
+   "seat": [
+    640,
+    434,
+    80
+   ]
+  },
+  "keep": [
+   "button",
+   "display",
+   "seat"
+  ],
+  "neutral": []
+ },
+ "Level579": {
+  "auto": [],
+  "circles": {
+   "amp": [
+    644,
+    430,
+    76
+   ],
+   "poster": [
+    834,
+    134,
+    73
+   ],
+   "sofa": [
+    80,
+    554,
+    77
+   ]
+  },
+  "keep": [
+   "amp",
+   "poster",
+   "sofa"
+  ],
+  "neutral": []
+ },
  "Level58": {
   "auto": [
    [
