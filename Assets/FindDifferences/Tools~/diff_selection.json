@@ -12690,6 +12690,298 @@
    "boat"
   ]
  },
+ "Level590": {
+  "auto": [],
+  "circles": {
+   "flag": [
+    445,
+    190,
+    34
+   ],
+   "hut": [
+    84,
+    412,
+    65
+   ],
+   "sign": [
+    830,
+    466,
+    38
+   ]
+  },
+  "keep": [
+   "flag",
+   "hut",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level591": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    434,
+    580,
+    42
+   ],
+   "farmer": [
+    790,
+    422,
+    29
+   ],
+   "tunnel": [
+    450,
+    234,
+    123
+   ]
+  },
+  "keep": [
+   "basket",
+   "farmer",
+   "tunnel"
+  ],
+  "neutral": []
+ },
+ "Level592": {
+  "auto": [],
+  "circles": {
+   "bush": [
+    760,
+    290,
+    44
+   ],
+   "camera": [
+    334,
+    522,
+    26
+   ],
+   "kid": [
+    700,
+    555,
+    27
+   ],
+   "wing": [
+    150,
+    293,
+    29
+   ]
+  },
+  "keep": [
+   "bush",
+   "camera",
+   "kid",
+   "wing"
+  ],
+  "neutral": []
+ },
+ "Level593": {
+  "auto": [],
+  "circles": {
+   "anemone": [
+    250,
+    375,
+    25
+   ],
+   "bucket": [
+    840,
+    582,
+    35
+   ],
+   "crab": [
+    420,
+    518,
+    39
+   ],
+   "star": [
+    560,
+    358,
+    30
+   ]
+  },
+  "keep": [
+   "anemone",
+   "bucket",
+   "crab",
+   "star"
+  ],
+  "neutral": []
+ },
+ "Level594": {
+  "auto": [
+   [
+    186,
+    516,
+    150,
+    "hue",
+    200,
+    536,
+    35
+   ]
+  ],
+  "circles": {
+   "cairn": [
+    840,
+    568,
+    48
+   ],
+   "pack": [
+    450,
+    432,
+    29
+   ]
+  },
+  "keep": [
+   "cairn",
+   "pack"
+  ],
+  "neutral": []
+ },
+ "Level595": {
+  "auto": [],
+  "circles": {
+   "blanket": [
+    374,
+    406,
+    39
+   ],
+   "lantern": [
+    842,
+    552,
+    37
+   ],
+   "shrub": [
+    100,
+    586,
+    41
+   ],
+   "turban": [
+    700,
+    410,
+    24
+   ]
+  },
+  "keep": [
+   "blanket",
+   "lantern",
+   "shrub",
+   "turban"
+  ],
+  "neutral": []
+ },
+ "Level596": {
+  "auto": [
+   [
+    226,
+    516,
+    150,
+    "hue",
+    240,
+    538,
+    34
+   ]
+  ],
+  "circles": {
+   "door": [
+    500,
+    274,
+    35
+   ],
+   "scarf": [
+    840,
+    528,
+    33
+   ]
+  },
+  "keep": [
+   "door",
+   "scarf"
+  ],
+  "neutral": []
+ },
+ "Level597": {
+  "auto": [],
+  "circles": {
+   "bike": [
+    220,
+    560,
+    52
+   ],
+   "roof": [
+    700,
+    224,
+    66
+   ],
+   "shirt": [
+    820,
+    535,
+    36
+   ],
+   "window": [
+    150,
+    230,
+    37
+   ]
+  },
+  "keep": [
+   "bike",
+   "roof",
+   "shirt",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level598": {
+  "auto": [],
+  "circles": {
+   "bat": [
+    300,
+    147,
+    46
+   ],
+   "stalactite": [
+    618,
+    127,
+    62
+   ],
+   "visitor": [
+    620,
+    464,
+    32
+   ]
+  },
+  "keep": [
+   "bat",
+   "stalactite",
+   "visitor"
+  ],
+  "neutral": []
+ },
+ "Level599": {
+  "auto": [],
+  "circles": {
+   "beak": [
+    406,
+    424,
+    49
+   ],
+   "sign": [
+    50,
+    522,
+    50
+   ],
+   "stack": [
+    720,
+    361,
+    65
+   ]
+  },
+  "keep": [
+   "beak",
+   "sign",
+   "stack"
+  ],
+  "neutral": []
+ },
  "Level60": {
   "auto": [],
   "circles": {
