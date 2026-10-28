@@ -203,6 +203,352 @@
   ],
   "neutral": []
  },
+ "Level1000": {
+  "auto": [],
+  "circles": {
+   "balloon": [
+    140,
+    94,
+    58
+   ],
+   "chimney": [
+    746,
+    355,
+    47
+   ],
+   "mill": [
+    464,
+    194,
+    48
+   ],
+   "rider": [
+    174,
+    398,
+    26
+   ],
+   "sun": [
+    812,
+    84,
+    91
+   ]
+  },
+  "keep": [
+   "balloon",
+   "chimney",
+   "mill",
+   "rider",
+   "sun"
+  ],
+  "neutral": []
+ },
+ "Level1001": {
+  "auto": [],
+  "circles": {
+   "helmet": [
+    470,
+    228,
+    45
+   ],
+   "light": [
+    130,
+    192,
+    44
+   ],
+   "sail": [
+    822,
+    270,
+    39
+   ],
+   "sun": [
+    700,
+    80,
+    50
+   ],
+   "tyre": [
+    330,
+    470,
+    89
+   ]
+  },
+  "keep": [
+   "helmet",
+   "light",
+   "sail",
+   "sun",
+   "tyre"
+  ],
+  "neutral": []
+ },
+ "Level1002": {
+  "auto": [],
+  "circles": {
+   "arch": [
+    130,
+    268,
+    50
+   ],
+   "bird": [
+    808,
+    124,
+    54
+   ],
+   "blaze": [
+    642,
+    280,
+    33
+   ],
+   "boot": [
+    464,
+    390,
+    29
+   ],
+   "hat": [
+    440,
+    155,
+    58
+   ]
+  },
+  "keep": [
+   "arch",
+   "bird",
+   "blaze",
+   "boot",
+   "hat"
+  ],
+  "neutral": []
+ },
+ "Level1003": {
+  "auto": [],
+  "circles": {
+   "emblem": [
+    450,
+    156,
+    55
+   ],
+   "kite": [
+    130,
+    422,
+    68
+   ],
+   "sandbag": [
+    510,
+    570,
+    38
+   ],
+   "small": [
+    770,
+    160,
+    72
+   ]
+  },
+  "keep": [
+   "emblem",
+   "kite",
+   "sandbag",
+   "small"
+  ],
+  "neutral": []
+ },
+ "Level1004": {
+  "auto": [],
+  "circles": {
+   "jelly": [
+    150,
+    483,
+    65
+   ],
+   "lamp": [
+    700,
+    316,
+    31
+   ],
+   "periscope": [
+    460,
+    178,
+    46
+   ]
+  },
+  "keep": [
+   "jelly",
+   "lamp",
+   "periscope"
+  ],
+  "neutral": [
+   "angler"
+  ]
+ },
+ "Level1005": {
+  "auto": [],
+  "circles": {
+   "blimp": [
+    230,
+    76,
+    64
+   ],
+   "nose": [
+    722,
+    448,
+    48
+   ],
+   "sun": [
+    560,
+    62,
+    47
+   ],
+   "wing": [
+    238,
+    394,
+    65
+   ]
+  },
+  "keep": [
+   "blimp",
+   "nose",
+   "sun",
+   "wing"
+  ],
+  "neutral": []
+ },
+ "Level1006": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    322,
+    326,
+    41
+   ],
+   "lantern": [
+    570,
+    330,
+    31
+   ],
+   "pyramid": [
+    60,
+    266,
+    66
+   ],
+   "star": [
+    180,
+    58,
+    35
+   ]
+  },
+  "keep": [
+   "bag",
+   "lantern",
+   "pyramid",
+   "star"
+  ],
+  "neutral": []
+ },
+ "Level1007": {
+  "auto": [],
+  "circles": {
+   "balloon": [
+    130,
+    478,
+    65
+   ],
+   "buddy": [
+    720,
+    356,
+    76
+   ],
+   "emblem": [
+    326,
+    130,
+    37
+   ],
+   "helmet": [
+    450,
+    320,
+    34
+   ],
+   "plane": [
+    768,
+    68,
+    70
+   ]
+  },
+  "keep": [
+   "balloon",
+   "buddy",
+   "emblem",
+   "helmet",
+   "plane"
+  ],
+  "neutral": []
+ },
+ "Level1008": {
+  "auto": [],
+  "circles": {
+   "clock": [
+    650,
+    140,
+    34
+   ],
+   "kite": [
+    390,
+    108,
+    64
+   ],
+   "spot": [
+    420,
+    430,
+    44
+   ],
+   "stick": [
+    686,
+    432,
+    56
+   ],
+   "sun": [
+    110,
+    80,
+    50
+   ]
+  },
+  "keep": [
+   "clock",
+   "kite",
+   "spot",
+   "stick",
+   "sun"
+  ],
+  "neutral": []
+ },
+ "Level1009": {
+  "auto": [],
+  "circles": {
+   "roundel": [
+    580,
+    216,
+    26
+   ],
+   "sun": [
+    800,
+    90,
+    57
+   ],
+   "tail": [
+    220,
+    260,
+    54
+   ],
+   "wheel": [
+    456,
+    384,
+    29
+   ]
+  },
+  "keep": [
+   "roundel",
+   "sun",
+   "tail",
+   "wheel"
+  ],
+  "neutral": []
+ },
  "Level101": {
   "auto": [],
   "circles": {
