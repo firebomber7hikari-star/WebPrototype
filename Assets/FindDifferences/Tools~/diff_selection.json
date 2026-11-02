@@ -6403,6 +6403,142 @@
   ],
   "neutral": []
  },
+ "Level1615": {
+  "auto": [],
+  "circles": {
+   "bag": [
+    276,
+    466,
+    24
+   ],
+   "sun": [
+    625,
+    282,
+    115
+   ],
+   "tower": [
+    175,
+    168,
+    73
+   ]
+  },
+  "keep": [
+   "bag",
+   "sun",
+   "tower"
+  ],
+  "neutral": []
+ },
+ "Level1616": {
+  "auto": [],
+  "circles": {
+   "crowd": [
+    671,
+    510,
+    92
+   ],
+   "signal": [
+    454,
+    250,
+    26
+   ],
+   "star": [
+    790,
+    97,
+    46
+   ]
+  },
+  "keep": [
+   "crowd",
+   "signal",
+   "star"
+  ],
+  "neutral": []
+ },
+ "Level1617": {
+  "auto": [],
+  "circles": {
+   "book": [
+    682,
+    452,
+    34
+   ],
+   "horn": [
+    384,
+    356,
+    54
+   ],
+   "lamp": [
+    160,
+    50,
+    47
+   ]
+  },
+  "keep": [
+   "book",
+   "horn",
+   "lamp"
+  ],
+  "neutral": []
+ },
+ "Level1618": {
+  "auto": [],
+  "circles": {
+   "cat": [
+    558,
+    552,
+    51
+   ],
+   "graffiti": [
+    140,
+    296,
+    60
+   ],
+   "tv": [
+    450,
+    274,
+    74
+   ],
+   "umbrella": [
+    796,
+    354,
+    84
+   ]
+  },
+  "keep": [
+   "cat",
+   "graffiti",
+   "tv",
+   "umbrella"
+  ],
+  "neutral": []
+ },
+ "Level1619": {
+  "auto": [],
+  "circles": {
+   "chandelier": [
+    450,
+    48,
+    106
+   ],
+   "rose": [
+    347,
+    558,
+    44
+   ],
+   "statue": [
+    776,
+    324,
+    98
+   ]
+  },
+  "keep": [
+   "chandelier",
+   "rose",
+   "statue"
+  ],
+  "neutral": []
+ },
  "Level162": {
   "auto": [],
   "circles": {

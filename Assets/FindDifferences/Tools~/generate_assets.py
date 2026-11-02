@@ -180,6 +180,7 @@ import levels_souls2
 import levels_jrpg
 import levels_gta
 import levels_dnd
+import levels_persona
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -208,7 +209,7 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_toon2.LEVELS + levels_remake.LEVELS
               + levels_souls.LEVELS + levels_souls2.LEVELS
               + levels_jrpg.LEVELS + levels_gta.LEVELS
-              + levels_dnd.LEVELS)
+              + levels_dnd.LEVELS + levels_persona.LEVELS)
 
 
 def main():
