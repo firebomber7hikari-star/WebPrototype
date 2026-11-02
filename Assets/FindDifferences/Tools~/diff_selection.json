@@ -5368,6 +5368,148 @@
   ],
   "neutral": []
  },
+ "Level1585": {
+  "auto": [],
+  "circles": {
+   "chimney": [
+    674,
+    218,
+    28
+   ],
+   "hat": [
+    820,
+    458,
+    25
+   ],
+   "well": [
+    230,
+    412,
+    46
+   ]
+  },
+  "keep": [
+   "chimney",
+   "hat",
+   "well"
+  ],
+  "neutral": []
+ },
+ "Level1586": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    730,
+    144,
+    82
+   ],
+   "scepter": [
+    434,
+    304,
+    52
+   ],
+   "shield": [
+    675,
+    470,
+    28
+   ],
+   "window": [
+    450,
+    71,
+    36
+   ]
+  },
+  "keep": [
+   "banner",
+   "scepter",
+   "shield",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1587": {
+  "auto": [],
+  "circles": {
+   "green": [
+    340,
+    272,
+    48
+   ],
+   "hp": [
+    562,
+    514,
+    47
+   ],
+   "king": [
+    130,
+    299,
+    28
+   ],
+   "robe": [
+    759,
+    366,
+    44
+   ]
+  },
+  "keep": [
+   "green",
+   "hp",
+   "king",
+   "robe"
+  ],
+  "neutral": []
+ },
+ "Level1588": {
+  "auto": [],
+  "circles": {
+   "bird": [
+    256,
+    115,
+    37
+   ],
+   "chest": [
+    590,
+    445,
+    46
+   ],
+   "mush": [
+    200,
+    494,
+    55
+   ]
+  },
+  "keep": [
+   "bird",
+   "chest",
+   "mush"
+  ],
+  "neutral": []
+ },
+ "Level1589": {
+  "auto": [],
+  "circles": {
+   "crate": [
+    88,
+    274,
+    31
+   ],
+   "emblem": [
+    360,
+    126,
+    47
+   ],
+   "island": [
+    760,
+    204,
+    96
+   ]
+  },
+  "keep": [
+   "crate",
+   "emblem",
+   "island"
+  ],
+  "neutral": []
+ },
  "Level159": {
   "auto": [],
   "circles": {
@@ -5403,6 +5545,154 @@
    "shirt",
    "stool",
    "tokens"
+  ],
+  "neutral": []
+ },
+ "Level1590": {
+  "auto": [],
+  "circles": {
+   "dome": [
+    480,
+    224,
+    61
+   ],
+   "lily": [
+    518,
+    497,
+    29
+   ],
+   "pot": [
+    250,
+    516,
+    43
+   ],
+   "ruin": [
+    180,
+    256,
+    38
+   ]
+  },
+  "keep": [
+   "dome",
+   "lily",
+   "pot",
+   "ruin"
+  ],
+  "neutral": []
+ },
+ "Level1591": {
+  "auto": [],
+  "circles": {
+   "lamp": [
+    398,
+    456,
+    61
+   ],
+   "pine": [
+    110,
+    300,
+    90
+   ],
+   "scarf": [
+    780,
+    504,
+    34
+   ]
+  },
+  "keep": [
+   "lamp",
+   "pine",
+   "scarf"
+  ],
+  "neutral": []
+ },
+ "Level1592": {
+  "auto": [],
+  "circles": {
+   "anchor": [
+    862,
+    534,
+    47
+   ],
+   "crate": [
+    169,
+    442,
+    36
+   ],
+   "emblem": [
+    380,
+    230,
+    52
+   ],
+   "light": [
+    820,
+    226,
+    34
+   ],
+   "sign": [
+    610,
+    448,
+    35
+   ]
+  },
+  "keep": [
+   "anchor",
+   "crate",
+   "emblem",
+   "light",
+   "sign"
+  ],
+  "neutral": []
+ },
+ "Level1593": {
+  "auto": [],
+  "circles": {
+   "cluster": [
+    239,
+    439,
+    65
+   ],
+   "pillar": [
+    750,
+    192,
+    81
+   ],
+   "slime": [
+    820,
+    569,
+    37
+   ]
+  },
+  "keep": [
+   "cluster",
+   "pillar",
+   "slime"
+  ],
+  "neutral": []
+ },
+ "Level1594": {
+  "auto": [],
+  "circles": {
+   "flag": [
+    780,
+    21,
+    31
+   ],
+   "rock": [
+    160,
+    410,
+    47
+   ],
+   "torch": [
+    540,
+    290,
+    67
+   ]
+  },
+  "keep": [
+   "flag",
+   "rock",
+   "torch"
   ],
   "neutral": []
  },

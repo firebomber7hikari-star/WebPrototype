@@ -69,6 +69,10 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_remake.py    Level1545-1564 the first five levels (06-10) remade in toon / realistic / comic / sketch render styles
   levels_souls.py     Level1565-1574 realistic dark fantasy 1: gothic hunters' city (street / cathedral steps / workshop / red-moon roofs / forbidden woods / fishing village / library / sewer / bridge duel / chapel)
   levels_souls2.py    Level1575-1584 realistic dark fantasy 2: fallen kingdom (shrine campfire / fortress gate / dragon tower / golden capital / lava ruins / poison swamp / catacombs / snow cathedral / throne hall / arena duel)
+  levels_jrpg.py      Level1585-1594 toon-render JRPG (starting village / throne room / slime battle / misty forest / airship / oasis town / snow village / harbour / crystal shrine / demon castle)
+  levels_gta.py       Level1595-1604 realistic open-world crime city (sunset boulevard / gas station / police chase / beach pier / neon strip / garage / docks / desert trailer / mansion pool / skyline)
+  levels_dnd.py       Level1605-1614 American-comic tabletop fantasy (tavern / dungeon / dragon hoard / goblin camp / wizard tower / troll bridge / spider cavern / ruined temple / market / giant pass)
+  levels_persona.py   Level1615-1619 stylish high-contrast school-life RPG look (rooftop / crossing / blue train room / shopping street / golden palace)
   levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
   levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
   levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
@@ -173,6 +177,7 @@ import levels_toon2
 import levels_remake
 import levels_souls
 import levels_souls2
+import levels_jrpg
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -199,7 +204,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_real2.LEVELS + levels_real3.LEVELS
               + levels_inkiso.LEVELS + levels_isostyle.LEVELS + levels_sketch.LEVELS
               + levels_toon2.LEVELS + levels_remake.LEVELS
-              + levels_souls.LEVELS + levels_souls2.LEVELS)
+              + levels_souls.LEVELS + levels_souls2.LEVELS
+              + levels_jrpg.LEVELS)
 
 
 def main():
