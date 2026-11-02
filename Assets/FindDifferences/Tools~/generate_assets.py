@@ -64,6 +64,15 @@ Find Differences asset generator (pure Python, no dependencies).
   orbit3d.py          tiny 3D paper-diorama renderer + builder for camera-orbit levels
   kit.py              prop library + post filters (oil painting, pencil sketch, tilt-shift) for the theme levels
   themes1..5.py       Level29-59 one level per theme (steampunk ... miniature world)
+  levels_real.py      Level1500-1509 realistic style (real.py numpy painter + real_kit.py): lake, coast, forest, canyon, ...
+  levels_toon.py      Level1510-1514 cel-shaded toon render (toon.py on the real.py painter): harbour, windmill, train, attic, sky islands
+  levels_remake.py    Level1545-1564 the first five levels (06-10) remade in toon / realistic / comic / sketch render styles
+  levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
+  levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
+  levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
+  levels_inkiso.py    Level1530-1531 ballpoint-ink sketch, high-angle axonometric camera: clifftop courtyard, fishing harbour
+  levels_real3.py     Level1520-1529 realistic set 3: lavender, canal, coral reef, fjord, rice terraces, oasis, waterfall, harbour, kitchen, vineyard
+  levels_real2.py     Level1515-1519 realistic night gothic with moonlight god rays: ruined castle, great hall, graveyard, vampire crypt, vampire count
   levels_vehicle.py   Level60-62 looking out of a vehicle window (train / taxi / airliner), parallax scenery
   levels_orbit.py     Level28 paper village on a turntable, camera orbits 3 views (120° apart, 6 s each)
   levels_weather.py   Level16-18 (weather cycles: farm storm / mountain snow & fog / beach heat & rain)
@@ -151,6 +160,15 @@ import levels_daily10
 import levels_daily11
 import levels_daily12
 import levels_scroll
+import levels_real
+import levels_toon
+import levels_real2
+import levels_real3
+import levels_inkiso
+import levels_isostyle
+import levels_sketch
+import levels_toon2
+import levels_remake
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -173,7 +191,10 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_daily3.LEVELS + levels_daily4.LEVELS + levels_daily5.LEVELS + levels_daily6.LEVELS
               + levels_daily7.LEVELS + levels_daily8.LEVELS + levels_daily9.LEVELS
               + levels_daily10.LEVELS + levels_daily11.LEVELS + levels_daily12.LEVELS
-              + levels_scroll.LEVELS)
+              + levels_scroll.LEVELS + levels_real.LEVELS + levels_toon.LEVELS
+              + levels_real2.LEVELS + levels_real3.LEVELS
+              + levels_inkiso.LEVELS + levels_isostyle.LEVELS + levels_sketch.LEVELS
+              + levels_toon2.LEVELS + levels_remake.LEVELS)
 
 
 def main():
