@@ -5696,6 +5696,154 @@
   ],
   "neutral": []
  },
+ "Level1595": {
+  "auto": [],
+  "circles": {
+   "billboard": [
+    160,
+    192,
+    101
+   ],
+   "hydrant": [
+    800,
+    572,
+    28
+   ],
+   "palm": [
+    614,
+    327,
+    94
+   ]
+  },
+  "keep": [
+   "billboard",
+   "hydrant",
+   "palm"
+  ],
+  "neutral": []
+ },
+ "Level1596": {
+  "auto": [],
+  "circles": {
+   "neon": [
+    719,
+    263,
+    39
+   ],
+   "pole": [
+    30,
+    74,
+    39
+   ],
+   "pump": [
+    416,
+    346,
+    58
+   ],
+   "tyres": [
+    640,
+    470,
+    39
+   ]
+  },
+  "keep": [
+   "neon",
+   "pole",
+   "pump",
+   "tyres"
+  ],
+  "neutral": []
+ },
+ "Level1597": {
+  "auto": [],
+  "circles": {
+   "beacon": [
+    604,
+    78,
+    65
+   ],
+   "cone": [
+    880,
+    510,
+    31
+   ],
+   "siren": [
+    320,
+    410,
+    65
+   ],
+   "spoiler": [
+    558,
+    424,
+    34
+   ]
+  },
+  "keep": [
+   "beacon",
+   "cone",
+   "siren",
+   "spoiler"
+  ],
+  "neutral": []
+ },
+ "Level1598": {
+  "auto": [],
+  "circles": {
+   "board": [
+    756,
+    502,
+    66
+   ],
+   "roof": [
+    150,
+    408,
+    64
+   ],
+   "towel": [
+    424,
+    550,
+    50
+   ]
+  },
+  "keep": [
+   "board",
+   "roof",
+   "towel"
+  ],
+  "neutral": []
+ },
+ "Level1599": {
+  "auto": [],
+  "circles": {
+   "ladder": [
+    208,
+    160,
+    42
+   ],
+   "taxi": [
+    520,
+    479,
+    43
+   ],
+   "umbrella": [
+    304,
+    372,
+    50
+   ],
+   "window": [
+    854,
+    248,
+    52
+   ]
+  },
+  "keep": [
+   "ladder",
+   "taxi",
+   "umbrella",
+   "window"
+  ],
+  "neutral": []
+ },
  "Level16": {
   "auto": [
    [
@@ -5765,6 +5913,166 @@
    "cooler",
    "jumbo",
    "shirt"
+  ],
+  "neutral": []
+ },
+ "Level1600": {
+  "auto": [],
+  "circles": {
+   "can": [
+    776,
+    552,
+    37
+   ],
+   "drawer": [
+    380,
+    492,
+    58
+   ],
+   "poster": [
+    408,
+    212,
+    70
+   ],
+   "rim": [
+    748,
+    272,
+    34
+   ],
+   "tyres": [
+    100,
+    493,
+    41
+   ]
+  },
+  "keep": [
+   "can",
+   "drawer",
+   "poster",
+   "rim",
+   "tyres"
+  ],
+  "neutral": []
+ },
+ "Level1601": {
+  "auto": [],
+  "circles": {
+   "box": [
+    260,
+    204,
+    47
+   ],
+   "forklift": [
+    540,
+    508,
+    92
+   ],
+   "funnel": [
+    870,
+    176,
+    24
+   ],
+   "lamp": [
+    480,
+    80,
+    38
+   ],
+   "stack": [
+    154,
+    460,
+    52
+   ]
+  },
+  "keep": [
+   "box",
+   "forklift",
+   "funnel",
+   "lamp",
+   "stack"
+  ],
+  "neutral": []
+ },
+ "Level1602": {
+  "auto": [],
+  "circles": {
+   "cactus": [
+    116,
+    346,
+    38
+   ],
+   "tyre": [
+    120,
+    560,
+    41
+   ],
+   "window": [
+    544,
+    388,
+    59
+   ]
+  },
+  "keep": [
+   "cactus",
+   "tyre",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1603": {
+  "auto": [],
+  "circles": {
+   "sculpture": [
+    380,
+    483,
+    56
+   ],
+   "umbrella": [
+    720,
+    432,
+    105
+   ],
+   "window": [
+    172,
+    196,
+    126
+   ]
+  },
+  "keep": [
+   "sculpture",
+   "umbrella",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1604": {
+  "auto": [],
+  "circles": {
+   "lamp": [
+    81,
+    380,
+    63
+   ],
+   "roundel": [
+    470,
+    500,
+    39
+   ],
+   "spire": [
+    394,
+    70,
+    40
+   ],
+   "telescope": [
+    712,
+    478,
+    55
+   ]
+  },
+  "keep": [
+   "lamp",
+   "roundel",
+   "spire",
+   "telescope"
   ],
   "neutral": []
  },
