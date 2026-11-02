@@ -6076,6 +6076,154 @@
   ],
   "neutral": []
  },
+ "Level1605": {
+  "auto": [],
+  "circles": {
+   "antlers": [
+    749,
+    115,
+    101
+   ],
+   "map": [
+    472,
+    464,
+    81
+   ],
+   "notice": [
+    152,
+    202,
+    44
+   ]
+  },
+  "keep": [
+   "antlers",
+   "map",
+   "notice"
+  ],
+  "neutral": []
+ },
+ "Level1606": {
+  "auto": [],
+  "circles": {
+   "chain": [
+    200,
+    94,
+    67
+   ],
+   "gate": [
+    450,
+    270,
+    87
+   ],
+   "gold": [
+    680,
+    566,
+    36
+   ],
+   "torch": [
+    780,
+    190,
+    59
+   ]
+  },
+  "keep": [
+   "chain",
+   "gate",
+   "gold",
+   "torch"
+  ],
+  "neutral": []
+ },
+ "Level1607": {
+  "auto": [],
+  "circles": {
+   "cloak": [
+    104,
+    468,
+    119
+   ],
+   "goblet": [
+    794,
+    496,
+    36
+   ],
+   "horns": [
+    441,
+    204,
+    39
+   ]
+  },
+  "keep": [
+   "cloak",
+   "goblet",
+   "horns"
+  ],
+  "neutral": []
+ },
+ "Level1608": {
+  "auto": [],
+  "circles": {
+   "cage": [
+    816,
+    424,
+    61
+   ],
+   "vest": [
+    590,
+    504,
+    36
+   ],
+   "wings": [
+    420,
+    259,
+    78
+   ]
+  },
+  "keep": [
+   "cage",
+   "vest",
+   "wings"
+  ],
+  "neutral": []
+ },
+ "Level1609": {
+  "auto": [],
+  "circles": {
+   "brew": [
+    250,
+    460,
+    76
+   ],
+   "chart": [
+    740,
+    28,
+    103
+   ],
+   "moon": [
+    471,
+    138,
+    33
+   ],
+   "owl": [
+    150,
+    34,
+    46
+   ],
+   "scroll": [
+    702,
+    424,
+    32
+   ]
+  },
+  "keep": [
+   "brew",
+   "chart",
+   "moon",
+   "owl",
+   "scroll"
+  ],
+  "neutral": []
+ },
  "Level161": {
   "auto": [],
   "circles": {
@@ -6105,6 +6253,153 @@
    "parasol",
    "shirt",
    "sign"
+  ],
+  "neutral": []
+ },
+ "Level1610": {
+  "auto": [
+   [
+    796,
+    126,
+    150,
+    "hue",
+    809,
+    174,
+    66
+   ],
+   [
+    186,
+    266,
+    210,
+    "hue",
+    226,
+    292,
+    60
+   ]
+  ],
+  "circles": {
+   "frog": [
+    740,
+    512,
+    43
+   ],
+   "hat": [
+    516,
+    153,
+    89
+   ]
+  },
+  "keep": [
+   "frog",
+   "hat"
+  ],
+  "neutral": []
+ },
+ "Level1611": {
+  "auto": [],
+  "circles": {
+   "bundle": [
+    640,
+    63,
+    70
+   ],
+   "crystal": [
+    780,
+    430,
+    80
+   ],
+   "web": [
+    370,
+    400,
+    100
+   ]
+  },
+  "keep": [
+   "bundle",
+   "crystal",
+   "web"
+  ],
+  "neutral": []
+ },
+ "Level1612": {
+  "auto": [],
+  "circles": {
+   "idol": [
+    450,
+    145,
+    37
+   ],
+   "parrot": [
+    824,
+    128,
+    54
+   ],
+   "robe": [
+    606,
+    476,
+    125
+   ]
+  },
+  "keep": [
+   "idol",
+   "parrot",
+   "robe"
+  ],
+  "neutral": []
+ },
+ "Level1613": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    450,
+    344,
+    55
+   ],
+   "door": [
+    102,
+    262,
+    46
+   ],
+   "shield": [
+    820,
+    352,
+    43
+   ]
+  },
+  "keep": [
+   "banner",
+   "door",
+   "shield"
+  ],
+  "neutral": []
+ },
+ "Level1614": {
+  "auto": [
+   [
+    46,
+    316,
+    150,
+    "hue",
+    60,
+    324,
+    37
+   ]
+  ],
+  "circles": {
+   "boulder": [
+    780,
+    228,
+    55
+   ],
+   "cape": [
+    220,
+    500,
+    40
+   ]
+  },
+  "keep": [
+   "boulder",
+   "cape"
   ],
   "neutral": []
  },
