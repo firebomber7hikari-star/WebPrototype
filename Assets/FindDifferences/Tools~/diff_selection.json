@@ -4711,6 +4711,166 @@
   ],
   "neutral": []
  },
+ "Level1565": {
+  "auto": [],
+  "circles": {
+   "coffin": [
+    124,
+    505,
+    79
+   ],
+   "scarf": [
+    738,
+    329,
+    28
+   ],
+   "sign": [
+    132,
+    252,
+    36
+   ],
+   "window": [
+    882,
+    128,
+    55
+   ]
+  },
+  "keep": [
+   "coffin",
+   "scarf",
+   "sign",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1566": {
+  "auto": [],
+  "circles": {
+   "crow": [
+    610,
+    520,
+    37
+   ],
+   "lantern": [
+    230,
+    554,
+    57
+   ],
+   "statue": [
+    750,
+    246,
+    37
+   ],
+   "window": [
+    220,
+    241,
+    71
+   ]
+  },
+  "keep": [
+   "crow",
+   "lantern",
+   "statue",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1567": {
+  "auto": [],
+  "circles": {
+   "axe": [
+    138,
+    80,
+    41
+   ],
+   "book": [
+    600,
+    180,
+    38
+   ],
+   "gear": [
+    229,
+    360,
+    40
+   ],
+   "pistol": [
+    356,
+    173,
+    43
+   ],
+   "tongs": [
+    734,
+    402,
+    51
+   ]
+  },
+  "keep": [
+   "axe",
+   "book",
+   "gear",
+   "pistol",
+   "tongs"
+  ],
+  "neutral": []
+ },
+ "Level1568": {
+  "auto": [],
+  "circles": {
+   "clock": [
+    420,
+    178,
+    57
+   ],
+   "crow": [
+    800,
+    379,
+    35
+   ],
+   "wing": [
+    191,
+    372,
+    36
+   ]
+  },
+  "keep": [
+   "clock",
+   "crow",
+   "wing"
+  ],
+  "neutral": []
+ },
+ "Level1569": {
+  "auto": [],
+  "circles": {
+   "cage": [
+    760,
+    225,
+    43
+   ],
+   "eyes": [
+    869,
+    440,
+    28
+   ],
+   "hut": [
+    542,
+    352,
+    36
+   ],
+   "lamp": [
+    278,
+    354,
+    65
+   ]
+  },
+  "keep": [
+   "cage",
+   "eyes",
+   "hut",
+   "lamp"
+  ],
+  "neutral": []
+ },
  "Level157": {
   "auto": [],
   "circles": {
@@ -4734,6 +4894,290 @@
    "flag",
    "pit",
    "tree"
+  ],
+  "neutral": []
+ },
+ "Level1570": {
+  "auto": [],
+  "circles": {
+   "barrel": [
+    870,
+    560,
+    49
+   ],
+   "boat": [
+    421,
+    497,
+    85
+   ],
+   "hut": [
+    105,
+    220,
+    45
+   ],
+   "light": [
+    780,
+    160,
+    65
+   ]
+  },
+  "keep": [
+   "barrel",
+   "boat",
+   "hut",
+   "light"
+  ],
+  "neutral": []
+ },
+ "Level1571": {
+  "auto": [],
+  "circles": {
+   "chand": [
+    480,
+    68,
+    32
+   ],
+   "globe": [
+    780,
+    500,
+    76
+   ],
+   "stack": [
+    90,
+    544,
+    35
+   ]
+  },
+  "keep": [
+   "chand",
+   "globe",
+   "stack"
+  ],
+  "neutral": []
+ },
+ "Level1572": {
+  "auto": [],
+  "circles": {
+   "crate": [
+    428,
+    505,
+    42
+   ],
+   "lamp": [
+    110,
+    262,
+    85
+   ],
+   "valve": [
+    800,
+    250,
+    37
+   ]
+  },
+  "keep": [
+   "crate",
+   "lamp",
+   "valve"
+  ],
+  "neutral": []
+ },
+ "Level1573": {
+  "auto": [],
+  "circles": {
+   "lamp": [
+    90,
+    260,
+    67
+   ],
+   "spire": [
+    740,
+    223,
+    108
+   ],
+   "statue": [
+    330,
+    374,
+    60
+   ]
+  },
+  "keep": [
+   "lamp",
+   "spire",
+   "statue"
+  ],
+  "neutral": []
+ },
+ "Level1574": {
+  "auto": [],
+  "circles": {
+   "censer": [
+    640,
+    288,
+    30
+   ],
+   "chalice": [
+    448,
+    322,
+    29
+   ],
+   "glass": [
+    185,
+    236,
+    66
+   ]
+  },
+  "keep": [
+   "censer",
+   "chalice",
+   "glass"
+  ],
+  "neutral": []
+ },
+ "Level1575": {
+  "auto": [],
+  "circles": {
+   "arch": [
+    612,
+    160,
+    63
+   ],
+   "bird": [
+    846,
+    202,
+    35
+   ],
+   "pot": [
+    580,
+    538,
+    35
+   ],
+   "shield": [
+    240,
+    411,
+    52
+   ]
+  },
+  "keep": [
+   "arch",
+   "bird",
+   "pot",
+   "shield"
+  ],
+  "neutral": []
+ },
+ "Level1576": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    280,
+    250,
+    63
+   ],
+   "crow": [
+    336,
+    542,
+    34
+   ],
+   "pennant": [
+    808,
+    184,
+    36
+   ],
+   "slit": [
+    620,
+    344,
+    32
+   ]
+  },
+  "keep": [
+   "banner",
+   "crow",
+   "pennant",
+   "slit"
+  ],
+  "neutral": []
+ },
+ "Level1577": {
+  "auto": [],
+  "circles": {
+   "gap": [
+    544,
+    408,
+    33
+   ],
+   "shield": [
+    248,
+    346,
+    31
+   ],
+   "window": [
+    739,
+    244,
+    55
+   ]
+  },
+  "keep": [
+   "gap",
+   "shield",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1578": {
+  "auto": [],
+  "circles": {
+   "emblem": [
+    50,
+    280,
+    81
+   ],
+   "finial": [
+    450,
+    90,
+    41
+   ],
+   "lamp": [
+    314,
+    440,
+    39
+   ],
+   "plume": [
+    824,
+    92,
+    57
+   ]
+  },
+  "keep": [
+   "emblem",
+   "finial",
+   "lamp",
+   "plume"
+  ],
+  "neutral": []
+ },
+ "Level1579": {
+  "auto": [],
+  "circles": {
+   "cage": [
+    450,
+    334,
+    44
+   ],
+   "fall": [
+    834,
+    530,
+    78
+   ],
+   "pillar": [
+    150,
+    540,
+    124
+   ]
+  },
+  "keep": [
+   "cage",
+   "fall",
+   "pillar"
   ],
   "neutral": []
  },
@@ -4766,6 +5210,161 @@
    "moon",
    "ring",
    "shield"
+  ],
+  "neutral": []
+ },
+ "Level1580": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    330,
+    484,
+    31
+   ],
+   "hut": [
+    722,
+    350,
+    49
+   ],
+   "mush": [
+    83,
+    526,
+    45
+   ]
+  },
+  "keep": [
+   "basket",
+   "hut",
+   "mush"
+  ],
+  "neutral": []
+ },
+ "Level1581": {
+  "auto": [],
+  "circles": {
+   "plaque": [
+    450,
+    140,
+    49
+   ],
+   "sword": [
+    449,
+    466,
+    129
+   ],
+   "urn": [
+    760,
+    436,
+    39
+   ]
+  },
+  "keep": [
+   "plaque",
+   "sword",
+   "urn"
+  ],
+  "neutral": []
+ },
+ "Level1582": {
+  "auto": [
+   [
+    786,
+    536,
+    150,
+    "hue",
+    802,
+    548,
+    37
+   ],
+   [
+    76,
+    406,
+    210,
+    "flat",
+    82,
+    410,
+    35
+   ]
+  ],
+  "circles": {
+   "bell": [
+    830,
+    210,
+    36
+   ],
+   "window": [
+    466,
+    314,
+    94
+   ]
+  },
+  "keep": [
+   "bell",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1583": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    50,
+    186,
+    33
+   ],
+   "helm": [
+    212,
+    358,
+    31
+   ],
+   "shield": [
+    850,
+    337,
+    50
+   ],
+   "trim": [
+    450,
+    512,
+    101
+   ]
+  },
+  "keep": [
+   "banner",
+   "helm",
+   "shield",
+   "trim"
+  ],
+  "neutral": []
+ },
+ "Level1584": {
+  "auto": [],
+  "circles": {
+   "column": [
+    840,
+    442,
+    51
+   ],
+   "pennant": [
+    133,
+    206,
+    33
+   ],
+   "shield": [
+    221,
+    426,
+    46
+   ],
+   "sword": [
+    600,
+    510,
+    57
+   ]
+  },
+  "keep": [
+   "column",
+   "pennant",
+   "shield",
+   "sword"
   ],
   "neutral": []
  },

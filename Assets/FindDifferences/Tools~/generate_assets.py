@@ -67,6 +67,8 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_real.py      Level1500-1509 realistic style (real.py numpy painter + real_kit.py): lake, coast, forest, canyon, ...
   levels_toon.py      Level1510-1514 cel-shaded toon render (toon.py on the real.py painter): harbour, windmill, train, attic, sky islands
   levels_remake.py    Level1545-1564 the first five levels (06-10) remade in toon / realistic / comic / sketch render styles
+  levels_souls.py     Level1565-1574 realistic dark fantasy 1: gothic hunters' city (street / cathedral steps / workshop / red-moon roofs / forbidden woods / fishing village / library / sewer / bridge duel / chapel)
+  levels_souls2.py    Level1575-1584 realistic dark fantasy 2: fallen kingdom (shrine campfire / fortress gate / dragon tower / golden capital / lava ruins / poison swamp / catacombs / snow cathedral / throne hall / arena duel)
   levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
   levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
   levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
@@ -169,6 +171,8 @@ import levels_isostyle
 import levels_sketch
 import levels_toon2
 import levels_remake
+import levels_souls
+import levels_souls2
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -194,7 +198,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_scroll.LEVELS + levels_real.LEVELS + levels_toon.LEVELS
               + levels_real2.LEVELS + levels_real3.LEVELS
               + levels_inkiso.LEVELS + levels_isostyle.LEVELS + levels_sketch.LEVELS
-              + levels_toon2.LEVELS + levels_remake.LEVELS)
+              + levels_toon2.LEVELS + levels_remake.LEVELS
+              + levels_souls.LEVELS + levels_souls2.LEVELS)
 
 
 def main():
