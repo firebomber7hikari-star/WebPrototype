@@ -45,7 +45,7 @@ def vscroll(eid, unit, step, up=True, x0=-20, x1=W + 20, **kw):
         for k in ks:
             unit(c, m, k * step)
     return E(eid, d, bbox=(x0, -step - 40, x1, (max(ks) + 1) * step + 40),
-             anim=dict(driftVelocity=(0, -step / LOOP if up else step / LOOP), driftLength=step), **kw)
+             anim=dict(driftVelocity=(0, step / LOOP if up else -step / LOOP), driftLength=step), **kw)   # anim y points up
 
 
 def focus(eid, draw, amp=(0, 3), speed=1.0, **kw):
@@ -148,7 +148,7 @@ def l1000_train(c, m):
 L1000_EL = [
     hscroll("hills", l1000_hills, 450, 260, 440),
     hscroll("near", l1000_near, 900, 460, 600),
-] + [puff("smoke", 746, 316, (-70, -30), 200, i) for i in range(3)] + [
+] + [puff("smoke", 746, 316, (-70, 30), 200, i) for i in range(3)] + [
     focus("train", l1000_train, amp=(0, 1.5), speed=2.0),
 ]
 L1000_DIFFS = [("sun", 810, 80, 0), ("balloon", 140, 100, 0), ("mill", 474, 196, 0), ("rider", 175, 396, 0),

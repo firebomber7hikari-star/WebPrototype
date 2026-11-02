@@ -56,7 +56,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: -60}
+      driftVelocity: {x: 0, y: 60}
       driftLength: 600
       driftStart: 0
       driftFade: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: -60}
+      driftVelocity: {x: 0, y: 60}
       driftLength: 600
       driftStart: 0
       driftFade: 0
