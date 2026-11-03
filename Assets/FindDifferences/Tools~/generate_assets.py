@@ -77,6 +77,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_gothic5.py   Level1624-1630 realistic gothic moonlight set 3 (clock tower / cloister / alchemist cellar / portrait gallery / ballroom / cliff monastery / Victorian station)
   levels_toon3.py     Level1631-1636 toon-render set 3 (witch's cottage / ghost ship / inn room / windmill fields / treehouse / pumpkin patch)
   levels_gamecontent7.py Level1637-1639 inside video games part 7 (pixel dungeon / snowfield turn-based battle / autumn farm sim)
+  levels_dnd2.py      Level1640-1641 American-comic tabletop-fantasy interiors 2 (dwarven forge / thieves' hideout)
   levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
   levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
   levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
@@ -189,6 +190,7 @@ import levels_souls_toon
 import levels_gothic5
 import levels_toon3
 import levels_gamecontent7
+import levels_dnd2
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -219,7 +221,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_jrpg.LEVELS + levels_gta.LEVELS
               + levels_dnd.LEVELS + levels_persona.LEVELS
               + levels_souls_toon.LEVELS + levels_gothic5.LEVELS
-              + levels_toon3.LEVELS + levels_gamecontent7.LEVELS)
+              + levels_toon3.LEVELS + levels_gamecontent7.LEVELS
+              + levels_dnd2.LEVELS)
 
 
 def main():

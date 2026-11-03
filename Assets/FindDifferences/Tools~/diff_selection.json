@@ -7236,6 +7236,70 @@
   ],
   "neutral": []
  },
+ "Level1640": {
+  "auto": [],
+  "circles": {
+   "axe": [
+    120,
+    270,
+    88
+   ],
+   "blade": [
+    612,
+    478,
+    56
+   ],
+   "bucket": [
+    220,
+    539,
+    39
+   ],
+   "shield": [
+    780,
+    260,
+    68
+   ]
+  },
+  "keep": [
+   "axe",
+   "blade",
+   "bucket",
+   "shield"
+  ],
+  "neutral": []
+ },
+ "Level1641": {
+  "auto": [],
+  "circles": {
+   "coins": [
+    320,
+    580,
+    46
+   ],
+   "dice": [
+    520,
+    460,
+    26
+   ],
+   "goblet": [
+    844,
+    494,
+    35
+   ],
+   "poster": [
+    224,
+    148,
+    41
+   ]
+  },
+  "keep": [
+   "coins",
+   "dice",
+   "goblet",
+   "poster"
+  ],
+  "neutral": []
+ },
  "Level165": {
   "auto": [],
   "circles": {
