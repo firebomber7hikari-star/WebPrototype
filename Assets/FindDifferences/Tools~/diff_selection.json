@@ -6693,6 +6693,181 @@
   ],
   "neutral": []
  },
+ "Level1624": {
+  "auto": [],
+  "circles": {
+   "crow": [
+    329,
+    50,
+    36
+   ],
+   "lantern": [
+    559,
+    502,
+    60
+   ],
+   "spoke": [
+    84,
+    318,
+    43
+   ]
+  },
+  "keep": [
+   "crow",
+   "lantern",
+   "spoke"
+  ],
+  "neutral": []
+ },
+ "Level1625": {
+  "auto": [],
+  "circles": {
+   "crow": [
+    199,
+    102,
+    34
+   ],
+   "ivy": [
+    860,
+    158,
+    81
+   ],
+   "lantern": [
+    620,
+    290,
+    52
+   ],
+   "urn": [
+    302,
+    428,
+    36
+   ]
+  },
+  "keep": [
+   "crow",
+   "ivy",
+   "lantern",
+   "urn"
+  ],
+  "neutral": []
+ },
+ "Level1626": {
+  "auto": [],
+  "circles": {
+   "cat": [
+    824,
+    526,
+    63
+   ],
+   "flask": [
+    400,
+    367,
+    43
+   ],
+   "jar": [
+    738,
+    184,
+    31
+   ]
+  },
+  "keep": [
+   "cat",
+   "flask",
+   "jar"
+  ],
+  "neutral": []
+ },
+ "Level1627": {
+  "auto": [],
+  "circles": {
+   "frame": [
+    834,
+    180,
+    118
+   ],
+   "plume": [
+    538,
+    257,
+    29
+   ],
+   "portrait": [
+    130,
+    197,
+    83
+   ]
+  },
+  "keep": [
+   "frame",
+   "plume",
+   "portrait"
+  ],
+  "neutral": []
+ },
+ "Level1628": {
+  "auto": [
+   [
+    456,
+    426,
+    150,
+    "hue",
+    478,
+    442,
+    39
+   ],
+   [
+    736,
+    126,
+    210,
+    "flat",
+    756,
+    116,
+    62
+   ]
+  ],
+  "circles": {
+   "lid": [
+    194,
+    380,
+    115
+   ],
+   "sheet": [
+    755,
+    468,
+    91
+   ]
+  },
+  "keep": [
+   "lid",
+   "sheet"
+  ],
+  "neutral": []
+ },
+ "Level1629": {
+  "auto": [],
+  "circles": {
+   "boat": [
+    590,
+    410,
+    42
+   ],
+   "lamp": [
+    370,
+    334,
+    40
+   ],
+   "window": [
+    160,
+    196,
+    52
+   ]
+  },
+  "keep": [
+   "boat",
+   "lamp",
+   "window"
+  ],
+  "neutral": []
+ },
  "Level163": {
   "auto": [],
   "circles": {
@@ -6722,6 +6897,32 @@
    "flag",
    "runner",
    "screen"
+  ],
+  "neutral": []
+ },
+ "Level1630": {
+  "auto": [],
+  "circles": {
+   "cab": [
+    570,
+    369,
+    61
+   ],
+   "case": [
+    356,
+    466,
+    27
+   ],
+   "lamp": [
+    873,
+    439,
+    54
+   ]
+  },
+  "keep": [
+   "cab",
+   "case",
+   "lamp"
   ],
   "neutral": []
  },
