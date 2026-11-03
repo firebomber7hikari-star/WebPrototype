@@ -161,8 +161,8 @@ MonoBehaviour:
   - id: fan0
     spriteOriginal: {fileID: 21300000, guid: 8ba018dd486741852bf9b0004eccde43, type: 3}
     spriteModified: {fileID: 21300000, guid: 8ba018dd486741852bf9b0004eccde43, type: 3}
-    position: {x: 457.2, y: 406}
-    pivot: {x: 0.504, y: 0.5}
+    position: {x: 439.2, y: 393.4}
+    pivot: {x: 0.5077, y: 0.4963}
     animOriginal:
       phase: 0
       bobAmplitude: {x: 0, y: 0}
@@ -223,8 +223,8 @@ MonoBehaviour:
   - id: fan1
     spriteOriginal: {fileID: 21300000, guid: 0d0869904d2abad4838ee551d43472ae, type: 3}
     spriteModified: {fileID: 21300000, guid: 0d0869904d2abad4838ee551d43472ae, type: 3}
-    position: {x: 507.6, y: 380.8}
-    pivot: {x: 0.502, y: 0.4923}
+    position: {x: 489.6, y: 368.2}
+    pivot: {x: 0.5037, y: 0.5077}
     animOriginal:
       phase: 0
       bobAmplitude: {x: 0, y: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   - id: vent0
     spriteOriginal: {fileID: 21300000, guid: 579c20ded0c2a37282effeb44e7e49b3, type: 3}
     spriteModified: {fileID: 21300000, guid: 579c20ded0c2a37282effeb44e7e49b3, type: 3}
-    position: {x: 458, y: 411}
+    position: {x: 458, y: 425.5}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
       phase: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
   - id: vent1
     spriteOriginal: {fileID: 21300000, guid: f9253da617f5ab7eb8bc0080fec6d93d, type: 3}
     spriteModified: {fileID: 21300000, guid: f9253da617f5ab7eb8bc0080fec6d93d, type: 3}
-    position: {x: 458, y: 411}
+    position: {x: 458, y: 425.5}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
       phase: 0.3333
@@ -719,7 +719,7 @@ MonoBehaviour:
   - id: vent2
     spriteOriginal: {fileID: 21300000, guid: a62b070d828c4e09dfd21e6247f665d3, type: 3}
     spriteModified: {fileID: 21300000, guid: a62b070d828c4e09dfd21e6247f665d3, type: 3}
-    position: {x: 458, y: 411}
+    position: {x: 458, y: 425.5}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
       phase: 0.6667

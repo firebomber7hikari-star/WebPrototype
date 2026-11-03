@@ -471,9 +471,10 @@ def l33_drone(c, m):
 L33_EL = [
     E("beam", l33_beam, pivot=(840, 310), daynight="untinted", anim=dict(swingAngle=25, swingSpeed=0.12), animB=dict(swingAngle=-25, swingSpeed=0.12)),
     E("drone", l33_drone, show="A", pivot=(380, 460), anim=dict(orbitRadius=(40, 30), orbitSpeed=0.1)),
-    E("ambulance", lambda c, m: (piece(c, [RRect(0, 288, 70, 312, 4)], (250, 250, 250), border=1.5, shadow=(4, 6, 5, 0.45)),
-                                 soft_union(c, [Circ(60, 300, 4)], (80, 140, 255), 0.8, spread=10)),
-      anim=drift_across(0, 70, 50)),
+    # the ambulance drives down the empty north-south road (the east-west road holds the parked trucks)
+    E("ambulance", lambda c, m: (piece(c, [RRect(442, 0, 466, 70, 4)], (250, 250, 250), border=1.5, shadow=(4, 6, 5, 0.45)),
+                                 soft_union(c, [Circ(454, 60, 4)], (80, 140, 255), 0.8, spread=10)),
+      anim=dict(driftVelocity=(0, -50), driftLength=H + 90, driftStart=-80, phase=80 / (H + 90))),
 ] + splash_rings("ripple", [(200, 200, 8), (620, 300, 9), (430, 500, 8), (760, 380, 8), (250, 540, 9)]) + [
     rain_layer("rain", 33, 110, 10, 1.4, 0.7, 170, step=(24, 64)),
     fog_layer("fog1", 33, 60, 300, 0.5, 9, 1, col=(220, 224, 220)),

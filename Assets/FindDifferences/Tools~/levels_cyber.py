@@ -237,7 +237,10 @@ def l23_background(c, d):
         flat(c, Thick(a[0], a[1], b[0], b[1], 5), mark)
     # AC units (fans are elements)
     for X, Y in FANS23:
-        iso_box(c, X - 0.5, Y - 0.5, 0, 1.0, 1.0, 0.6, (205, 205, 214))
+        iso_box(c, X - 0.5, Y - 0.5, 0, 1.0, 1.0, 1.0, (205, 205, 214))
+        fx, fy = P(X, Y + 0.5, 0.5)
+        flat(c, Circ(fx, fy, 15), (60, 62, 76))
+        c.ellipse_ring(fx, fy, 15, 15, 2.4, (150, 152, 165))
     # water tank (colour differs)
     for lx, ly in ((-0.4, -0.4), (0.4, -0.4), (-0.4, 0.4), (0.4, 0.4)):
         a, b = P(TANK23[0] + lx, TANK23[1] + ly, 0), P(TANK23[0] + lx, TANK23[1] + ly, 0.6)
@@ -322,14 +325,14 @@ def l23_sign(c, m):
 
 
 def l23_fan(X, Y):
+    """Fan blades on the front face of an AC unit (a round, screen-facing fan, so a plain rotation is correct)."""
     def d(c, m):
-        cx, cy = P(X, Y, 0.6)
-        c.ellipse(cx, cy, 24, 12, (60, 62, 76))
+        cx, cy = P(X, Y + 0.5, 0.5)
         for k in range(4):
             a = math.radians(k * 90 + 20)
-            flat(c, Poly([(cx, cy), (cx + 22 * math.cos(a), cy + 11 * math.sin(a)), (cx + 22 * math.cos(a + 0.6), cy + 11 * math.sin(a + 0.6))]),
+            flat(c, Poly([(cx, cy), (cx + 13 * math.cos(a), cy + 13 * math.sin(a)), (cx + 13 * math.cos(a + 0.7), cy + 13 * math.sin(a + 0.7))]),
                  (170, 172, 185))
-        flat(c, Ell(cx, cy, 4, 2), (220, 220, 230))
+        flat(c, Circ(cx, cy, 3), (220, 220, 230))
     return d
 
 
@@ -374,9 +377,8 @@ L23_ELEMENTS = [
     E("city_lights", l23_city_lights, daynight="night"),
     E("flyer", l23_flyer, daynight="untinted", anim=dict(drift_across(40, 150, 40), bobAmplitude=(0, 6), bobSpeed=0.3)),
 ] + [
-    # fan blades: the second fan spins the other way in B
-    E("fan%d" % i, l23_fan(X, Y), pivot=P(X, Y, 0.6), anim=dict(rotateSpeed=-240),
-      animB=dict(rotateSpeed=240 if i == 1 else -240))
+    # fan blades (same spin in both pictures)
+    E("fan%d" % i, l23_fan(X, Y), pivot=P(X, Y + 0.5, 0.5), anim=dict(rotateSpeed=-240))
     for i, (X, Y) in enumerate(FANS23)
 ] + [
     E("dish", l23_dish, pivot=(P(*DISH23)[0], P(*DISH23)[1] - 34), anim=dict(spinSpeed=0.12, spinShade=0.3), animB={}),
@@ -384,13 +386,12 @@ L23_ELEMENTS = [
     E("sign", l23_sign, daynight="night", anim=dict(twinkle=0.12, twinkleSpeed=2.0)),
     E("drone", l23_drone, show="A", pivot=P(5.6, 5.8, 2.2), anim=dict(bobAmplitude=(0, 10), bobSpeed=0.35, swingAngle=4, swingSpeed=0.3)),
     E("laundry", l23_laundry, variant=True, pivot=P(LINE23[0][0], LINE23[0][1], 1.4), anim=dict(swingAngle=2, swingSpeed=0.5)),
-] + smoke("vent", *P(2.2, 2.0, 0.8), n=3, col=(235, 235, 240), r=6) + [
+] + smoke("vent", *P(2.2, 2.0, 1.2), n=3, col=(235, 235, 240), r=6) + [
     fog_layer("smog1", 23, 200, 380, 0.5, 10, 1, col=(206, 214, 200)),
     fog_layer("smog2", 24, 380, 560, 0.55, 14, -1, col=(206, 214, 200)),
 ]
 
 L23_DIFFS = [
-    ("fan", int(P(*FANS23[1], 0.6)[0]), int(P(*FANS23[1], 0.6)[1]), 26),
     ("dish", int(P(*DISH23)[0] + 4), int(P(*DISH23)[1] - 34), 26),
     ("tank", int(P(*TANK23, 1.3)[0]), int(P(*TANK23, 1.3)[1]) - 4, 48),
     ("planters", int(P(1.3, 5.5, 0.3)[0]), int(P(1.3, 5.5, 0.3)[1] - 4), 38),
@@ -514,12 +515,13 @@ def l24_drone(x, y):
 
 
 L24_ELEMENTS = [
-    E("carE", l24_car(150, 314, "R", (230, 70, 110)), daynight="untinted", anim=drift_across(126, 174, 70)),
-    E("carW", l24_car(700, 286, "L", (60, 160, 240)), daynight="untinted", anim=drift_across(676, 724, -55)),
+    # one 16 s traffic cycle; the north-south cars are phased so they never share the crossing with the others
+    E("carE", l24_car(150, 314, "R", (230, 70, 110)), daynight="untinted", anim=drift_across(126, 174, 60.5)),
+    E("carW", l24_car(700, 286, "L", (60, 160, 240)), daynight="untinted", anim=drift_across(676, 724, -60.5)),
     E("carS", l24_car(434, 120, "D", (250, 200, 70)), daynight="untinted",
-      anim=dict(driftVelocity=(0, -60), driftLength=700, driftStart=-160, phase=160 / 700)),
+      anim=dict(driftVelocity=(0, -43.75), driftLength=700, driftStart=-160, phase=0.655)),
     E("carN", l24_car(466, 480, "U", (120, 230, 140)), daynight="untinted",
-      anim=dict(driftVelocity=(0, 50), driftLength=700, driftStart=-160, phase=160 / 700)),
+      anim=dict(driftVelocity=(0, 43.75), driftLength=700, driftStart=-160, phase=0.68)),
     E("holo", l24_holo, pivot=(740, 125), daynight="untinted", anim=dict(rotateSpeed=50, twinkle=0.25, twinkleSpeed=1.4),
       animB=dict(rotateSpeed=-50, twinkle=0.25, twinkleSpeed=1.4)),
     E("roofsign", l24_sign, variant=True, daynight="untinted", anim=dict(twinkle=0.2, twinkleSpeed=2.2)),

@@ -161,10 +161,10 @@ MonoBehaviour:
   - id: ambulance
     spriteOriginal: {fileID: 21300000, guid: 2b6305155e6af8634be60f445691b39e, type: 3}
     spriteModified: {fileID: 21300000, guid: 2b6305155e6af8634be60f445691b39e, type: 3}
-    position: {x: 39, y: 294.5}
+    position: {x: 458, y: 559.5}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
-      phase: 0.0808
+      phase: 0.1159
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 50, y: 0}
-      driftLength: 990
+      driftVelocity: {x: 0, y: -50}
+      driftLength: 690
       driftStart: -80
       driftFade: 0
       driftGrow: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
       blinkInterval: 0
       blinkDuration: 0.3
     animModified:
-      phase: 0.0808
+      phase: 0.1159
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 50, y: 0}
-      driftLength: 990
+      driftVelocity: {x: 0, y: -50}
+      driftLength: 690
       driftStart: -80
       driftFade: 0
       driftGrow: 0

@@ -60,8 +60,6 @@ def l1640(g, d):
                weapon=False)
     S.obj(g, Seg(360, 470, 410, 420, 4), (140, 100, 60), 31)
     S.obj(g, Box(400, 404, 430, 426, 3), (110, 110, 120), 32)
-    adventurer(g, 470, 600, 180, kind="fighter", main=(60, 90, 70), trim=(150, 150, 160), face=1, seed=33, beard=True,
-               hair=(220, 220, 220) if "beard" not in d else (200, 80, 40), weapon=False)
     barrel(S, g, 120, 560, r=26, h=60, seed=34)
     if "bucket" not in d:
         S.obj(g, Union([Box(200, 520, 240, 560, 4), Seg(200, 520, 240, 520, 2)]), (120, 120, 130), 35, hi=True)
@@ -76,8 +74,11 @@ L1640_EL = [
       pivot=(450, 430), daynight="untinted", anim=dict(stretch=(0.06, 0.25), scaleSpeed=2.2)),
     E("hammer", el(lambda g, m: S.obj(g, Union([Seg(660, 360, 640, 430, 4), Box(626, 420, 660, 440, 3)]), (120, 120, 130), 41)), pivot=(660, 360),
       anim=dict(swingAngle=14, swingSpeed=0.8)),
+    # the smith in front of the furnace is a layer above the fire, so the flames never cover his body
+    E("smith", el(lambda g, m: (adventurer(g, 470, 600, 180, kind="fighter", main=(60, 90, 70), trim=(150, 150, 160), face=1, seed=33, beard=True,
+                                           hair=(220, 220, 220), weapon=False), S.finish(g)))),
 ]
-L1640_DIFFS = [("blade", 612, 478, 0), ("axe", 125, 270, 0), ("shield", 780, 260, 0), ("gem", 770, 452, 0), ("beard", 472, 430, 0), ("bucket", 220, 540, 0)]
+L1640_DIFFS = [("blade", 612, 478, 0), ("axe", 125, 270, 0), ("shield", 780, 260, 0), ("gem", 770, 452, 0), ("bucket", 220, 540, 0)]
 
 
 # =================================================================== Level 1641 thieves' hideout

@@ -457,11 +457,12 @@ L9_ELEMENTS = [
       anim=dict(bobAmplitude=(48, 0), bobSpeed=0.08, spinSpeed=0.08, spinSnap=0.85), animB={}),
     E("spray", l9_spray, pivot=FOUNTAIN, anim=dict(rotateSpeed=45, pulse=0.08, scaleSpeed=0.8),
       animB=dict(rotateSpeed=-45, pulse=0.08, scaleSpeed=0.8)),
-    # traffic: two lanes each way, cars loop across the picture
-    E("car_e", lambda c, m: car(c, 200, ROAD_Y + 14, "R", (230, 80, 80)), anim=drift_line(180, 220, W, 55, sign=1)),
-    E("car_w", lambda c, m: car(c, 600, ROAD_Y - 14, "L", (80, 140, 220)), anim=drift_line(580, 620, W, 45, sign=-1)),
-    E("car_s", lambda c, m: car(c, ROAD_X - 14, 120, "D", (250, 200, 70)), anim=drift_line(100, 140, H, 40, axis="y", sign=1)),
-    E("car_n", lambda c, m: car(c, ROAD_X + 14, 480, "U", (120, 190, 120)), anim=drift_line(460, 500, H, 50, axis="y", sign=-1)),
+    # traffic: two lanes each way on one 20 s cycle; the north-south cars are phased so that they never share the
+    # crossing with the east-west cars (checked by sampling the whole cycle)
+    E("car_e", lambda c, m: car(c, 200, ROAD_Y + 14, "R", (230, 80, 80)), anim=drift_line(180, 220, W, 48, sign=1)),
+    E("car_w", lambda c, m: car(c, 600, ROAD_Y - 14, "L", (80, 140, 220)), anim=drift_line(580, 620, W, 48, sign=-1)),
+    E("car_s", lambda c, m: car(c, ROAD_X - 14, 120, "D", (250, 200, 70)), anim=dict(drift_line(100, 140, H, 33, axis="y", sign=1), phase=0.745)),
+    E("car_n", lambda c, m: car(c, ROAD_X + 14, 480, "U", (120, 190, 120)), anim=dict(drift_line(460, 500, H, 33, axis="y", sign=-1), phase=0.71)),
     E("balloon_shadow", l9_balloon_shadow, anim=dict(BALLOON_MOVE, pulse=-0.08, scaleSpeed=0.12, twinkle=0.4, twinkleSpeed=0.12)),
     E("balloon", l9_balloon, pivot=(520, 440), anim=dict(BALLOON_MOVE, pulse=0.08, scaleSpeed=0.12, rotateSpeed=6)),
 ] + [

@@ -48,7 +48,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 70, y: 0}
+      driftVelocity: {x: 60.5, y: 0}
       driftLength: 968
       driftStart: -184
       driftFade: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 70, y: 0}
+      driftVelocity: {x: 60.5, y: 0}
       driftLength: 968
       driftStart: -184
       driftFade: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: -55, y: 0}
+      driftVelocity: {x: -60.5, y: 0}
       driftLength: 968
       driftStart: -234
       driftFade: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: -55, y: 0}
+      driftVelocity: {x: -60.5, y: 0}
       driftLength: 968
       driftStart: -234
       driftFade: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
     position: {x: 434, y: 440}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
-      phase: 0.2286
+      phase: 0.655
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: -60}
+      driftVelocity: {x: 0, y: -43.75}
       driftLength: 700
       driftStart: -160
       driftFade: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
       blinkInterval: 0
       blinkDuration: 0.3
     animModified:
-      phase: 0.2286
+      phase: 0.655
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: -60}
+      driftVelocity: {x: 0, y: -43.75}
       driftLength: 700
       driftStart: -160
       driftFade: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
     position: {x: 466, y: 160}
     pivot: {x: 0.5, y: 0.5}
     animOriginal:
-      phase: 0.2286
+      phase: 0.68
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: 50}
+      driftVelocity: {x: 0, y: 43.75}
       driftLength: 700
       driftStart: -160
       driftFade: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
       blinkInterval: 0
       blinkDuration: 0.3
     animModified:
-      phase: 0.2286
+      phase: 0.68
       bobAmplitude: {x: 0, y: 0}
       bobSpeed: 0
       bounce: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
       scaleSpeed: 0
       twinkle: 0
       twinkleSpeed: 0
-      driftVelocity: {x: 0, y: 50}
+      driftVelocity: {x: 0, y: 43.75}
       driftLength: 700
       driftStart: -160
       driftFade: 0
