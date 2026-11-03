@@ -319,12 +319,7 @@ def l166_bg(c, d):
     digits(c, 788, 556, "248", (250, 210, 60), 4)
 
 
-def dash(ph):
-    return E("dash%d" % int(ph * 10), lambda c, m: flat(c, RRect(VX - 2, HZ + 6, VX + 2, HZ + 14, 0), (250, 250, 250)), pivot=(VX, HZ + 10),
-             anim=dict(driftVelocity=(0, -120), driftLength=330, driftGrow=9, driftFade=True, phase=ph))
-
-
-L166_ELEMENTS = [dash(k / 4) for k in range(4)] + [
+L166_ELEMENTS = [
     E("needle", lambda c, m: flat(c, Thick(820, 530, 866, 500, 3), (250, 80, 80)), pivot=(820, 530), anim=dict(swingAngle=6, swingSpeed=1.5)),
     E("exhaust", lambda c, m: [piece(c, Circ(x, 572, 9), (220, 220, 226), shadow=None) for x in (360, 540)],
       anim=dict(driftVelocity=(0, 30), driftLength=40, driftFade=True, driftGrow=1.5)),

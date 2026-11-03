@@ -563,13 +563,13 @@ def l567_bg(c, d):
 
 
 L567_ELEMENTS = [
-    E("rock%d" % i, (lambda x, b, s, st: lambda c, m: yacht(c, x, b, stripe=st, s=s))(x, b, s, st), pivot=(x, b), anim=dict(swingAngle=1.5, swingSpeed=0.3, phase=i / 2))
-    for i, (x, b, s, st) in enumerate(((160, 360, 1.0, (60, 110, 190)), (820, 360, 0.9, (40, 40, 50))))
-] + [
     bird_el("gull1", 300, 80, s=9, speed=-20),
     bird_el("gull2", 640, 300, s=8, speed=22),
     E("buoy", lambda c, m: piece(c, [Ell(260, 590, 14, 6), RRect(252, 566, 268, 588, 3)], (250, 200, 60), border=1, shadow=SMALL), pivot=(260, 590),
       anim=dict(bobAmplitude=(0, 3), bobSpeed=0.5)),
+] + [                   # the yachts last, so they draw on top of every other layer
+    E("rock%d" % i, (lambda x, b, s, st: lambda c, m: yacht(c, x, b, stripe=st, s=s))(x, b, s, st), pivot=(x, b), anim=dict(swingAngle=1.5, swingSpeed=0.3, phase=i / 2))
+    for i, (x, b, s, st) in enumerate(((160, 360, 1.0, (60, 110, 190)), (820, 360, 0.9, (40, 40, 50))))
 ]
 
 L567_DIFFS = [

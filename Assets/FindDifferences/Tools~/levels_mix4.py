@@ -386,7 +386,6 @@ def l268_bg(c, d):
 
 L268_ELEMENTS = [
     E("curtain", lambda c, m: flat(c, Poly([(300, 30), (330, 30), (322, 250), (296, 250)]), (220, 120, 100)), pivot=(315, 30), anim=dict(swingAngle=2, swingSpeed=0.4)),
-    E("brush", lambda c, m: flat(c, Thick(330, 470, 376, 430, 3), (160, 110, 70)), pivot=(330, 470), anim=dict(swingAngle=10, swingSpeed=1.0)),
     E("sun", lambda c, m: soft_union(c, [Poly([(320, 240), (580, 240), (660, 440), (260, 440)])], (255, 246, 220), 0.12, spread=20), daynight="untinted",
       anim=dict(twinkle=0.3, twinkleSpeed=0.4)),
 ]
@@ -473,10 +472,7 @@ def l269_bg(c, d):
     piece(c, RRect(830, 300, 862, 332, 4), tea, border=1.2, shadow=SMALL)
 
 
-L269_ELEMENTS = steam("stm", 846, 296, n=3) + [
-    E("knife", lambda c, m: flat(c, Thick(470, 320, 510, 306, 3), (210, 214, 220)), pivot=(470, 320), anim=dict(swingAngle=10, swingSpeed=1.6)),
-    E("sway", lambda c, m: flat(c, Thick(700, 134, 700, 160, 3), (250, 200, 60)), pivot=(700, 134), anim=dict(swingAngle=14, swingSpeed=0.8)),
-]
+L269_ELEMENTS = steam("stm", 846, 296, n=3)
 
 L269_DIFFS = [
     ("noren", 110, 78, 0),

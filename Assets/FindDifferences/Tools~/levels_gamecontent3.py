@@ -206,8 +206,6 @@ def l186_bg(c, d):
 
 
 L186_ELEMENTS = [
-    E("cursor", lambda c, m: toon(c, Poly([(600, 300), (600, 330), (608, 322), (614, 336), (620, 333), (614, 320), (624, 320)]), (250, 250, 250), w=1.4, shadow=None),
-      daynight="untinted", anim=dict(bobAmplitude=(30, 14), bobSpeed=0.2)),
     E("lampglow", lambda c, m: soft_union(c, [Ell(360, 330, 60, 30)], (255, 230, 150), 0.35, spread=30), daynight="untinted", anim=dict(twinkle=0.2, twinkleSpeed=0.5)),
     E("sparkle", lambda c, m: flat(c, Poly(star_pts(515, 300, 10, 2, points=4, rot=0)), (255, 255, 230)), daynight="untinted", anim=dict(twinkle=1.0, twinkleSpeed=0.7)),
     E("dust", lambda c, m: [flat(c, Circ(x, y, 2), (250, 240, 210)) for x, y in ((420, 120), (470, 170), (440, 200))], anim=dict(driftVelocity=(6, -10), driftLength=40, driftFade=True)),

@@ -861,8 +861,27 @@ def streak(eid, y, phase):
              anim=dict(driftVelocity=(-480, 0), driftLength=240, driftStart=-60, driftFade=True, phase=phase))
 
 
+def l294_front(c, m):
+    """The car interior around the windows (walls, frames, centre pole) redrawn over the streaks, so the tunnel lights
+    show only through the glass. Copies the unmodified background inside the streak band; no differences lie there."""
+    l294_bg(c, set())
+    s = c.ss
+    for j, row in enumerate(c.rows):
+        y = c.oy + (j + 0.5) / s
+        if not 163 <= y <= 282:
+            row[3::4] = bytes(len(row) // 4)
+            continue
+        for x0 in (40, 330, 620):
+            gx0, gx1 = x0 + 10, x0 + 230
+            for a, b in ((gx0, 446), (454, gx1)) if x0 == 330 else ((gx0, gx1),):
+                i0, i1 = max(0, int((a - c.ox) * s)), min(c.w, int((b - c.ox) * s))
+                if i1 > i0 and y <= 270:
+                    row[i0 * 4 + 3:i1 * 4:4] = bytes(i1 - i0)
+
+
 L294_ELEMENTS = [
     streak("s1", 170, 0.0), streak("s2", 220, 0.4), streak("s3", 250, 0.7),
+    E("front", l294_front),
     E("sway1", lambda c, m: [flat(c, Thick(140, 30, 140, 128, 4), (120, 120, 130)), c.ellipse_ring(140, 144, 14, 16, 5, (250, 250, 246))], pivot=(140, 30),
       anim=dict(swingAngle=4, swingSpeed=0.6)),
     E("rock", lambda c, m: flat(c, Thick(0, 596, W, 596, 4), (120, 120, 126)), anim=dict(bobAmplitude=(0, 1.5), bobSpeed=2.0)),

@@ -118,8 +118,6 @@ def l225_bg(c, d):
 
 
 L225_ELEMENTS = [
-    E("falling", lambda c, m: [jelly(c, WX + 5.5 * WS, WY + 1.5 * WS, BLOCK_COLS["o"]), jelly(c, WX + 5.5 * WS, WY + 2.5 * WS, BLOCK_COLS["c"])],
-      pivot=(WX + 5.5 * WS, WY + 2 * WS), anim=dict(bobAmplitude=(0, 30), bobSpeed=0.25)),
     E("arms", lambda c, m: toon(c, [Ell(694, 500, 14, 10), Ell(846, 500, 14, 10)], (250, 170, 200), w=1.6, shadow=None), pivot=(770, 500),
       anim=dict(bobAmplitude=(0, 8), bobSpeed=1.2, bounce=True)),
     E("spark", lambda c, m: [flat(c, Poly(star_pts(x, y, 12, 3, points=4, rot=0)), (255, 255, 220)) for x, y in ((220, 460), (60, 600 - 140), (640, 380))],

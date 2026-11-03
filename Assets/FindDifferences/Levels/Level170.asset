@@ -17,10 +17,6 @@ MonoBehaviour:
   modified: {fileID: 21300000, guid: 7ece1bfc36e74af6fb046e5fb78df87a, type: 3}
   timeLimit: 60
   differences:
-  - id: flag
-    center: {x: 276, y: 522}
-    radius: 29
-    viewCenters: []
   - id: sign
     center: {x: 120, y: 294}
     radius: 49

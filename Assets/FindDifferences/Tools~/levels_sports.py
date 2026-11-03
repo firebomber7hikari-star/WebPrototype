@@ -579,8 +579,6 @@ def l164_bat(c, m):
 
 L164_ELEMENTS = [
     E("bat", l164_bat, pivot=(522, 502), anim=dict(swingAngle=6, swingSpeed=0.4)),
-    E("pitch", lambda c, m: piece(c, Circ(440, 380, 4), (250, 250, 246), shadow=None), pivot=(440, 380),
-      anim=dict(driftVelocity=(10, -150), driftLength=180, driftFade=True, driftGrow=1.4)),
     E("flagL", lambda c, m: piece(c, Poly([(34, 60), (64, 66), (34, 80)]), HOME, shadow=SMALL), pivot=(34, 70), anim=dict(stretch=(0.15, 0), scaleSpeed=1.4)),
     bird_el("gull", 200, 40, s=9, speed=24),
     flash_el("flash", [(140, 100), (640, 140), (860, 110)], interval=2.0),

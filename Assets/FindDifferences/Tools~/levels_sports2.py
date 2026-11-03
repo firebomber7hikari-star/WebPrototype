@@ -192,8 +192,6 @@ def l215_bg(c, d):
 
 
 L215_ELEMENTS = [
-    E("ball", lambda c, m: [piece(c, Circ(450, 210, 12), (250, 220, 70), shadow=SMALL), flat(c, Thick(440, 204, 458, 216, 2.4), (60, 120, 200))],
-      pivot=(450, 222), anim=dict(bobAmplitude=(0, 30), bobSpeed=0.8)),
     flash_el("flash1", [(140, 120), (520, 170), (700, 90)], phase=0.0),
     flash_el("flash2", [(300, 90), (620, 200), (240, 200)], phase=0.5, interval=2.2),
     E("glow", lambda c, m: soft_union(c, [RRect(352, 32, 548, 108, 3)], (180, 200, 255), 0.2, spread=20), daynight="untinted",
@@ -285,8 +283,6 @@ def l216_bg(c, d):
 
 
 L216_ELEMENTS = [
-    E("ball", lambda c, m: piece(c, Circ(400, 320, 6), (250, 160, 40), shadow=SMALL), pivot=(400, 320),
-      anim=dict(bobAmplitude=(40, 24), bobSpeed=0.9)),
     flash_el("flash", [(140, 110), (620, 80), (760, 150), (260, 160)], interval=1.9),
     E("lamp", lambda c, m: soft_union(c, [RRect(342, 36, 558, 128, 3)], (160, 200, 255), 0.18, spread=20), daynight="untinted",
       anim=dict(twinkle=0.3, twinkleSpeed=1.1)),
