@@ -7722,6 +7722,134 @@
   ],
   "neutral": []
  },
+ "Level1656": {
+  "auto": [],
+  "circles": {
+   "boat": [
+    600,
+    408,
+    64
+   ],
+   "gull": [
+    170,
+    368,
+    30
+   ],
+   "stripe": [
+    800,
+    244,
+    53
+   ],
+   "window": [
+    340,
+    238,
+    33
+   ]
+  },
+  "keep": [
+   "boat",
+   "gull",
+   "stripe",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1657": {
+  "auto": [],
+  "circles": {
+   "books": [
+    182,
+    92,
+    72
+   ],
+   "cat": [
+    154,
+    490,
+    43
+   ],
+   "rung": [
+    674,
+    240,
+    37
+   ],
+   "vase": [
+    380,
+    366,
+    40
+   ]
+  },
+  "keep": [
+   "books",
+   "cat",
+   "rung",
+   "vase"
+  ],
+  "neutral": []
+ },
+ "Level1658": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    220,
+    82,
+    89
+   ],
+   "can": [
+    692,
+    533,
+    42
+   ],
+   "flowers": [
+    520,
+    134,
+    38
+   ],
+   "pot": [
+    330,
+    464,
+    44
+   ]
+  },
+  "keep": [
+   "basket",
+   "can",
+   "flowers",
+   "pot"
+  ],
+  "neutral": []
+ },
+ "Level1659": {
+  "auto": [],
+  "circles": {
+   "coat": [
+    330,
+    533,
+    33
+   ],
+   "frame": [
+    54,
+    170,
+    77
+   ],
+   "gondola": [
+    820,
+    124,
+    28
+   ],
+   "vase": [
+    450,
+    296,
+    54
+   ]
+  },
+  "keep": [
+   "coat",
+   "frame",
+   "gondola",
+   "vase"
+  ],
+  "neutral": []
+ },
  "Level166": {
   "auto": [],
   "circles": {
@@ -7757,6 +7885,38 @@
    "sign",
    "spoiler",
    "sun"
+  ],
+  "neutral": []
+ },
+ "Level1660": {
+  "auto": [],
+  "circles": {
+   "chart": [
+    130,
+    204,
+    80
+   ],
+   "coat": [
+    140,
+    533,
+    33
+   ],
+   "lamp": [
+    680,
+    430,
+    60
+   ],
+   "lens": [
+    520,
+    200,
+    27
+   ]
+  },
+  "keep": [
+   "chart",
+   "coat",
+   "lamp",
+   "lens"
   ],
   "neutral": []
  },
