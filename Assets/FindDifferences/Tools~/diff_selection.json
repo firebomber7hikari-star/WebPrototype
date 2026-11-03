@@ -7300,6 +7300,64 @@
   ],
   "neutral": []
  },
+ "Level1642": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    254,
+    130,
+    30
+   ],
+   "eave": [
+    610,
+    137,
+    56
+   ],
+   "flags": [
+    328,
+    411,
+    89
+   ],
+   "pine": [
+    651,
+    538,
+    99
+   ]
+  },
+  "keep": [
+   "banner",
+   "eave",
+   "flags",
+   "pine"
+  ],
+  "neutral": []
+ },
+ "Level1643": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    798,
+    292,
+    28
+   ],
+   "cargo": [
+    104,
+    344,
+    38
+   ],
+   "roof": [
+    422,
+    388,
+    59
+   ]
+  },
+  "keep": [
+   "banner",
+   "cargo",
+   "roof"
+  ],
+  "neutral": []
+ },
  "Level165": {
   "auto": [],
   "circles": {
