@@ -383,6 +383,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
+  - {fileID: 11400000, guid: aef21e10997acada7745578cedc8cd5d, type: 2}
+  - {fileID: 11400000, guid: ac02c96e36ae5eb6fe4a15775aa9f6e4, type: 2}
+  - {fileID: 11400000, guid: 24f786397b5681f9d8261461718462e7, type: 2}
+  - {fileID: 11400000, guid: 3b71deab8c3e9b2a6b4ac8dd4cdbd7cf, type: 2}
+  - {fileID: 11400000, guid: 2dc1e34e8c7ca5625608d54b02dc4337, type: 2}
   - {fileID: 11400000, guid: a2375220c94b32d00aee899d5222f39a, type: 2}
   - {fileID: 11400000, guid: 244d69de4333e3e2ece3386e25b86dff, type: 2}
   - {fileID: 11400000, guid: 0c18f5be4a917bb18dd449dc8e4512d9, type: 2}
@@ -1433,6 +1438,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 73e19cef87a2424aab26a827799e9296, type: 2}
   - {fileID: 11400000, guid: 243f14c10a5b7690621417ba36d42ce6, type: 2}
   - {fileID: 11400000, guid: cf112138f66d3ae9d17144cf3d438afd, type: 2}
+  - {fileID: 11400000, guid: aef21e10997acada7745578cedc8cd5d, type: 2}
+  - {fileID: 11400000, guid: ac02c96e36ae5eb6fe4a15775aa9f6e4, type: 2}
+  - {fileID: 11400000, guid: 24f786397b5681f9d8261461718462e7, type: 2}
+  - {fileID: 11400000, guid: 3b71deab8c3e9b2a6b4ac8dd4cdbd7cf, type: 2}
+  - {fileID: 11400000, guid: 2dc1e34e8c7ca5625608d54b02dc4337, type: 2}
   survivalRandomOrder: 0
   survivalTime: 180
   survivalBonusPerLevel: 10

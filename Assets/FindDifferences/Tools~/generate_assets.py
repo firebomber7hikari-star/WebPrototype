@@ -79,6 +79,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_gamecontent7.py Level1637-1639 inside video games part 7 (pixel dungeon / snowfield turn-based battle / autumn farm sim)
   levels_dnd2.py      Level1640-1641 American-comic tabletop-fantasy interiors 2 (dwarven forge / thieves' hideout)
   levels_inkiso2.py   Level1642-1643 ink-sketch axonometric set 2 (mountain temple / market inside the town gate)
+  levels_layton.py    Level1644-1648 storybook puzzle-adventure look (hillside town / scholar's study / dining car / fairground / clockmaker)
   levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
   levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
   levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
@@ -193,6 +194,7 @@ import levels_toon3
 import levels_gamecontent7
 import levels_dnd2
 import levels_inkiso2
+import levels_layton
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -224,7 +226,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_dnd.LEVELS + levels_persona.LEVELS
               + levels_souls_toon.LEVELS + levels_gothic5.LEVELS
               + levels_toon3.LEVELS + levels_gamecontent7.LEVELS
-              + levels_dnd2.LEVELS + levels_inkiso2.LEVELS)
+              + levels_dnd2.LEVELS + levels_inkiso2.LEVELS
+              + levels_layton.LEVELS)
 
 
 def main():
