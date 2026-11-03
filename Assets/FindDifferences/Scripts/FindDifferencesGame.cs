@@ -13,7 +13,8 @@ namespace FindDifferences
     public class FindDifferencesGame : MonoBehaviour
     {
         enum State { Menu, Playing, Won, Lost }
-        enum Mode { Campaign, Survival, Test }   // Test: plays releaseLevels in order with campaign rules
+        // Test / Rated4 / Rated5: play releaseLevels / fourStarLevels / fiveStarLevels in order with campaign rules
+        enum Mode { Campaign, Survival, Test, Rated4, Rated5 }
 
         /// <summary>Outcome of a survival run (to be reported to a leaderboard later).</summary>
         public struct SurvivalResult
@@ -56,6 +57,12 @@ namespace FindDifferences
                  "(the hand-edited list is replaced). When off, Release Levels is used as edited.")]
         [SerializeField] bool releaseFromRange;
 
+        [Header("Rated levels (tester picks)")]
+        [Tooltip("Levels rated 4 by testers. Played in order by the menu's \"4 分关卡\" button (campaign rules).")]
+        [SerializeField] FindDifferencesLevel[] fourStarLevels;
+        [Tooltip("Levels rated 5 by testers. Played in order by the menu's \"5 分关卡\" button (campaign rules).")]
+        [SerializeField] FindDifferencesLevel[] fiveStarLevels;
+
         [Header("Rules")]
         [SerializeField] float wrongTapPenalty = 5f;
         [SerializeField] int hintsPerLevel = 2;
@@ -81,6 +88,11 @@ namespace FindDifferences
         [Header("Debug")]
         [Tooltip("Shows a \"skip level\" button on screen (can be toggled while playing).")]
         [SerializeField] bool debugMode;
+        [Tooltip("Campaign mode: shows the level asset name (e.g. Level170) in the top-left corner, for testing.")]
+        [SerializeField] bool showLevelAssetName = true;
+        [Tooltip("Campaign mode: 1-5 star rating row for testers (tap the current rating again to clear it). " +
+                 "Saved in PlayerPrefs per level asset; outside WebGL also exported to FindDifferencesRatings.csv.")]
+        [SerializeField] bool levelRating = true;
 
         [Header("Optional")]
         [Tooltip("Leave empty to use an OS font with CJK support.")]
@@ -92,6 +104,8 @@ namespace FindDifferences
 
         const string BestLevelsKey = "fd.survival.bestLevels";
         const string BestDiffsKey = "fd.survival.bestDiffs";
+        const string RatingKeyPrefix = "fd.rating.";   // + level asset name, value 1-5
+        const string RatingsFile = "FindDifferencesRatings.csv";
 
         static readonly Color BgColor = new Color32(255, 243, 222, 255);
         static readonly Color BarColor = new Color32(255, 170, 70, 255);
@@ -104,12 +118,14 @@ namespace FindDifferences
         static readonly Color CampaignColor = new Color32(90, 170, 240, 255);
         static readonly Color SurvivalColor = new Color32(240, 110, 80, 255);
         static readonly Color TestColor = new Color32(150, 120, 210, 255);
+        static readonly Color Rated4Color = new Color32(80, 185, 150, 255);
+        static readonly Color Rated5Color = new Color32(240, 175, 40, 255);
         static readonly Color SecondaryColor = new Color32(170, 160, 150, 255);
 
         // runtime
         RectTransform _canvasRect, _root;
         DifferencePicture _picTop, _picBottom;
-        Text _levelText, _timerText, _hintText, _progressText, _bonusText, _restartText;
+        Text _levelText, _levelAssetText, _timerText, _hintText, _progressText, _bonusText, _restartText;
         readonly List<Image> _dots = new List<Image>();
         RectTransform _dotRow;
         GameObject _overlay, _menu;
@@ -118,6 +134,8 @@ namespace FindDifferences
         Button _overlayButton, _overlayButton2;
         RectTransform _overlayCard;
         GameObject _debugSkip;
+        GameObject _ratingRow;
+        Image[] _ratingStars;
 
         Mode _mode;
         readonly List<FindDifferencesLevel> _order = new List<FindDifferencesLevel>(); // this round's level sequence
@@ -138,7 +156,18 @@ namespace FindDifferences
         float _secondsPlayed;
 
         public FindDifferencesLevel[] ReleaseLevels => releaseLevels;
-        FindDifferencesLevel[] ModeLevels => _mode == Mode.Campaign ? levels : _mode == Mode.Test ? releaseLevels : survivalLevels;
+        FindDifferencesLevel[] ModeLevels => _mode switch
+        {
+            Mode.Campaign => levels,
+            Mode.Test => releaseLevels,
+            Mode.Rated4 => fourStarLevels,
+            Mode.Rated5 => fiveStarLevels,
+            _ => survivalLevels,
+        };
+        /// <summary>Fixed-list modes played start to end with an "n/total" counter.</summary>
+        bool ListMode => _mode == Mode.Test || _mode == Mode.Rated4 || _mode == Mode.Rated5;
+        /// <summary>Modes that show the tester aids (level asset name, rating stars).</summary>
+        bool TesterMode => _mode == Mode.Campaign || _mode == Mode.Rated4 || _mode == Mode.Rated5;
         bool ModeRandom => _mode == Mode.Campaign ? campaignRandomOrder : _mode == Mode.Survival && survivalRandomOrder;
         bool PerLevelClock => _mode != Mode.Survival;   // campaign and test: each level has its own clock, the run ends after the last
 
@@ -236,6 +265,8 @@ namespace FindDifferences
             _timerText.rectTransform.localScale = Vector3.one;
             _bonusText.gameObject.SetActive(false);
             _state = State.Menu;
+            _levelAssetText.gameObject.SetActive(false);
+            _ratingRow.SetActive(false);
             _overlay.SetActive(false);
             _menu.SetActive(true);
             int bestLevels = PlayerPrefs.GetInt(BestLevelsKey, 0);
@@ -316,8 +347,14 @@ namespace FindDifferences
             _overlay.SetActive(false);
 
             int number = PerLevelClock ? _orderPos + 1 : _levelsCleared + 1;
-            string prefix = _mode == Mode.Test ? $"测试 {number}/{_order.Count}" : $"第 {number} 关";
+            string prefix = !ListMode ? $"第 {number} 关"
+                : $"{(_mode == Mode.Test ? "测试" : _mode == Mode.Rated4 ? "4分" : "5分")} {number}/{_order.Count}";
             _levelText.text = $"{prefix}\n<size=30>{_level.levelName}</size>";
+            bool showAsset = showLevelAssetName && TesterMode;
+            _levelAssetText.gameObject.SetActive(showAsset);
+            if (showAsset) _levelAssetText.text = _level.name;
+            _ratingRow.SetActive(levelRating && TesterMode);
+            UpdateRating();
             BuildDots(_found.Length);
             UpdateProgress();
             UpdateHint();
@@ -416,7 +453,8 @@ namespace FindDifferences
             int stars = ratio > 0.5f ? 3 : ratio > 0.2f ? 2 : 1;
             string sub = $"用时 {Mathf.CeilToInt(_level.timeLimit - _timeLeft)} 秒";
             if (_orderPos >= _order.Count - 1)
-                ShowOverlay(_mode == Mode.Test ? "测试关卡已全部完成" : "恭喜，您已通关！", sub, stars, "返回模式选择", ShowMenu);
+                ShowOverlay(_mode == Mode.Test ? "测试关卡已全部完成" : _mode == Mode.Rated4 ? "4 分关卡已全部完成"
+                    : _mode == Mode.Rated5 ? "5 分关卡已全部完成" : "恭喜，您已通关！", sub, stars, "返回模式选择", ShowMenu);
             else
                 ShowOverlay("太棒了！", sub, stars, "下一关", () => { Advance(); StartLevel(); });
         }
@@ -627,6 +665,7 @@ namespace FindDifferences
 
             BuildBottomBar();
             BuildOverlay();
+            BuildRating();   // after the overlay so the level can still be rated on the result screen
             BuildMenu();
             BuildDebugSkip();
             FitRoot();
@@ -639,6 +678,11 @@ namespace FindDifferences
 
             _levelText = CreateText("Level", bar.rectTransform, "", 40, TextAnchor.MiddleLeft, Color.white);
             Place(_levelText.rectTransform, new Vector2(0, 0.5f), new Vector2(40, 0), new Vector2(360, 130), new Vector2(0, 0.5f));
+
+            // test aid: level asset name in the bar's top-left corner (campaign mode, see StartLevel)
+            _levelAssetText = CreateText("LevelAsset", bar.rectTransform, "", 24, TextAnchor.UpperLeft, new Color(1f, 0.92f, 0.4f));
+            Place(_levelAssetText.rectTransform, new Vector2(0, 1), new Vector2(18, -6), new Vector2(300, 30), new Vector2(0, 1));
+            _levelAssetText.gameObject.SetActive(false);
 
             _timerText = CreateText("Timer", bar.rectTransform, "00:00", 56, TextAnchor.MiddleCenter, Color.white);
             Place(_timerText.rectTransform, new Vector2(1, 0.5f), new Vector2(-120, 0), new Vector2(220, 100), new Vector2(0.5f, 0.5f));
@@ -693,6 +737,85 @@ namespace FindDifferences
             var labelText = CreateText("Text", label.rectTransform, tag, 28, TextAnchor.MiddleCenter, Color.white);
             Stretch(labelText.rectTransform);
             return comp;
+        }
+
+        // ------------------------------------------------------------------ level rating (test aid, campaign mode)
+        /// <summary>Five tappable stars in the top bar, next to the level asset name.</summary>
+        void BuildRating()
+        {
+            _ratingRow = CreateRect("LevelRating", _root).gameObject;
+            var row = (RectTransform)_ratingRow.transform;
+            Place(row, new Vector2(0.5f, 1f), new Vector2(-340, -42), new Vector2(5 * 42, 42), new Vector2(0, 0.5f));
+            _ratingStars = new Image[5];
+            for (int i = 0; i < 5; i++)
+            {
+                var star = CreateImage("Star" + (i + 1), row, starSprite, Color.white);
+                Place(star.rectTransform, new Vector2(0, 0.5f), new Vector2(i * 42 + 21, 0), new Vector2(36, 36), new Vector2(0.5f, 0.5f));
+                int value = i + 1;
+                star.gameObject.AddComponent<Button>().onClick.AddListener(() => SetRating(value));
+                _ratingStars[i] = star;
+            }
+            _ratingRow.SetActive(false);
+        }
+
+        static string RatingKey(FindDifferencesLevel level) => RatingKeyPrefix + level.name;
+
+        void UpdateRating()
+        {
+            int rating = _level != null ? PlayerPrefs.GetInt(RatingKey(_level), 0) : 0;
+            for (int i = 0; i < _ratingStars.Length; i++)
+                _ratingStars[i].color = i < rating ? new Color32(255, 225, 60, 255) : new Color32(120, 70, 30, 110);
+        }
+
+        /// <summary>Tapping the current rating again clears it.</summary>
+        void SetRating(int value)
+        {
+            if (_level == null) return;
+            string key = RatingKey(_level);
+            if (PlayerPrefs.GetInt(key, 0) == value)
+            {
+                PlayerPrefs.DeleteKey(key);
+                value = 0;
+            }
+            else PlayerPrefs.SetInt(key, value);
+            PlayerPrefs.Save();
+            UpdateRating();
+            Debug.Log($"[FindDifferences] Rating {_level.name} ({_level.levelName}) = {value}");
+            ExportRatings();
+        }
+
+        /// <summary>Writes every rated level (campaign order first) to a CSV: project folder in the editor,
+        /// persistentDataPath in builds. WebGL has no file system: ratings stay in PlayerPrefs only.</summary>
+        void ExportRatings()
+        {
+#if !UNITY_WEBGL || UNITY_EDITOR
+            var sb = new System.Text.StringBuilder("level,name,rating\n");
+            var seen = new HashSet<FindDifferencesLevel>();
+            // every list, so levels already dropped from the campaign keep their rating in the file
+            foreach (var list in new[] { levels, fourStarLevels, fiveStarLevels, survivalLevels, releaseLevels })
+            {
+                if (list == null) continue;
+                foreach (var l in list)
+                {
+                    if (l == null || !seen.Add(l)) continue;
+                    int r = PlayerPrefs.GetInt(RatingKey(l), 0);
+                    if (r > 0) sb.Append(l.name).Append(',').Append(l.levelName).Append(',').Append(r).Append('\n');
+                }
+            }
+#if UNITY_EDITOR
+            string dir = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, ".."));
+#else
+            string dir = Application.persistentDataPath;
+#endif
+            try
+            {
+                System.IO.File.WriteAllText(System.IO.Path.Combine(dir, RatingsFile), sb.ToString(), new System.Text.UTF8Encoding(true));
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[FindDifferences] Could not write {RatingsFile}: {e.Message}");
+            }
+#endif
         }
 
         /// <summary>Debug-only button, created last so it stays above the result overlay.</summary>
@@ -792,25 +915,34 @@ namespace FindDifferences
             Place(title.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -110), new Vector2(800, 120), new Vector2(0.5f, 0.5f));
 
             float campaignTime = levels != null && levels.Length > 0 && levels[0] != null ? levels[0].timeLimit : 60f;
-            MenuButton(card.rectTransform, -320, CampaignColor, "通关模式",
+            MenuButton(card.rectTransform, 0, -290, 720, CampaignColor, "通关模式",
                 $"每关限时 {Mathf.RoundToInt(campaignTime)} 秒，挑战全部关卡", () => StartMode(Mode.Campaign));
-            MenuButton(card.rectTransform, -580, SurvivalColor, "生存模式",
+            MenuButton(card.rectTransform, 0, -500, 720, SurvivalColor, "生存模式",
                 $"总计 {Mathf.RoundToInt(survivalTime)} 秒，每过一关 +{Mathf.RoundToInt(survivalBonusPerLevel)} 秒", () => StartMode(Mode.Survival));
-            int releaseCount = 0;
-            if (releaseLevels != null)
-                foreach (var l in releaseLevels)
-                    if (l != null) releaseCount++;
-            MenuButton(card.rectTransform, -840, TestColor, "测试关卡",
-                $"按顺序试玩正式版关卡（共 {releaseCount} 关）", () => StartMode(Mode.Test));
+            MenuButton(card.rectTransform, 0, -710, 720, TestColor, "测试关卡",
+                $"按顺序试玩正式版关卡（共 {CountLevels(releaseLevels)} 关）", () => StartMode(Mode.Test));
+            MenuButton(card.rectTransform, -185, -920, 350, Rated4Color, "4 分关卡",
+                $"共 {CountLevels(fourStarLevels)} 关", () => StartMode(Mode.Rated4));
+            MenuButton(card.rectTransform, 185, -920, 350, Rated5Color, "5 分关卡",
+                $"共 {CountLevels(fiveStarLevels)} 关", () => StartMode(Mode.Rated5));
 
             _menuBest = CreateText("Best", card.rectTransform, "", 34, TextAnchor.MiddleCenter, TextDark);
-            Place(_menuBest.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -1035), new Vector2(800, 60), new Vector2(0.5f, 0.5f));
+            Place(_menuBest.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -1055), new Vector2(800, 60), new Vector2(0.5f, 0.5f));
             _menu.SetActive(false);
         }
 
-        void MenuButton(RectTransform card, float y, Color color, string label, string detail, UnityEngine.Events.UnityAction onClick)
+        static int CountLevels(FindDifferencesLevel[] list)
         {
-            var btn = CreateButton(label, card, $"{label}\n<size=32>{detail}</size>", color, new Vector2(0, y), new Vector2(720, 210), onClick);
+            int n = 0;
+            if (list != null)
+                foreach (var l in list)
+                    if (l != null) n++;
+            return n;
+        }
+
+        void MenuButton(RectTransform card, float x, float y, float width, Color color, string label, string detail, UnityEngine.Events.UnityAction onClick)
+        {
+            var btn = CreateButton(label, card, $"{label}\n<size=32>{detail}</size>", color, new Vector2(x, y), new Vector2(width, 180), onClick);
             btn.GetComponentInChildren<Text>().lineSpacing = 1.2f;
         }
 

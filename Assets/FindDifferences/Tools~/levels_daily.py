@@ -14,7 +14,7 @@
 import math
 import random
 
-from fdcore import E, H, W, lit
+from fdcore import Canvas, E, H, W, lit
 from paper import Circ, Ell, Poly, RRect, Thick, flat, paper_post, piece, soft_union, star_pts
 from kit import INK, LAYER, PROP, SMALL, bird_el, bush, cloud_bg, cloud_el, drift_across, sky, tree_round
 from fills import cloud_bank, far_ridge, far_round_trees, far_skyline
@@ -206,15 +206,21 @@ def traveller(c, x, base, top, case, h=1.8, hair=(40, 30, 30), style="short", ri
     flat(c, [Circ(cx + 2 * h, base - 1 * h, 1.6 * h), Circ(cx + 10 * h, base - 1 * h, 1.6 * h)], (40, 40, 46))
 
 
-def l501_bg(c, d):
-    # outside through the glass: sky, city, apron
-    sky(c, (120, 186, 240), (226, 238, 248), 330)
-    cloud_bank(c, 130, (250, 250, 248), 5011, k=0.7)
-    far_skyline(c, 236, 20, 70, (170, 186, 210), 5012)
-    far_ridge(c, 240, 24, (150, 176, 200), 5013)
-    c.rect(0, 240, W, 330, (170, 172, 180))
-    for x in range(-40, 940, 90):
-        flat(c, Thick(x, 286, x + 50, 286, 3), (250, 240, 170))
+_L501_D = {}   # diff set the background was last built with, per picture (False = A, True = B); read by l501_front
+
+
+def l501_bg(c, d, layer="all"):
+    """layer: 'all' | 'front' (only what the taking-off plane must pass behind)."""
+    _L501_D[bool(d)] = set(d)
+    if layer != "front":
+        # outside through the glass: sky, city, apron
+        sky(c, (120, 186, 240), (226, 238, 248), 330)
+        cloud_bank(c, 130, (250, 250, 248), 5011, k=0.7)
+        far_skyline(c, 236, 20, 70, (170, 186, 210), 5012)
+        far_ridge(c, 240, 24, (150, 176, 200), 5013)
+        c.rect(0, 240, W, 330, (170, 172, 180))
+        for x in range(-40, 940, 90):
+            flat(c, Thick(x, 286, x + 50, 286, 3), (250, 240, 170))
     # control tower
     piece(c, [Poly([(726, 240), (760, 240), (754, 120), (732, 120)])], (230, 232, 240), border=1.5, shadow=PROP)
     piece(c, [Poly([(712, 120), (774, 120), (766, 92), (720, 92)])], (90, 140, 180) if "cab" not in d else (240, 170, 70), border=1.5, shadow=PROP)
@@ -287,8 +293,41 @@ def plane_takeoff(c, m):
     airliner(c, 0, 222, 0.45, tail=(90, 180, 120))
 
 
+_L501_FRONT = {}
+
+
+def l501_front(c, m):
+    """Static occluder drawn right after the taking-off plane: the background's own pixels wherever the 'front' layer
+    (tower, parked airliners, glass frame, departures board ...) is solid, so the plane passes behind all of it.
+    Copies the exact background render (pre-multiplied by the vignette that paper_post only gives the background),
+    so the layer is invisible where the plane is not."""
+    if m not in _L501_FRONT:
+        d = _L501_D[m]
+        full, front = Canvas(W, H), Canvas(W, H, alpha=True)
+        l501_bg(full, d)
+        l501_bg(front, d, layer="front")
+        _L501_FRONT[m] = (full, front)
+    full, front = _L501_FRONT[m]
+    s = c.ss
+    vig = [[1 - 0.13 * (((x - W / 2) / (W / 2)) ** 2 + ((y - H / 2) / (H / 2)) ** 2) ** 1.3 for x in range(W)] for y in range(H)]
+    for j in range(c.h):
+        Y = j + c.oy * s
+        if not 0 <= Y < full.h:
+            continue
+        src, mask, dst, vrow = full.rows[Y], front.rows[Y], c.rows[j], vig[Y // s]
+        for i in range(c.w):
+            X = i + c.ox * s
+            if not 0 <= X < full.w or mask[X * 4 + 3] < 128:
+                continue
+            f = vrow[X // s]
+            k = i * 4
+            dst[k:k + 4] = bytes((min(255, int(src[X * 3] * f + 0.5)), min(255, int(src[X * 3 + 1] * f + 0.5)),
+                                  min(255, int(src[X * 3 + 2] * f + 0.5)), 255))
+
+
 L501_ELEMENTS = [
     E("takeoff", plane_takeoff, anim=dict(drift_across(-60, 60, 40, start=300), driftVelocity=(40, -2))),
+    E("front", l501_front, bbox=(0, 180, W, 300), variant=True),   # puts the plane behind the whole background
     bird_el("bird", 420, 40, s=7, speed=-22),
     E("cart", lambda c, m: (piece(c, RRect(0, 296, 36, 318, 4), (250, 250, 252), border=1.2, shadow=SMALL),
                             piece(c, [Circ(8, 320, 4), Circ(28, 320, 4)], (40, 40, 46), shadow=None)),
