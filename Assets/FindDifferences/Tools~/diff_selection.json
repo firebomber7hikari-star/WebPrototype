@@ -7502,6 +7502,32 @@
   ],
   "neutral": []
  },
+ "Level1649": {
+  "auto": [],
+  "circles": {
+   "coral": [
+    560,
+    480,
+    53
+   ],
+   "star": [
+    340,
+    558,
+    34
+   ],
+   "sub": [
+    562,
+    160,
+    87
+   ]
+  },
+  "keep": [
+   "coral",
+   "star",
+   "sub"
+  ],
+  "neutral": []
+ },
  "Level165": {
   "auto": [],
   "circles": {
@@ -7537,6 +7563,162 @@
    "portrait",
    "roof",
    "sheep"
+  ],
+  "neutral": []
+ },
+ "Level1650": {
+  "auto": [],
+  "circles": {
+   "dish": [
+    560,
+    342,
+    72
+   ],
+   "pack": [
+    792,
+    492,
+    26
+   ],
+   "window": [
+    180,
+    370,
+    25
+   ]
+  },
+  "keep": [
+   "dish",
+   "pack",
+   "window"
+  ],
+  "neutral": []
+ },
+ "Level1651": {
+  "auto": [],
+  "circles": {
+   "egg": [
+    492,
+    548,
+    29
+   ],
+   "ptero": [
+    820,
+    444,
+    69
+   ],
+   "spikes": [
+    234,
+    368,
+    58
+   ]
+  },
+  "keep": [
+   "egg",
+   "ptero",
+   "spikes"
+  ],
+  "neutral": []
+ },
+ "Level1652": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    240,
+    582,
+    39
+   ],
+   "bread": [
+    180,
+    164,
+    36
+   ],
+   "till": [
+    584,
+    350,
+    45
+   ]
+  },
+  "keep": [
+   "basket",
+   "bread",
+   "till"
+  ],
+  "neutral": []
+ },
+ "Level1653": {
+  "auto": [],
+  "circles": {
+   "balloon": [
+    820,
+    126,
+    56
+   ],
+   "window": [
+    560,
+    300,
+    24
+   ],
+   "wing": [
+    204,
+    428,
+    43
+   ]
+  },
+  "keep": [
+   "balloon",
+   "window",
+   "wing"
+  ],
+  "neutral": []
+ },
+ "Level1654": {
+  "auto": [],
+  "circles": {
+   "fish": [
+    426,
+    360,
+    24
+   ],
+   "lantern": [
+    490,
+    150,
+    38
+   ],
+   "mask": [
+    760,
+    360,
+    37
+   ]
+  },
+  "keep": [
+   "fish",
+   "lantern",
+   "mask"
+  ],
+  "neutral": []
+ },
+ "Level1655": {
+  "auto": [],
+  "circles": {
+   "case": [
+    314,
+    406,
+    28
+   ],
+   "clock": [
+    250,
+    140,
+    42
+   ],
+   "window": [
+    604,
+    420,
+    37
+   ]
+  },
+  "keep": [
+   "case",
+   "clock",
+   "window"
   ],
   "neutral": []
  },
