@@ -6571,6 +6571,128 @@
   ],
   "neutral": []
  },
+ "Level1620": {
+  "auto": [],
+  "circles": {
+   "cage": [
+    760,
+    170,
+    98
+   ],
+   "eyes": [
+    869,
+    440,
+    33
+   ],
+   "hut": [
+    542,
+    354,
+    45
+   ],
+   "lamp": [
+    279,
+    360,
+    65
+   ]
+  },
+  "keep": [
+   "cage",
+   "eyes",
+   "hut",
+   "lamp"
+  ],
+  "neutral": []
+ },
+ "Level1621": {
+  "auto": [],
+  "circles": {
+   "chand": [
+    480,
+    67,
+    34
+   ],
+   "ribbon": [
+    454,
+    480,
+    28
+   ],
+   "rung": [
+    226,
+    272,
+    41
+   ],
+   "scroll": [
+    676,
+    362,
+    48
+   ],
+   "stack": [
+    90,
+    542,
+    38
+   ]
+  },
+  "keep": [
+   "chand",
+   "ribbon",
+   "rung",
+   "scroll",
+   "stack"
+  ],
+  "neutral": []
+ },
+ "Level1622": {
+  "auto": [],
+  "circles": {
+   "banner": [
+    810,
+    336,
+    44
+   ],
+   "eyes": [
+    570,
+    258,
+    29
+   ],
+   "lamp": [
+    90,
+    272,
+    82
+   ]
+  },
+  "keep": [
+   "banner",
+   "eyes",
+   "lamp"
+  ],
+  "neutral": []
+ },
+ "Level1623": {
+  "auto": [],
+  "circles": {
+   "book": [
+    717,
+    486,
+    34
+   ],
+   "candle": [
+    530,
+    268,
+    46
+   ],
+   "glass": [
+    190,
+    250,
+    53
+   ]
+  },
+  "keep": [
+   "book",
+   "candle",
+   "glass"
+  ],
+  "neutral": []
+ },
  "Level163": {
   "auto": [],
   "circles": {

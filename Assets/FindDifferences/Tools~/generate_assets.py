@@ -73,6 +73,7 @@ Find Differences asset generator (pure Python, no dependencies).
   levels_gta.py       Level1595-1604 realistic open-world crime city (sunset boulevard / gas station / police chase / beach pier / neon strip / garage / docks / desert trailer / mansion pool / skyline)
   levels_dnd.py       Level1605-1614 American-comic tabletop fantasy (tavern / dungeon / dragon hoard / goblin camp / wizard tower / troll bridge / spider cavern / ruined temple / market / giant pass)
   levels_persona.py   Level1615-1619 stylish high-contrast school-life RPG look (rooftop / crossing / blue train room / shopping street / golden palace)
+  levels_souls_toon.py Level1620-1623 toon-render remakes of Level1569 / 1571 / 1573 / 1574 (forbidden woods / library / bridge duel / chapel)
   levels_toon2.py     Level1542-1544 cel-shaded fairy tales: candy cottage, tower with the long braid, mushroom fairy village
   levels_sketch.py    Level1538-1541 pencil sketch: 45-degree overhead 3D (street, garden) and plain 2D (station, study)
   levels_isostyle.py  Level1532-1537 same axonometric camera in realistic / toon / American-comic render styles
@@ -181,6 +182,7 @@ import levels_jrpg
 import levels_gta
 import levels_dnd
 import levels_persona
+import levels_souls_toon
 
 ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS + levels_topdown.LEVELS
               + levels_views.LEVELS + levels_more.LEVELS + levels_weather.LEVELS
@@ -209,7 +211,8 @@ ALL_LEVELS = (levels_classic.LEVELS + levels_fairy.LEVELS + levels_paper.LEVELS 
               + levels_toon2.LEVELS + levels_remake.LEVELS
               + levels_souls.LEVELS + levels_souls2.LEVELS
               + levels_jrpg.LEVELS + levels_gta.LEVELS
-              + levels_dnd.LEVELS + levels_persona.LEVELS)
+              + levels_dnd.LEVELS + levels_persona.LEVELS
+              + levels_souls_toon.LEVELS)
 
 
 def main():
