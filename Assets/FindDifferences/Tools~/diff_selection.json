@@ -6926,6 +6926,175 @@
   ],
   "neutral": []
  },
+ "Level1631": {
+  "auto": [],
+  "circles": {
+   "brew": [
+    450,
+    452,
+    83
+   ],
+   "hat": [
+    650,
+    104,
+    70
+   ],
+   "skull": [
+    220,
+    188,
+    42
+   ]
+  },
+  "keep": [
+   "brew",
+   "hat",
+   "skull"
+  ],
+  "neutral": []
+ },
+ "Level1632": {
+  "auto": [
+   [
+    106,
+    316,
+    150,
+    "flat",
+    97,
+    334,
+    40
+   ],
+   [
+    416,
+    336,
+    210,
+    "flat",
+    420,
+    342,
+    35
+   ]
+  ],
+  "circles": {
+   "lantern": [
+    800,
+    340,
+    71
+   ],
+   "patch": [
+    224,
+    140,
+    40
+   ]
+  },
+  "keep": [
+   "lantern",
+   "patch"
+  ],
+  "neutral": []
+ },
+ "Level1633": {
+  "auto": [],
+  "circles": {
+   "pack": [
+    670,
+    434,
+    53
+   ],
+   "quilt": [
+    180,
+    440,
+    122
+   ],
+   "shield": [
+    790,
+    184,
+    78
+   ]
+  },
+  "keep": [
+   "pack",
+   "quilt",
+   "shield"
+  ],
+  "neutral": []
+ },
+ "Level1634": {
+  "auto": [],
+  "circles": {
+   "basket": [
+    250,
+    528,
+    54
+   ],
+   "kite": [
+    820,
+    224,
+    58
+   ],
+   "tree": [
+    520,
+    250,
+    66
+   ]
+  },
+  "keep": [
+   "basket",
+   "kite",
+   "tree"
+  ],
+  "neutral": []
+ },
+ "Level1635": {
+  "auto": [],
+  "circles": {
+   "chest": [
+    740,
+    532,
+    50
+   ],
+   "roof": [
+    440,
+    166,
+    141
+   ],
+   "rung": [
+    304,
+    452,
+    28
+   ]
+  },
+  "keep": [
+   "chest",
+   "roof",
+   "rung"
+  ],
+  "neutral": []
+ },
+ "Level1636": {
+  "auto": [],
+  "circles": {
+   "crow": [
+    406,
+    285,
+    34
+   ],
+   "glow": [
+    560,
+    536,
+    70
+   ],
+   "shirt": [
+    700,
+    308,
+    61
+   ]
+  },
+  "keep": [
+   "crow",
+   "glow",
+   "shirt"
+  ],
+  "neutral": []
+ },
  "Level164": {
   "auto": [],
   "circles": {

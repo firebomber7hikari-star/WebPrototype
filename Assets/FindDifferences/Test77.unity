@@ -854,6 +854,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62cda875abac01e08a3a1351ce346b36, type: 2}
   - {fileID: 11400000, guid: fba5bdacd7ddaefa8a0c6f319dd6901b, type: 2}
   - {fileID: 11400000, guid: 72e09f97d6e6bdafae19d7fb66552175, type: 2}
+  - {fileID: 11400000, guid: a47594e652997af39e37cc5418a52967, type: 2}
+  - {fileID: 11400000, guid: 5fcb7868f16206704857d2c6edaeb4ce, type: 2}
+  - {fileID: 11400000, guid: 1bca6b76c8577f74e66ef37ff394f963, type: 2}
+  - {fileID: 11400000, guid: 0d0d274ee363b93a8bb3c8678f86bd39, type: 2}
+  - {fileID: 11400000, guid: dd0d003b6e143cf8a35e306c77e8fad9, type: 2}
+  - {fileID: 11400000, guid: e682372d59fb37aa62cd837429219844, type: 2}
   startLevel: 130
   campaignRandomOrder: 0
   survivalLevels:
@@ -1407,6 +1413,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62cda875abac01e08a3a1351ce346b36, type: 2}
   - {fileID: 11400000, guid: fba5bdacd7ddaefa8a0c6f319dd6901b, type: 2}
   - {fileID: 11400000, guid: 72e09f97d6e6bdafae19d7fb66552175, type: 2}
+  - {fileID: 11400000, guid: a47594e652997af39e37cc5418a52967, type: 2}
+  - {fileID: 11400000, guid: 5fcb7868f16206704857d2c6edaeb4ce, type: 2}
+  - {fileID: 11400000, guid: 1bca6b76c8577f74e66ef37ff394f963, type: 2}
+  - {fileID: 11400000, guid: 0d0d274ee363b93a8bb3c8678f86bd39, type: 2}
+  - {fileID: 11400000, guid: dd0d003b6e143cf8a35e306c77e8fad9, type: 2}
+  - {fileID: 11400000, guid: e682372d59fb37aa62cd837429219844, type: 2}
   survivalRandomOrder: 0
   survivalTime: 180
   survivalBonusPerLevel: 10
